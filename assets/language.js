@@ -210,7 +210,8 @@
   }
   function grammarLink(target) {
     const destination = target === "en" ? "grammar-en.html" : "grammar-ja.html";
-    const number = mode === "ar" ? Number(sessionStorage.getItem("fss-grammar-chapter") || 1) : documentNumber();
+    const requested = Number(new URLSearchParams(location.search).get("chapter"));
+    const number = mode === "ar" ? Number(sessionStorage.getItem("fss-grammar-chapter") || 1) : (window.scrollY < 100 && Number.isInteger(requested) && requested >= 1 && requested <= 51 ? requested : documentNumber());
     return destination + "?chapter=" + number;
   }
   function setMode(next) {
