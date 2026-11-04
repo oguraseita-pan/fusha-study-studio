@@ -210,10 +210,12 @@
   }
   function grammarLink(target) {
     const destination = target === "en" ? "grammar-en.html" : "grammar-ja.html";
-    return destination + "?chapter=" + documentNumber();
+    const number = mode === "ar" ? Number(sessionStorage.getItem("fss-grammar-chapter") || 1) : documentNumber();
+    return destination + "?chapter=" + number;
   }
   function setMode(next) {
     if (!allowed.includes(next)) return;
+    if (next === "ar" && (grammarEn || grammarJa) && mode !== "ar") sessionStorage.setItem("fss-grammar-chapter", String(documentNumber()));
     localStorage.setItem(K,next);
     if ((grammarEn && next === "ja") || (grammarJa && next === "en")) {
       location.href = grammarLink(next);
