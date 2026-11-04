@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>フスハーの基本日常会話集｜初級者のための場面別練習帳</title>
+<style>
+@page {size:A4; margin:17mm 16mm 18mm;}
+:root { --ink:#243344; --muted:#5d6b7a; --accent:#087f70; --line:#dbe7e3; --soft:#f3faf8; --cream:#fffbf3; }
+* {box-sizing:border-box}
+body { margin:0; font-family:'Noto Sans CJK JP','Noto Sans JP',sans-serif; color:var(--ink); background:#eff4f3; font-size:14px; line-height:1.65; }
+main { max-width:920px; margin:0 auto; background:white; padding:0 44px 70px; box-shadow:0 6px 38px #1a3b3222; }
+nav.toolbar { position:sticky; top:0; z-index:30; background:#fffefa; padding:14px 20px; border-bottom:1px solid var(--line); display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin:0 -44px; }
+button {cursor:pointer; font-family:inherit; color:var(--ink);border-radius:8px;border:1px solid #bad0ca;background:#fff;padding:7px 11px;font-size:12px}
+button:hover {background:#e6f5f0}button.active{background:#087f70;color:white;border-color:#087f70}
+.search{flex:1;min-width:160px;padding:9px;border:1px solid #cbd9d6;border-radius:8px;font-family:inherit; }
+.cover {min-height:850px; display:flex; flex-direction:column; justify-content:space-between; padding:70px 0 50px; border-bottom:2px solid var(--accent); break-after:page;}
+.eyebrow {color:var(--accent);font-size:12px;font-weight:800;letter-spacing:.19em;}
+.cover h1{font-size:44px;line-height:1.34;margin:20px 0 18px;letter-spacing:.025em;}
+.cover h1 span{color:var(--accent)}.cover-sub{color:var(--muted);font-size:18px;line-height:1.8}
+.cover-ar {font-family:'Noto Naskh Arabic',serif;font-size:54px;direction:rtl;text-align:right;line-height:2; color:var(--accent); margin:60px 0;}
+.cover-footer{display:flex;justify-content:space-between; border-top:1px solid var(--line);padding-top:20px;color:var(--muted);font-size:12px;}
+.intro {break-after:page;padding:18px 0 20px;}.intro h2{font-size:24px;margin:20px 0}.intro li{margin:9px 0}.intro .intro-box{border-left:4px solid var(--accent);background:var(--soft);padding:16px 20px;margin:18px 0}
+.toc {break-after:page;padding:20px 0}.toc h2{font-size:24px}.tocgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;margin-top:28px}
+.tocgrid a{text-decoration:none;color:var(--ink);border-bottom:1px solid var(--line);padding:9px 4px;font-size:13px}
+.tocgrid span{color:var(--accent);font-weight:800;margin-right:9px}
+.unit{break-before:page;padding:0 0 16px;}.unit-banner{border-left:6px solid var(--accent);padding:6px 0 14px 18px;margin:6px 0 18px;border-bottom:1px solid var(--line)}
+.unit-index{font-size:11px;letter-spacing:.17em;color:var(--accent);font-weight:800}
+.unit-banner h2{font-size:27px;line-height:1.4;margin:3px 0}
+.unit-banner p{font-size:13px;color:var(--muted);margin:0}
+.unit-goal{background:var(--soft);border-radius:8px;padding:12px 16px;margin:15px 0 20px;font-size:12px}.unit-goal b{color:var(--accent);margin-right:8px}
+h3{font-size:17px;margin:24px 0 12px;break-after:avoid}h3 small{font-size:11px;color:var(--muted);font-weight:400;margin-left:12px}
+.phrase-list{display:grid;grid-template-columns:1fr 1fr;column-gap:15px;row-gap:12px}
+.phrase{border:1px solid var(--line);border-radius:10px;padding:11px 14px 12px;min-width:0;break-inside:avoid;background:#fff}
+.ph-head{display:flex;justify-content:space-between;align-items:center}.ph-num{font-size:10px;font-weight:800;color:var(--accent)}
+.speech{font-size:10px;padding:3px 8px;border:none;background:#eff8f5;color:#097465}
+.arabic{font-family:'Noto Naskh Arabic','Amiri',serif;font-size:32px;line-height:1.85;letter-spacing:0;text-align:right;font-weight:600;direction:rtl;unicode-bidi:isolate;overflow-wrap:anywhere;}
+.roman{font-size:12px;color:#637485;line-height:1.7;}
+.japanese{font-size:13px;font-weight:650;line-height:1.6;margin-top:4px;}
+.note{font-size:11px;color:#637485;line-height:1.6;margin-top:6px;border-top:1px dashed #e5edeb;padding-top:5px}
+.chapter-extras{padding-top:16px}
+.dialogue{border:1px solid var(--line);border-radius:12px;padding:8px 15px;background:#fff;}
+.dialog-turn{display:flex;gap:14px;padding:10px 0;border-bottom:1px dashed var(--line);break-inside:avoid}.dialog-turn:last-child{border:none}
+.speaker{background:var(--accent);color:white;width:27px;height:27px;border-radius:100%;text-align:center;line-height:27px;font-weight:700;flex-shrink:0;font-size:12px;margin-top:12px}
+.dialog-content{flex:1;min-width:0}.dialogue .arabic{font-size:33px}
+.real-tip{margin-top:20px;background:var(--soft);border-left:4px solid var(--accent);padding:12px 16px;border-radius:5px;break-inside:avoid;font-size:12px}.real-tip b{color:var(--accent)}.real-tip p{margin:5px 0 0;line-height:1.8}
+.drills{border:1px solid var(--line);border-radius:12px;padding:3px 16px}
+.drill{display:flex;align-items:center;min-height:56px;gap:12px;border-bottom:1px dashed var(--line);break-inside:avoid;font-size:13px}
+.drill:last-child{border:0}.drill span{color:var(--accent);font-weight:800}.drill strong{flex:0 1 60%;font-weight:500}.practice-line{border-bottom:1px solid #a3b9b2;flex:1;height:25px}
+.role{background:var(--cream);border-left:4px solid #d7aa49;padding:12px 16px;border-radius:4px;font-size:12px;margin-top:15px;break-inside:avoid}.role p{margin:6px 0 0}
+.appendix{break-before:page}.appendix h2{font-size:24px}.answer-group{break-inside:avoid;border-bottom:1px solid var(--line);padding:5px 0 10px}.answer-group h3{font-size:13px;color:var(--accent);margin:16px 0 4px}.answer-item{display:flex;gap:14px;margin:5px 0;align-items:center}.answer-item span{width:19px;color:var(--muted);font-size:12px}.answer-item .arabic{font-size:28px;line-height:1.5;text-align:left}.answer-item .roman{font-size:11px}
+.studyplan{break-before:page;padding-top:10px}.studyplan h2{font-size:24px}.planbox{background:var(--soft);padding:13px 17px;margin:14px 0;border-radius:8px}.planitem{padding:10px 0;border-bottom:1px solid var(--line);font-size:13px}
+.footer{padding:20px 0;color:var(--muted);font-size:11px;border-top:1px solid var(--line);margin-top:35px}
+body.hide-jp .japanese,body.hide-jp .note,body.hide-jp .dialogue .japanese {visibility:hidden}
+body.hide-rom .roman{visibility:hidden}
+body.hide-both .japanese, body.hide-both .note,body.hide-both .roman{visibility:hidden}
+.phrase.hidden-search{display:none}.unit.no-results{display:none}
+@media(max-width:700px){main{padding:0 15px 30px;}nav.toolbar{margin:0 -15px;padding:8px;}.cover{min-height:70vh;padding-top:50px}.cover h1{font-size:33px;}.cover-ar{font-size:46px}.phrase-list,.tocgrid{grid-template-columns:1fr}.arabic{font-size:36px}.dialogue .arabic{font-size:36px}.unit-banner h2{font-size:22px}.drill{flex-wrap:wrap;gap:6px;padding:12px 0}.drill strong{flex:1;}.practice-line{flex-basis:100%}}
+@media print{body{background:white;font-size:12px}main{max-width:none;box-shadow:none;padding:0}nav.toolbar,.speech{display:none!important}.cover{min-height:240mm;}.arabic{font-size:31px}.dialogue .arabic{font-size:32px}.phrase-list{gap:9px 11px}.phrase{padding:9px 12px}.unit{padding-bottom:0}.chapter-extras{break-before:auto;padding-top:3mm}.answer-group{break-inside:avoid}.intro{break-after:page}.toc{break-after:page}.footer{padding:10px 0}}
+
+@media print{
+.unit-banner{padding-bottom:8px;margin-bottom:10px}
+.unit-banner h2{font-size:23px;margin:2px 0}
+.unit-goal{padding:8px 12px;margin:8px 0 12px}
+.phrase-list{column-gap:9px;row-gap:7px}
+.phrase{padding:6px 10px 7px}
+.arabic{font-size:29px;line-height:1.53}
+.roman{font-size:11px;line-height:1.35}
+.japanese{font-size:12px;line-height:1.4;margin-top:2px}
+.note{font-size:10px;line-height:1.35;margin-top:4px;padding-top:3px}
+h3{margin:15px 0 9px}
+.chapter-extras{padding-top:7px}
+.dialogue{padding:4px 11px}
+.dialogue .arabic{font-size:29px;line-height:1.5}
+.dialog-turn{padding:6px 0}
+.real-tip{margin-top:12px;padding:8px 12px}
+.drill{min-height:43px}
+.role{padding:9px 12px;margin-top:10px}
+}
+</style></head><body>
+<nav class="toolbar"><button id="showAll" class="active">訳・読み方を表示</button><button id="hideJp">日本語訳を隠す</button><button id="hideRom">発音を隠す</button><button id="hideBoth">両方隠す</button><input class="search" id="search" type="search" placeholder="日本語・アラビア語・ローマ字で検索"></nav>
+<main>
+<section class="cover"><div><div class="eyebrow">FUSHA • BEGINNER CONVERSATION PRACTICE</div><h1>フスハーの<br><span>基本日常会話集</span></h1><div class="cover-sub">初級者のための場面別フレーズ＆会話練習帳<br>挨拶からレストラン、仕事、旅行まで</div><div class="cover-ar" lang="ar" dir="rtl">هَيَّا نَتَحَدَّثْ بِالْعَرَبِيَّةِ!</div></div><div class="cover-footer"><span>13場面・132基本表現・52会話ターン</span><span>Modern Standard Arabic / A0–A2</span></div></section>
+<section class="intro"><div class="eyebrow">HOW TO USE</div><h2>この会話集の使い方</h2><p>文章を暗記するだけでなく、<b>見ずに言えるようにする</b>ことを目標とする練習帳です。13の生活場面を、簡単なフスハー（現代標準アラビア語）でまとめました。</p>
+<ol><li><b>意味を確認：</b>アラビア語・発音・日本語を見ながら3回音読します。</li><li><b>日本語を隠す：</b>ブラウザ版の切替ボタンで意味を隠し、文字だけで読みます。</li><li><b>アラビア語を隠す：</b>章末の日本語練習3問を見て、声に出して答えます。</li><li><b>会話を交代で：</b>「A → B」の順番で読み、自分だけで両方の役を練習します。</li><li><b>語句を入れ替える：</b>場所・時間・商品などを変えて自分の文章を作ります。</li></ol>
+<div class="intro-box"><b>文字の大きさ：</b>ご希望に合わせ、アラビア語本文は日本語の約2倍以上の大きさにしています。母音記号・シャッダ・ハムザも確認しながら練習できます。</div>
+<h3>読み方の約束</h3><p>アラビア語は学習しやすいよう母音記号を多めに付けています。ローマ字表記は<b>日常的に文末で止めて読む発音</b>を優先しているため、厳密な文法上の格語尾とは完全に一致しないことがあります。<b>ʿ</b> はアイン、<b>ʾ</b> はハムザ、長母音は <b>ā / ī / ū</b> です。</p>
+<div class="intro-box"><b>フスハーと実際の会話：</b>本書の中心は、国や地域をまたいで学べるフスハーです。ドバイの実際の会話では湾岸方言や英語もよく使われます。各章の「現地での使い方」で違いを補足します。口語メモは地域や話者による違いがあります。</div>
+<h3>相手が男性・女性で変わる表現</h3><p>本書では「あなた」に男性へ話す形を基本として記載しています。必要な箇所に女性への言い換えを付けています。最初は男性形で基本構文を覚え、次に女性形を増やしましょう。</p></section>
+<section class="toc"><div class="eyebrow">CONTENTS</div><h2>目次 ─ 13の生活場面</h2><div class="tocgrid"><a href="#unit1"><span>01</span> あいさつ・別れ際</a><a href="#unit2"><span>02</span> 自己紹介・出身・仕事</a><a href="#unit3"><span>03</span> 聞き返す・言葉を確認する</a><a href="#unit4"><span>04</span> レストラン・カフェ</a><a href="#unit5"><span>05</span> 買い物・値段・支払い</a><a href="#unit6"><span>06</span> 道案内・場所を聞く</a><a href="#unit7"><span>07</span> タクシー・移動</a><a href="#unit8"><span>08</span> ホテル・住まい</a><a href="#unit9"><span>09</span> 時間・約束・予定</a><a href="#unit10"><span>10</span> 仕事・オフィス</a><a href="#unit11"><span>11</span> 友人との雑談・誘い</a><a href="#unit12"><span>12</span> 体調・薬局・助けを求める</a><a href="#unit13"><span>13</span> 空港・旅行</a></div><div class="planbox"><b>練習の目安：</b>毎日1章ずつ（約15〜25分）。最初の13日で1周し、次の13日で日本語を隠して復習。最後に苦手な場面を集中練習します。</div></section>
+<section class="unit" id="unit1">
+      <div class="unit-banner"><div class="unit-index">UNIT 01</div><h2>あいさつ・別れ際</h2><p>毎日最も使う表現</p></div>
+      <div class="unit-goal"><b>この章の目標</b> 会ってから別れるまで、短いやり取りを自分から始められる。</div>
+      <h3>使える基本フレーズ <small>10表現</small></h3>
+      <div class="phrase-list"><article class="phrase" id="u1-p1" data-search="السَّلَامُ عَلَيْكُمْ as-salāmu ʿalaykum こんにちは／あなたに平安を。 時間帯を問わず使う定番の挨拶。">
+        <div class="ph-head"><span class="ph-num">01</span><button class="speech" data-text="السَّلَامُ عَلَيْكُمْ" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">السَّلَامُ عَلَيْكُمْ</div>
+        <div class="roman">as-salāmu ʿalaykum</div>
+        <div class="japanese">こんにちは／あなたに平安を。</div>
+        <div class="note">時間帯を問わず使う定番の挨拶。</div></article><article class="phrase" id="u1-p2" data-search="وَعَلَيْكُمُ السَّلَامُ wa ʿalaykumu s-salām こんにちは（挨拶への返事）。 定番の返答。">
+        <div class="ph-head"><span class="ph-num">02</span><button class="speech" data-text="وَعَلَيْكُمُ السَّلَامُ" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">وَعَلَيْكُمُ السَّلَامُ</div>
+        <div class="roman">wa ʿalaykumu s-salām</div>
+        <div class="japanese">こんにちは（挨拶への返事）。</div>
+        <div class="note">定番の返答。</div></article><article class="phrase" id="u1-p3" data-search="صَبَاحُ الْخَيْرِ ṣabāḥ al-khayr おはようございます。 朝の挨拶。">
+        <div class="ph-head"><span class="ph-num">03</span><button class="speech" data-text="صَبَاحُ الْخَيْرِ" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">صَبَاحُ الْخَيْرِ</div>
+        <div class="roman">ṣabāḥ al-khayr</div>
+        <div class="japanese">おはようございます。</div>
+        <div class="note">朝の挨拶。</div></article><article class="phrase" id="u1-p4" data-search="صَبَاحُ النُّورِ ṣabāḥ an-nūr おはようございます（返事）。 朝の挨拶に対するよくある返事。">
+        <div class="ph-head"><span class="ph-num">04</span><button class="speech" data-text="صَبَاحُ النُّورِ" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">صَبَاحُ النُّورِ</div>
+        <div class="roman">ṣabāḥ an-nūr</div>
+        <div class="japanese">おはようございます（返事）。</div>
+        <div class="note">朝の挨拶に対するよくある返事。</div></article><article class="phrase" id="u1-p5" data-search="مَسَاءُ الْخَيْرِ masāʾ al-khayr こんばんは。 夕方以降に使う。">
+        <div class="ph-head"><span class="ph-num">05</span><button class="speech" data-text="مَسَاءُ الْخَيْرِ" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">مَسَاءُ الْخَيْرِ</div>
+        <div class="roman">masāʾ al-khayr</div>
+        <div class="japanese">こんばんは。</div>
+        <div class="note">夕方以降に使う。</div></article><article class="phrase" id="u1-p6" data-search="كَيْفَ حَالُكَ؟ kayfa ḥāluka? お元気ですか？（男性へ） 女性には「ḥāluki」と言う。">
+        <div class="ph-head"><span class="ph-num">06</span><button class="speech" data-text="كَيْفَ حَالُكَ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">كَيْفَ حَالُكَ؟</div>
+        <div class="roman">kayfa ḥāluka?</div>
+        <div class="japanese">お元気ですか？（男性へ）</div>
+        <div class="note">女性には「ḥāluki」と言う。</div></article><article class="phrase" id="u1-p7" data-search="أَنَا بِخَيْرٍ، شُكْرًا. anā bikhayr, shukran 元気です。ありがとう。 普段は語末の格語尾を弱くする／省くことが多い。">
+        <div class="ph-head"><span class="ph-num">07</span><button class="speech" data-text="أَنَا بِخَيْرٍ، شُكْرًا." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أَنَا بِخَيْرٍ، شُكْرًا.</div>
+        <div class="roman">anā bikhayr, shukran</div>
+        <div class="japanese">元気です。ありがとう。</div>
+        <div class="note">普段は語末の格語尾を弱くする／省くことが多い。</div></article><article class="phrase" id="u1-p8" data-search="تَشَرَّفْتُ بِمَعْرِفَتِكَ. tasharraftu bi-maʿrifatika お会いできて光栄です。（男性へ） やや丁寧な初対面の表現。">
+        <div class="ph-head"><span class="ph-num">08</span><button class="speech" data-text="تَشَرَّفْتُ بِمَعْرِفَتِكَ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">تَشَرَّفْتُ بِمَعْرِفَتِكَ.</div>
+        <div class="roman">tasharraftu bi-maʿrifatika</div>
+        <div class="japanese">お会いできて光栄です。（男性へ）</div>
+        <div class="note">やや丁寧な初対面の表現。</div></article><article class="phrase" id="u1-p9" data-search="إِلَى اللِّقَاءِ ilā l-liqāʾ また会いましょう。 別れの挨拶。">
+        <div class="ph-head"><span class="ph-num">09</span><button class="speech" data-text="إِلَى اللِّقَاءِ" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">إِلَى اللِّقَاءِ</div>
+        <div class="roman">ilā l-liqāʾ</div>
+        <div class="japanese">また会いましょう。</div>
+        <div class="note">別れの挨拶。</div></article><article class="phrase" id="u1-p10" data-search="مَعَ السَّلَامَةِ maʿa s-salāma さようなら。 フスハーでも会話でも広く使う。">
+        <div class="ph-head"><span class="ph-num">10</span><button class="speech" data-text="مَعَ السَّلَامَةِ" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">مَعَ السَّلَامَةِ</div>
+        <div class="roman">maʿa s-salāma</div>
+        <div class="japanese">さようなら。</div>
+        <div class="note">フスハーでも会話でも広く使う。</div></article></div>
+      <div class="chapter-extras">
+      <h3>会話例：A と B を交代で読む</h3><div class="dialogue"><div class="dialog-turn"><div class="speaker">A</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">السَّلَامُ عَلَيْكُمْ.</div><div class="roman">as-salāmu ʿalaykum.</div><div class="japanese">こんにちは。</div></div></div><div class="dialog-turn"><div class="speaker">B</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">وَعَلَيْكُمُ السَّلَامُ.</div><div class="roman">wa ʿalaykumu s-salām.</div><div class="japanese">こんにちは。</div></div></div><div class="dialog-turn"><div class="speaker">A</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">كَيْفَ حَالُكَ؟</div><div class="roman">kayfa ḥāluka?</div><div class="japanese">お元気ですか？</div></div></div><div class="dialog-turn"><div class="speaker">B</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">أَنَا بِخَيْرٍ، شُكْرًا.</div><div class="roman">anā bikhayr, shukran.</div><div class="japanese">元気です。ありがとう。</div></div></div></div>
+      <div class="real-tip"><b>現地での使い方</b><p>挨拶の「as-salāmu ʿalaykum」「maʿa s-salāma」は湾岸地域でも自然です。フォーマルな「kayfa ḥāluka?」に対し、現地では「kēf il-ḥāl?」のような口語も聞かれます。</p></div>
+      <h3>日本語だけ見て言ってみよう</h3><div class="drills"><div class="drill"><span>01</span><strong>こんにちは／あなたに平安を。</strong><div class="practice-line"></div></div><div class="drill"><span>02</span><strong>お元気ですか？（男性へ）</strong><div class="practice-line"></div></div><div class="drill"><span>03</span><strong>さようなら。</strong><div class="practice-line"></div></div></div>
+      <div class="role"><b>1分ロールプレイ</b><p>出社して同僚に朝の挨拶をし、調子を聞き、最後に別れの挨拶をする。</p></div></div></section><section class="unit" id="unit2">
+      <div class="unit-banner"><div class="unit-index">UNIT 02</div><h2>自己紹介・出身・仕事</h2><p>初対面の会話を続ける</p></div>
+      <div class="unit-goal"><b>この章の目標</b> 名前、出身、住んでいる場所、仕事、学習状況を紹介する。</div>
+      <h3>使える基本フレーズ <small>10表現</small></h3>
+      <div class="phrase-list"><article class="phrase" id="u2-p1" data-search="مَا اسْمُكَ؟ mā ismuka? お名前は何ですか？（男性へ） 女性には「ismuki」。">
+        <div class="ph-head"><span class="ph-num">01</span><button class="speech" data-text="مَا اسْمُكَ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">مَا اسْمُكَ؟</div>
+        <div class="roman">mā ismuka?</div>
+        <div class="japanese">お名前は何ですか？（男性へ）</div>
+        <div class="note">女性には「ismuki」。</div></article><article class="phrase" id="u2-p2" data-search="اِسْمِي ... ismī ... 私の名前は…です。 名前を後ろに入れる。">
+        <div class="ph-head"><span class="ph-num">02</span><button class="speech" data-text="اِسْمِي ..." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">اِسْمِي ...</div>
+        <div class="roman">ismī ...</div>
+        <div class="japanese">私の名前は…です。</div>
+        <div class="note">名前を後ろに入れる。</div></article><article class="phrase" id="u2-p3" data-search="مِنْ أَيْنَ أَنْتَ؟ min ayna anta? どこの出身ですか？（男性へ） 女性には「anti」。">
+        <div class="ph-head"><span class="ph-num">03</span><button class="speech" data-text="مِنْ أَيْنَ أَنْتَ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">مِنْ أَيْنَ أَنْتَ؟</div>
+        <div class="roman">min ayna anta?</div>
+        <div class="japanese">どこの出身ですか？（男性へ）</div>
+        <div class="note">女性には「anti」。</div></article><article class="phrase" id="u2-p4" data-search="أَنَا مِنَ الْيَابَانِ. anā mina l-yābān 私は日本出身です。 日本を伝える定番表現。">
+        <div class="ph-head"><span class="ph-num">04</span><button class="speech" data-text="أَنَا مِنَ الْيَابَانِ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أَنَا مِنَ الْيَابَانِ.</div>
+        <div class="roman">anā mina l-yābān</div>
+        <div class="japanese">私は日本出身です。</div>
+        <div class="note">日本を伝える定番表現。</div></article><article class="phrase" id="u2-p5" data-search="أَيْنَ تَسْكُنُ؟ ayna taskunu? どこに住んでいますか？（男性へ） 女性へは「taskunīna」。">
+        <div class="ph-head"><span class="ph-num">05</span><button class="speech" data-text="أَيْنَ تَسْكُنُ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أَيْنَ تَسْكُنُ؟</div>
+        <div class="roman">ayna taskunu?</div>
+        <div class="japanese">どこに住んでいますか？（男性へ）</div>
+        <div class="note">女性へは「taskunīna」。</div></article><article class="phrase" id="u2-p6" data-search="أَسْكُنُ فِي دُبَيّ. askunu fī dubayy 私はドバイに住んでいます。 都市名を入れ替えられる。">
+        <div class="ph-head"><span class="ph-num">06</span><button class="speech" data-text="أَسْكُنُ فِي دُبَيّ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أَسْكُنُ فِي دُبَيّ.</div>
+        <div class="roman">askunu fī dubayy</div>
+        <div class="japanese">私はドバイに住んでいます。</div>
+        <div class="note">都市名を入れ替えられる。</div></article><article class="phrase" id="u2-p7" data-search="مَاذَا تَعْمَلُ؟ mādhā taʿmalu? お仕事は何ですか？（男性へ） 職業を聞く。">
+        <div class="ph-head"><span class="ph-num">07</span><button class="speech" data-text="مَاذَا تَعْمَلُ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">مَاذَا تَعْمَلُ؟</div>
+        <div class="roman">mādhā taʿmalu?</div>
+        <div class="japanese">お仕事は何ですか？（男性へ）</div>
+        <div class="note">職業を聞く。</div></article><article class="phrase" id="u2-p8" data-search="أَعْمَلُ فِي شَرِكَةٍ يَابَانِيَّةٍ. aʿmalu fī sharika yābāniyya 日本の会社で働いています。 フスハーの格語尾は会話では通常省かれる。">
+        <div class="ph-head"><span class="ph-num">08</span><button class="speech" data-text="أَعْمَلُ فِي شَرِكَةٍ يَابَانِيَّةٍ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أَعْمَلُ فِي شَرِكَةٍ يَابَانِيَّةٍ.</div>
+        <div class="roman">aʿmalu fī sharika yābāniyya</div>
+        <div class="japanese">日本の会社で働いています。</div>
+        <div class="note">フスハーの格語尾は会話では通常省かれる。</div></article><article class="phrase" id="u2-p9" data-search="أَتَعَلَّمُ الْعَرَبِيَّةَ. ataʿallamu l-ʿarabiyya アラビア語を勉強しています。 「أَتَعَلَّمُ」は「私は学ぶ」。">
+        <div class="ph-head"><span class="ph-num">09</span><button class="speech" data-text="أَتَعَلَّمُ الْعَرَبِيَّةَ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أَتَعَلَّمُ الْعَرَبِيَّةَ.</div>
+        <div class="roman">ataʿallamu l-ʿarabiyya</div>
+        <div class="japanese">アラビア語を勉強しています。</div>
+        <div class="note">「أَتَعَلَّمُ」は「私は学ぶ」。</div></article><article class="phrase" id="u2-p10" data-search="أَتَحَدَّثُ الْعَرَبِيَّةَ قَلِيلًا. ataḥaddathu l-ʿarabiyya qalīlan アラビア語を少し話します。 最初に言うと相手が配慮してくれやすい。">
+        <div class="ph-head"><span class="ph-num">10</span><button class="speech" data-text="أَتَحَدَّثُ الْعَرَبِيَّةَ قَلِيلًا." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أَتَحَدَّثُ الْعَرَبِيَّةَ قَلِيلًا.</div>
+        <div class="roman">ataḥaddathu l-ʿarabiyya qalīlan</div>
+        <div class="japanese">アラビア語を少し話します。</div>
+        <div class="note">最初に言うと相手が配慮してくれやすい。</div></article></div>
+      <div class="chapter-extras">
+      <h3>会話例：A と B を交代で読む</h3><div class="dialogue"><div class="dialog-turn"><div class="speaker">A</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">مَا اسْمُكَ؟</div><div class="roman">mā ismuka?</div><div class="japanese">お名前は何ですか？</div></div></div><div class="dialog-turn"><div class="speaker">B</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">اِسْمِي كِنْجِي.</div><div class="roman">ismī kenjī.</div><div class="japanese">ケンジです。</div></div></div><div class="dialog-turn"><div class="speaker">A</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">مِنْ أَيْنَ أَنْتَ؟</div><div class="roman">min ayna anta?</div><div class="japanese">どこの出身ですか？</div></div></div><div class="dialog-turn"><div class="speaker">B</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">أَنَا مِنَ الْيَابَانِ، وَأَسْكُنُ فِي دُبَيّ.</div><div class="roman">anā mina l-yābān, wa askunu fī dubayy.</div><div class="japanese">日本出身で、ドバイに住んでいます。</div></div></div></div>
+      <div class="real-tip"><b>現地での使い方</b><p>出身や仕事を聞く内容は自然ですが、フスハーの動詞語尾まで丁寧に発音するとやや改まって聞こえます。日常会話では短く区切って使うと通じやすいです。</p></div>
+      <h3>日本語だけ見て言ってみよう</h3><div class="drills"><div class="drill"><span>01</span><strong>お名前は何ですか？（男性へ）</strong><div class="practice-line"></div></div><div class="drill"><span>02</span><strong>私は日本出身です。</strong><div class="practice-line"></div></div><div class="drill"><span>03</span><strong>アラビア語を勉強しています。</strong><div class="practice-line"></div></div></div>
+      <div class="role"><b>1分ロールプレイ</b><p>初めて会う相手に、自分の名前・国籍・住む都市・仕事内容を30秒で説明する。</p></div></div></section><section class="unit" id="unit3">
+      <div class="unit-banner"><div class="unit-index">UNIT 03</div><h2>聞き返す・言葉を確認する</h2><p>初心者の最重要フレーズ</p></div>
+      <div class="unit-goal"><b>この章の目標</b> 理解できない場面でも会話を止めずに聞き返せる。</div>
+      <h3>使える基本フレーズ <small>10表現</small></h3>
+      <div class="phrase-list"><article class="phrase" id="u3-p1" data-search="لَمْ أَفْهَمْ. lam afham 分かりませんでした。 短くて非常に実用的。">
+        <div class="ph-head"><span class="ph-num">01</span><button class="speech" data-text="لَمْ أَفْهَمْ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">لَمْ أَفْهَمْ.</div>
+        <div class="roman">lam afham</div>
+        <div class="japanese">分かりませんでした。</div>
+        <div class="note">短くて非常に実用的。</div></article><article class="phrase" id="u3-p2" data-search="تَكَلَّمْ بِبُطْءٍ، مِنْ فَضْلِكَ. takallam bi-buṭʾ, min faḍlika ゆっくり話してください。（男性へ） 女性には「takallamī」。">
+        <div class="ph-head"><span class="ph-num">02</span><button class="speech" data-text="تَكَلَّمْ بِبُطْءٍ، مِنْ فَضْلِكَ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">تَكَلَّمْ بِبُطْءٍ، مِنْ فَضْلِكَ.</div>
+        <div class="roman">takallam bi-buṭʾ, min faḍlika</div>
+        <div class="japanese">ゆっくり話してください。（男性へ）</div>
+        <div class="note">女性には「takallamī」。</div></article><article class="phrase" id="u3-p3" data-search="هَلْ يُمْكِنُكَ أَنْ تُعِيدَ ذَلِكَ؟ hal yumkinuka an tuʿīda dhālika? もう一度言ってもらえますか？（男性へ） 丁寧な聞き返し。">
+        <div class="ph-head"><span class="ph-num">03</span><button class="speech" data-text="هَلْ يُمْكِنُكَ أَنْ تُعِيدَ ذَلِكَ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">هَلْ يُمْكِنُكَ أَنْ تُعِيدَ ذَلِكَ؟</div>
+        <div class="roman">hal yumkinuka an tuʿīda dhālika?</div>
+        <div class="japanese">もう一度言ってもらえますか？（男性へ）</div>
+        <div class="note">丁寧な聞き返し。</div></article><article class="phrase" id="u3-p4" data-search="مَاذَا يَعْنِي هَذَا؟ mādhā yaʿnī hādhā? これはどういう意味ですか？ 単語や表現の意味を聞く。">
+        <div class="ph-head"><span class="ph-num">04</span><button class="speech" data-text="مَاذَا يَعْنِي هَذَا؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">مَاذَا يَعْنِي هَذَا؟</div>
+        <div class="roman">mādhā yaʿnī hādhā?</div>
+        <div class="japanese">これはどういう意味ですか？</div>
+        <div class="note">単語や表現の意味を聞く。</div></article><article class="phrase" id="u3-p5" data-search="كَيْفَ أَقُولُ هَذَا بِالْعَرَبِيَّةِ؟ kayfa aqūlu hādhā bi-l-ʿarabiyya? これはアラビア語で何と言いますか？ 指差しながら使える。">
+        <div class="ph-head"><span class="ph-num">05</span><button class="speech" data-text="كَيْفَ أَقُولُ هَذَا بِالْعَرَبِيَّةِ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">كَيْفَ أَقُولُ هَذَا بِالْعَرَبِيَّةِ؟</div>
+        <div class="roman">kayfa aqūlu hādhā bi-l-ʿarabiyya?</div>
+        <div class="japanese">これはアラビア語で何と言いますか？</div>
+        <div class="note">指差しながら使える。</div></article><article class="phrase" id="u3-p6" data-search="هَلْ تَتَحَدَّثُ الْإِنْجِلِيزِيَّةَ؟ hal tataḥaddathu l-inglīziyya? 英語を話しますか？（男性へ） 女性には「tataḥaddathīna」。">
+        <div class="ph-head"><span class="ph-num">06</span><button class="speech" data-text="هَلْ تَتَحَدَّثُ الْإِنْجِلِيزِيَّةَ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">هَلْ تَتَحَدَّثُ الْإِنْجِلِيزِيَّةَ؟</div>
+        <div class="roman">hal tataḥaddathu l-inglīziyya?</div>
+        <div class="japanese">英語を話しますか？（男性へ）</div>
+        <div class="note">女性には「tataḥaddathīna」。</div></article><article class="phrase" id="u3-p7" data-search="أَعْرِفُ هَذِهِ الْكَلِمَةَ. aʿrifu hādhihi l-kalima この単語は知っています。 「أَعْرِفُ」は知っている。">
+        <div class="ph-head"><span class="ph-num">07</span><button class="speech" data-text="أَعْرِفُ هَذِهِ الْكَلِمَةَ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أَعْرِفُ هَذِهِ الْكَلِمَةَ.</div>
+        <div class="roman">aʿrifu hādhihi l-kalima</div>
+        <div class="japanese">この単語は知っています。</div>
+        <div class="note">「أَعْرِفُ」は知っている。</div></article><article class="phrase" id="u3-p8" data-search="لَا أَعْرِفُ. lā aʿrif 知りません。 応用範囲が広い。">
+        <div class="ph-head"><span class="ph-num">08</span><button class="speech" data-text="لَا أَعْرِفُ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">لَا أَعْرِفُ.</div>
+        <div class="roman">lā aʿrif</div>
+        <div class="japanese">知りません。</div>
+        <div class="note">応用範囲が広い。</div></article><article class="phrase" id="u3-p9" data-search="هَلْ هَذَا صَحِيحٌ؟ hal hādhā ṣaḥīḥ? これは正しいですか？ 授業でも利用頻度が高い。">
+        <div class="ph-head"><span class="ph-num">09</span><button class="speech" data-text="هَلْ هَذَا صَحِيحٌ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">هَلْ هَذَا صَحِيحٌ؟</div>
+        <div class="roman">hal hādhā ṣaḥīḥ?</div>
+        <div class="japanese">これは正しいですか？</div>
+        <div class="note">授業でも利用頻度が高い。</div></article><article class="phrase" id="u3-p10" data-search="سَاعِدْنِي، مِنْ فَضْلِكَ. sāʿidnī, min faḍlika 手伝ってください。（男性へ） 女性には「sāʿidīnī」。">
+        <div class="ph-head"><span class="ph-num">10</span><button class="speech" data-text="سَاعِدْنِي، مِنْ فَضْلِكَ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">سَاعِدْنِي، مِنْ فَضْلِكَ.</div>
+        <div class="roman">sāʿidnī, min faḍlika</div>
+        <div class="japanese">手伝ってください。（男性へ）</div>
+        <div class="note">女性には「sāʿidīnī」。</div></article></div>
+      <div class="chapter-extras">
+      <h3>会話例：A と B を交代で読む</h3><div class="dialogue"><div class="dialog-turn"><div class="speaker">A</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">هَلْ تَفْهَمُ؟</div><div class="roman">hal tafhamu?</div><div class="japanese">分かりますか？</div></div></div><div class="dialog-turn"><div class="speaker">B</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">لَمْ أَفْهَمْ.</div><div class="roman">lam afham.</div><div class="japanese">分かりませんでした。</div></div></div><div class="dialog-turn"><div class="speaker">B</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">هَلْ يُمْكِنُكَ أَنْ تُعِيدَ ذَلِكَ؟</div><div class="roman">hal yumkinuka an tuʿīda dhālika?</div><div class="japanese">もう一度言ってもらえますか？</div></div></div><div class="dialog-turn"><div class="speaker">A</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">نَعَمْ، بِالطَّبْعِ.</div><div class="roman">naʿam, bi-ṭ-ṭabʿ.</div><div class="japanese">はい、もちろん。</div></div></div></div>
+      <div class="real-tip"><b>現地での使い方</b><p>これらは丁寧なフスハーです。湾岸の普段の会話では「mā fahimt（分からなかった）」や「shū yaʿnī?（どういう意味？）」なども聞かれます。</p></div>
+      <h3>日本語だけ見て言ってみよう</h3><div class="drills"><div class="drill"><span>01</span><strong>分かりませんでした。</strong><div class="practice-line"></div></div><div class="drill"><span>02</span><strong>もう一度言ってもらえますか？（男性へ）</strong><div class="practice-line"></div></div><div class="drill"><span>03</span><strong>これはアラビア語で何と言いますか？</strong><div class="practice-line"></div></div></div>
+      <div class="role"><b>1分ロールプレイ</b><p>講師に対して「分からない→もう一度→ゆっくり→意味は？」の順で質問する。</p></div></div></section><section class="unit" id="unit4">
+      <div class="unit-banner"><div class="unit-index">UNIT 04</div><h2>レストラン・カフェ</h2><p>注文からお会計まで</p></div>
+      <div class="unit-goal"><b>この章の目標</b> 席の確認、注文、リクエスト、会計ができる。</div>
+      <h3>使える基本フレーズ <small>12表現</small></h3>
+      <div class="phrase-list"><article class="phrase" id="u4-p1" data-search="هَلْ لَدَيْكُمْ طَاوِلَةٌ لِشَخْصَيْنِ؟ hal ladaykum ṭāwila li-shakhṣayn? 2人用の席はありますか？ 複数人・店員に「ladaykum」。">
+        <div class="ph-head"><span class="ph-num">01</span><button class="speech" data-text="هَلْ لَدَيْكُمْ طَاوِلَةٌ لِشَخْصَيْنِ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">هَلْ لَدَيْكُمْ طَاوِلَةٌ لِشَخْصَيْنِ؟</div>
+        <div class="roman">hal ladaykum ṭāwila li-shakhṣayn?</div>
+        <div class="japanese">2人用の席はありますか？</div>
+        <div class="note">複数人・店員に「ladaykum」。</div></article><article class="phrase" id="u4-p2" data-search="أُرِيدُ قَائِمَةَ الطَّعَامِ، مِنْ فَضْلِكَ. urīdu qāʾimat aṭ-ṭaʿām, min faḍlika メニューをください。 「أُرِيدُ」は〜が欲しい。">
+        <div class="ph-head"><span class="ph-num">02</span><button class="speech" data-text="أُرِيدُ قَائِمَةَ الطَّعَامِ، مِنْ فَضْلِكَ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أُرِيدُ قَائِمَةَ الطَّعَامِ، مِنْ فَضْلِكَ.</div>
+        <div class="roman">urīdu qāʾimat aṭ-ṭaʿām, min faḍlika</div>
+        <div class="japanese">メニューをください。</div>
+        <div class="note">「أُرِيدُ」は〜が欲しい。</div></article><article class="phrase" id="u4-p3" data-search="مَاذَا تَنْصَحُنِي أَنْ أَطْلُبَ؟ mādhā tanṣaḥunī an aṭluba? 何を注文するのがおすすめですか？（男性へ） おすすめを尋ねる。">
+        <div class="ph-head"><span class="ph-num">03</span><button class="speech" data-text="مَاذَا تَنْصَحُنِي أَنْ أَطْلُبَ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">مَاذَا تَنْصَحُنِي أَنْ أَطْلُبَ؟</div>
+        <div class="roman">mādhā tanṣaḥunī an aṭluba?</div>
+        <div class="japanese">何を注文するのがおすすめですか？（男性へ）</div>
+        <div class="note">おすすめを尋ねる。</div></article><article class="phrase" id="u4-p4" data-search="أُرِيدُ هَذَا الطَّبَقَ. urīdu hādhā ṭ-ṭabaq この料理をください。 指差しでも使える。">
+        <div class="ph-head"><span class="ph-num">04</span><button class="speech" data-text="أُرِيدُ هَذَا الطَّبَقَ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أُرِيدُ هَذَا الطَّبَقَ.</div>
+        <div class="roman">urīdu hādhā ṭ-ṭabaq</div>
+        <div class="japanese">この料理をください。</div>
+        <div class="note">指差しでも使える。</div></article><article class="phrase" id="u4-p5" data-search="أُرِيدُ مَاءً، مِنْ فَضْلِكَ. urīdu māʾan, min faḍlika 水をください。 会話では「māʾ」のように止めてもよい。">
+        <div class="ph-head"><span class="ph-num">05</span><button class="speech" data-text="أُرِيدُ مَاءً، مِنْ فَضْلِكَ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أُرِيدُ مَاءً، مِنْ فَضْلِكَ.</div>
+        <div class="roman">urīdu māʾan, min faḍlika</div>
+        <div class="japanese">水をください。</div>
+        <div class="note">会話では「māʾ」のように止めてもよい。</div></article><article class="phrase" id="u4-p6" data-search="قَهْوَةً بِدُونِ سُكَّرٍ، مِنْ فَضْلِكَ. qahwa bidūn sukkar, min faḍlika 砂糖なしのコーヒーをください。 飲み物の注文に。">
+        <div class="ph-head"><span class="ph-num">06</span><button class="speech" data-text="قَهْوَةً بِدُونِ سُكَّرٍ، مِنْ فَضْلِكَ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">قَهْوَةً بِدُونِ سُكَّرٍ، مِنْ فَضْلِكَ.</div>
+        <div class="roman">qahwa bidūn sukkar, min faḍlika</div>
+        <div class="japanese">砂糖なしのコーヒーをください。</div>
+        <div class="note">飲み物の注文に。</div></article><article class="phrase" id="u4-p7" data-search="هَلْ هَذَا الطَّبَقُ حَارٌّ بِالتَّوَابِلِ؟ hal hādhā ṭ-ṭabaq ḥārr bi-t-tawābil? この料理はスパイシーですか？ 単に「ḥārr」だと熱さを指すこともある。">
+        <div class="ph-head"><span class="ph-num">07</span><button class="speech" data-text="هَلْ هَذَا الطَّبَقُ حَارٌّ بِالتَّوَابِلِ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">هَلْ هَذَا الطَّبَقُ حَارٌّ بِالتَّوَابِلِ؟</div>
+        <div class="roman">hal hādhā ṭ-ṭabaq ḥārr bi-t-tawābil?</div>
+        <div class="japanese">この料理はスパイシーですか？</div>
+        <div class="note">単に「ḥārr」だと熱さを指すこともある。</div></article><article class="phrase" id="u4-p8" data-search="أَنَا نَبَاتِيٌّ. anā nabātiyy 私はベジタリアンです。（男性） 女性は「nabātiyya」。">
+        <div class="ph-head"><span class="ph-num">08</span><button class="speech" data-text="أَنَا نَبَاتِيٌّ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أَنَا نَبَاتِيٌّ.</div>
+        <div class="roman">anā nabātiyy</div>
+        <div class="japanese">私はベジタリアンです。（男性）</div>
+        <div class="note">女性は「nabātiyya」。</div></article><article class="phrase" id="u4-p9" data-search="بِدُونِ بَصَلٍ، مِنْ فَضْلِكَ. bidūn baṣal, min faḍlika 玉ねぎ抜きでお願いします。 「bidūn + 食材」。">
+        <div class="ph-head"><span class="ph-num">09</span><button class="speech" data-text="بِدُونِ بَصَلٍ، مِنْ فَضْلِكَ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">بِدُونِ بَصَلٍ، مِنْ فَضْلِكَ.</div>
+        <div class="roman">bidūn baṣal, min faḍlika</div>
+        <div class="japanese">玉ねぎ抜きでお願いします。</div>
+        <div class="note">「bidūn + 食材」。</div></article><article class="phrase" id="u4-p10" data-search="الْحِسَابَ، مِنْ فَضْلِكَ. al-ḥisāb, min faḍlika お会計をお願いします。 レストランでとても便利。">
+        <div class="ph-head"><span class="ph-num">10</span><button class="speech" data-text="الْحِسَابَ، مِنْ فَضْلِكَ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">الْحِسَابَ، مِنْ فَضْلِكَ.</div>
+        <div class="roman">al-ḥisāb, min faḍlika</div>
+        <div class="japanese">お会計をお願いします。</div>
+        <div class="note">レストランでとても便利。</div></article><article class="phrase" id="u4-p11" data-search="هَلْ أَسْتَطِيعُ الدَّفْعَ بِالْبِطَاقَةِ؟ hal astaṭīʿu d-dafʿa bi-l-biṭāqa? カードで支払えますか？ クレジットカード等。">
+        <div class="ph-head"><span class="ph-num">11</span><button class="speech" data-text="هَلْ أَسْتَطِيعُ الدَّفْعَ بِالْبِطَاقَةِ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">هَلْ أَسْتَطِيعُ الدَّفْعَ بِالْبِطَاقَةِ؟</div>
+        <div class="roman">hal astaṭīʿu d-dafʿa bi-l-biṭāqa?</div>
+        <div class="japanese">カードで支払えますか？</div>
+        <div class="note">クレジットカード等。</div></article><article class="phrase" id="u4-p12" data-search="كَانَ الطَّعَامُ لَذِيذًا. kāna ṭ-ṭaʿām ladhīd 料理はおいしかったです。 食後に伝える。">
+        <div class="ph-head"><span class="ph-num">12</span><button class="speech" data-text="كَانَ الطَّعَامُ لَذِيذًا." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">كَانَ الطَّعَامُ لَذِيذًا.</div>
+        <div class="roman">kāna ṭ-ṭaʿām ladhīd</div>
+        <div class="japanese">料理はおいしかったです。</div>
+        <div class="note">食後に伝える。</div></article></div>
+      <div class="chapter-extras">
+      <h3>会話例：A と B を交代で読む</h3><div class="dialogue"><div class="dialog-turn"><div class="speaker">A</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">هَلْ لَدَيْكُمْ طَاوِلَةٌ لِشَخْصَيْنِ؟</div><div class="roman">hal ladaykum ṭāwila li-shakhṣayn?</div><div class="japanese">2人用の席はありますか？</div></div></div><div class="dialog-turn"><div class="speaker">B</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">نَعَمْ، تَفَضَّلْ.</div><div class="roman">naʿam, tafaḍḍal.</div><div class="japanese">はい、どうぞ。</div></div></div><div class="dialog-turn"><div class="speaker">A</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">أُرِيدُ هَذَا الطَّبَقَ وَمَاءً، مِنْ فَضْلِكَ.</div><div class="roman">urīdu hādhā ṭ-ṭabaq wa māʾan, min faḍlika.</div><div class="japanese">この料理と水をお願いします。</div></div></div><div class="dialog-turn"><div class="speaker">A</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">الْحِسَابَ، مِنْ فَضْلِكَ.</div><div class="roman">al-ḥisāb, min faḍlika.</div><div class="japanese">お会計をお願いします。</div></div></div></div>
+      <div class="real-tip"><b>現地での使い方</b><p>UAEの飲食店は英語が通じることも多いですが、アラビア語を使うなら「min faḍlak」「al-ḥisāb」は短く便利。フスハーの丁寧な質問は通じても少し書き言葉的に聞こえる場合があります。</p></div>
+      <h3>日本語だけ見て言ってみよう</h3><div class="drills"><div class="drill"><span>01</span><strong>メニューをください。</strong><div class="practice-line"></div></div><div class="drill"><span>02</span><strong>水をください。</strong><div class="practice-line"></div></div><div class="drill"><span>03</span><strong>お会計をお願いします。</strong><div class="practice-line"></div></div></div>
+      <div class="role"><b>1分ロールプレイ</b><p>店員に入店から注文、お会計まで話しかける。食材を1つ抜く注文も練習する。</p></div></div></section><section class="unit" id="unit5">
+      <div class="unit-banner"><div class="unit-index">UNIT 05</div><h2>買い物・値段・支払い</h2><p>店舗やスークで使う</p></div>
+      <div class="unit-goal"><b>この章の目標</b> 値段、サイズ、色を尋ねて買い物できる。</div>
+      <h3>使える基本フレーズ <small>10表現</small></h3>
+      <div class="phrase-list"><article class="phrase" id="u5-p1" data-search="بِكَمْ هَذَا؟ bikam hādhā? これはいくらですか？ 最優先で覚える表現。">
+        <div class="ph-head"><span class="ph-num">01</span><button class="speech" data-text="بِكَمْ هَذَا؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">بِكَمْ هَذَا؟</div>
+        <div class="roman">bikam hādhā?</div>
+        <div class="japanese">これはいくらですか？</div>
+        <div class="note">最優先で覚える表現。</div></article><article class="phrase" id="u5-p2" data-search="كَمْ سِعْرُ هَذَا؟ kam siʿru hādhā? これの値段はいくらですか？ 少し丁寧な聞き方。">
+        <div class="ph-head"><span class="ph-num">02</span><button class="speech" data-text="كَمْ سِعْرُ هَذَا؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">كَمْ سِعْرُ هَذَا؟</div>
+        <div class="roman">kam siʿru hādhā?</div>
+        <div class="japanese">これの値段はいくらですか？</div>
+        <div class="note">少し丁寧な聞き方。</div></article><article class="phrase" id="u5-p3" data-search="هَلْ لَدَيْكُمْ مَقَاسٌ أَكْبَرُ؟ hal ladaykum maqās akbar? もっと大きいサイズはありますか？ 衣料品の買い物に。">
+        <div class="ph-head"><span class="ph-num">03</span><button class="speech" data-text="هَلْ لَدَيْكُمْ مَقَاسٌ أَكْبَرُ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">هَلْ لَدَيْكُمْ مَقَاسٌ أَكْبَرُ؟</div>
+        <div class="roman">hal ladaykum maqās akbar?</div>
+        <div class="japanese">もっと大きいサイズはありますか？</div>
+        <div class="note">衣料品の買い物に。</div></article><article class="phrase" id="u5-p4" data-search="هَلْ لَدَيْكُمْ هَذَا بِاللَّوْنِ الْأَسْوَدِ؟ hal ladaykum hādhā bi-l-lawn al-aswad? これは黒色もありますか？ 色を入れ替える。">
+        <div class="ph-head"><span class="ph-num">04</span><button class="speech" data-text="هَلْ لَدَيْكُمْ هَذَا بِاللَّوْنِ الْأَسْوَدِ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">هَلْ لَدَيْكُمْ هَذَا بِاللَّوْنِ الْأَسْوَدِ؟</div>
+        <div class="roman">hal ladaykum hādhā bi-l-lawn al-aswad?</div>
+        <div class="japanese">これは黒色もありますか？</div>
+        <div class="note">色を入れ替える。</div></article><article class="phrase" id="u5-p5" data-search="هَلْ يُمْكِنُنِي أَنْ أُجَرِّبَ هَذَا؟ hal yumkinunī an ujarriba hādhā? これを試着してもいいですか？ 服や靴など。">
+        <div class="ph-head"><span class="ph-num">05</span><button class="speech" data-text="هَلْ يُمْكِنُنِي أَنْ أُجَرِّبَ هَذَا؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">هَلْ يُمْكِنُنِي أَنْ أُجَرِّبَ هَذَا؟</div>
+        <div class="roman">hal yumkinunī an ujarriba hādhā?</div>
+        <div class="japanese">これを試着してもいいですか？</div>
+        <div class="note">服や靴など。</div></article><article class="phrase" id="u5-p6" data-search="هَذَا غَالٍ جِدًّا. hādhā ghālin jiddan これはとても高いです。 湾岸口語でも「ghālī」はよく使う。">
+        <div class="ph-head"><span class="ph-num">06</span><button class="speech" data-text="هَذَا غَالٍ جِدًّا." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">هَذَا غَالٍ جِدًّا.</div>
+        <div class="roman">hādhā ghālin jiddan</div>
+        <div class="japanese">これはとても高いです。</div>
+        <div class="note">湾岸口語でも「ghālī」はよく使う。</div></article><article class="phrase" id="u5-p7" data-search="هَلْ يُوجَدُ خَصْمٌ؟ hal yūjadu khaṣm? 割引はありますか？ 値引きやセールについて尋ねる。">
+        <div class="ph-head"><span class="ph-num">07</span><button class="speech" data-text="هَلْ يُوجَدُ خَصْمٌ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">هَلْ يُوجَدُ خَصْمٌ؟</div>
+        <div class="roman">hal yūjadu khaṣm?</div>
+        <div class="japanese">割引はありますか？</div>
+        <div class="note">値引きやセールについて尋ねる。</div></article><article class="phrase" id="u5-p8" data-search="سَآخُذُ هَذَا. sa-ākhudhu hādhā これにします。 購入の意思表示。">
+        <div class="ph-head"><span class="ph-num">08</span><button class="speech" data-text="سَآخُذُ هَذَا." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">سَآخُذُ هَذَا.</div>
+        <div class="roman">sa-ākhudhu hādhā</div>
+        <div class="japanese">これにします。</div>
+        <div class="note">購入の意思表示。</div></article><article class="phrase" id="u5-p9" data-search="أَنَا أَنْظُرُ فَقَطْ. anā anẓuru faqaṭ 見ているだけです。 声を掛けられたときに。">
+        <div class="ph-head"><span class="ph-num">09</span><button class="speech" data-text="أَنَا أَنْظُرُ فَقَطْ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أَنَا أَنْظُرُ فَقَطْ.</div>
+        <div class="roman">anā anẓuru faqaṭ</div>
+        <div class="japanese">見ているだけです。</div>
+        <div class="note">声を掛けられたときに。</div></article><article class="phrase" id="u5-p10" data-search="أَيْنَ صُنْدُوقُ الدَّفْعِ؟ ayna ṣundūq ad-dafʿ? レジはどこですか？ cashier は口語で別の借用語も使われる。">
+        <div class="ph-head"><span class="ph-num">10</span><button class="speech" data-text="أَيْنَ صُنْدُوقُ الدَّفْعِ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أَيْنَ صُنْدُوقُ الدَّفْعِ؟</div>
+        <div class="roman">ayna ṣundūq ad-dafʿ?</div>
+        <div class="japanese">レジはどこですか？</div>
+        <div class="note">cashier は口語で別の借用語も使われる。</div></article></div>
+      <div class="chapter-extras">
+      <h3>会話例：A と B を交代で読む</h3><div class="dialogue"><div class="dialog-turn"><div class="speaker">A</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">بِكَمْ هَذَا؟</div><div class="roman">bikam hādhā?</div><div class="japanese">これはいくらですか？</div></div></div><div class="dialog-turn"><div class="speaker">B</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">بِخَمْسِينَ دِرْهَمًا.</div><div class="roman">bi-khamsīn dirhaman.</div><div class="japanese">50ディルハムです。</div></div></div><div class="dialog-turn"><div class="speaker">A</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">هَلْ يُوجَدُ خَصْمٌ؟</div><div class="roman">hal yūjadu khaṣm?</div><div class="japanese">割引はありますか？</div></div></div><div class="dialog-turn"><div class="speaker">B</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">عُذْرًا، لَا يُوجَدُ خَصْمٌ.</div><div class="roman">ʿudhran, lā yūjadu khaṣm.</div><div class="japanese">すみません、割引はありません。</div></div></div></div>
+      <div class="real-tip"><b>現地での使い方</b><p>スークでは「bikam?（いくら？）」「ghālī（高い）」のような短い表現が役立ちます。店員の国籍によっては英語や別の言語が中心のこともあります。</p></div>
+      <h3>日本語だけ見て言ってみよう</h3><div class="drills"><div class="drill"><span>01</span><strong>これはいくらですか？</strong><div class="practice-line"></div></div><div class="drill"><span>02</span><strong>もっと大きいサイズはありますか？</strong><div class="practice-line"></div></div><div class="drill"><span>03</span><strong>これにします。</strong><div class="practice-line"></div></div></div>
+      <div class="role"><b>1分ロールプレイ</b><p>服を1着買う設定で、値段→サイズ→色→試着→購入まで言う。</p></div></div></section><section class="unit" id="unit6">
+      <div class="unit-banner"><div class="unit-index">UNIT 06</div><h2>道案内・場所を聞く</h2><p>駅、トイレ、施設への移動</p></div>
+      <div class="unit-goal"><b>この章の目標</b> 目的地の場所を尋ね、簡単な道順を理解する。</div>
+      <h3>使える基本フレーズ <small>10表現</small></h3>
+      <div class="phrase-list"><article class="phrase" id="u6-p1" data-search="أَيْنَ الْحَمَّامُ؟ ayna l-ḥammām? トイレはどこですか？ トイレの場所を尋ねる定番。">
+        <div class="ph-head"><span class="ph-num">01</span><button class="speech" data-text="أَيْنَ الْحَمَّامُ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أَيْنَ الْحَمَّامُ؟</div>
+        <div class="roman">ayna l-ḥammām?</div>
+        <div class="japanese">トイレはどこですか？</div>
+        <div class="note">トイレの場所を尋ねる定番。</div></article><article class="phrase" id="u6-p2" data-search="أَيْنَ مَحَطَّةُ الْمِتْرُو؟ ayna maḥaṭṭat al-mitrū? 地下鉄の駅はどこですか？ Dubai Metro にも応用できる。">
+        <div class="ph-head"><span class="ph-num">02</span><button class="speech" data-text="أَيْنَ مَحَطَّةُ الْمِتْرُو؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أَيْنَ مَحَطَّةُ الْمِتْرُو؟</div>
+        <div class="roman">ayna maḥaṭṭat al-mitrū?</div>
+        <div class="japanese">地下鉄の駅はどこですか？</div>
+        <div class="note">Dubai Metro にも応用できる。</div></article><article class="phrase" id="u6-p3" data-search="كَيْفَ أَذْهَبُ إِلَى الْمَطَارِ؟ kayfa adhhabu ilā l-maṭār? 空港へはどう行けばいいですか？ 目的地を入れ替える。">
+        <div class="ph-head"><span class="ph-num">03</span><button class="speech" data-text="كَيْفَ أَذْهَبُ إِلَى الْمَطَارِ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">كَيْفَ أَذْهَبُ إِلَى الْمَطَارِ؟</div>
+        <div class="roman">kayfa adhhabu ilā l-maṭār?</div>
+        <div class="japanese">空港へはどう行けばいいですか？</div>
+        <div class="note">目的地を入れ替える。</div></article><article class="phrase" id="u6-p4" data-search="هَلْ هُوَ بَعِيدٌ؟ hal huwa baʿīd? そこは遠いですか？ 場所が男性名詞の場合。">
+        <div class="ph-head"><span class="ph-num">04</span><button class="speech" data-text="هَلْ هُوَ بَعِيدٌ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">هَلْ هُوَ بَعِيدٌ؟</div>
+        <div class="roman">hal huwa baʿīd?</div>
+        <div class="japanese">そこは遠いですか？</div>
+        <div class="note">場所が男性名詞の場合。</div></article><article class="phrase" id="u6-p5" data-search="هَلْ يُمْكِنُنِي الذَّهَابُ مَشْيًا؟ hal yumkinunī dh-dhahāb mashyan? 歩いて行けますか？ 徒歩での移動。">
+        <div class="ph-head"><span class="ph-num">05</span><button class="speech" data-text="هَلْ يُمْكِنُنِي الذَّهَابُ مَشْيًا؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">هَلْ يُمْكِنُنِي الذَّهَابُ مَشْيًا؟</div>
+        <div class="roman">hal yumkinunī dh-dhahāb mashyan?</div>
+        <div class="japanese">歩いて行けますか？</div>
+        <div class="note">徒歩での移動。</div></article><article class="phrase" id="u6-p6" data-search="اِذْهَبْ مُبَاشَرَةً. idhhab mubāsharatan まっすぐ進んでください。（男性へ） 道案内の命令形。">
+        <div class="ph-head"><span class="ph-num">06</span><button class="speech" data-text="اِذْهَبْ مُبَاشَرَةً." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">اِذْهَبْ مُبَاشَرَةً.</div>
+        <div class="roman">idhhab mubāsharatan</div>
+        <div class="japanese">まっすぐ進んでください。（男性へ）</div>
+        <div class="note">道案内の命令形。</div></article><article class="phrase" id="u6-p7" data-search="اِنْعَطِفْ يَمِينًا. inʿaṭif yamīnan 右に曲がってください。（男性へ） 「yamīn」＝右。">
+        <div class="ph-head"><span class="ph-num">07</span><button class="speech" data-text="اِنْعَطِفْ يَمِينًا." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">اِنْعَطِفْ يَمِينًا.</div>
+        <div class="roman">inʿaṭif yamīnan</div>
+        <div class="japanese">右に曲がってください。（男性へ）</div>
+        <div class="note">「yamīn」＝右。</div></article><article class="phrase" id="u6-p8" data-search="اِنْعَطِفْ يَسَارًا. inʿaṭif yasāran 左に曲がってください。（男性へ） 「yasār」＝左。">
+        <div class="ph-head"><span class="ph-num">08</span><button class="speech" data-text="اِنْعَطِفْ يَسَارًا." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">اِنْعَطِفْ يَسَارًا.</div>
+        <div class="roman">inʿaṭif yasāran</div>
+        <div class="japanese">左に曲がってください。（男性へ）</div>
+        <div class="note">「yasār」＝左。</div></article><article class="phrase" id="u6-p9" data-search="هُوَ بِجَانِبِ الْبَنْكِ. huwa bi-jānib al-bank 銀行の隣です。 目印を説明できる。">
+        <div class="ph-head"><span class="ph-num">09</span><button class="speech" data-text="هُوَ بِجَانِبِ الْبَنْكِ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">هُوَ بِجَانِبِ الْبَنْكِ.</div>
+        <div class="roman">huwa bi-jānib al-bank</div>
+        <div class="japanese">銀行の隣です。</div>
+        <div class="note">目印を説明できる。</div></article><article class="phrase" id="u6-p10" data-search="لَا أَعْرِفُ الطَّرِيقَ. lā aʿrifu ṭ-ṭarīq 道が分かりません。 迷ったとき。">
+        <div class="ph-head"><span class="ph-num">10</span><button class="speech" data-text="لَا أَعْرِفُ الطَّرِيقَ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">لَا أَعْرِفُ الطَّرِيقَ.</div>
+        <div class="roman">lā aʿrifu ṭ-ṭarīq</div>
+        <div class="japanese">道が分かりません。</div>
+        <div class="note">迷ったとき。</div></article></div>
+      <div class="chapter-extras">
+      <h3>会話例：A と B を交代で読む</h3><div class="dialogue"><div class="dialog-turn"><div class="speaker">A</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">أَيْنَ مَحَطَّةُ الْمِتْرُو؟</div><div class="roman">ayna maḥaṭṭat al-mitrū?</div><div class="japanese">地下鉄の駅はどこですか？</div></div></div><div class="dialog-turn"><div class="speaker">B</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">اِذْهَبْ مُبَاشَرَةً، ثُمَّ اِنْعَطِفْ يَمِينًا.</div><div class="roman">idhhab mubāsharatan, thumma inʿaṭif yamīnan.</div><div class="japanese">まっすぐ進み、右に曲がってください。</div></div></div><div class="dialog-turn"><div class="speaker">A</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">هَلْ هِيَ بَعِيدَةٌ؟</div><div class="roman">hal hiya baʿīda?</div><div class="japanese">駅は遠いですか？</div></div></div><div class="dialog-turn"><div class="speaker">B</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">لَا، هِيَ قَرِيبَةٌ.</div><div class="roman">lā, hiya qarība.</div><div class="japanese">いいえ、近いです。</div></div></div></div>
+      <div class="real-tip"><b>現地での使い方</b><p>湾岸の日常会話では「ayna?」より「wēn?（どこ？）」がよく聞かれます。道順を聞くにはフスハーでも十分理解してもらえます。</p></div>
+      <h3>日本語だけ見て言ってみよう</h3><div class="drills"><div class="drill"><span>01</span><strong>トイレはどこですか？</strong><div class="practice-line"></div></div><div class="drill"><span>02</span><strong>地下鉄の駅はどこですか？</strong><div class="practice-line"></div></div><div class="drill"><span>03</span><strong>空港へはどう行けばいいですか？</strong><div class="practice-line"></div></div></div>
+      <div class="role"><b>1分ロールプレイ</b><p>道に迷った想定で、駅の位置を聞き、左右の指示を口に出す。</p></div></div></section><section class="unit" id="unit7">
+      <div class="unit-banner"><div class="unit-index">UNIT 07</div><h2>タクシー・移動</h2><p>乗車から降車まで</p></div>
+      <div class="unit-goal"><b>この章の目標</b> 行き先を伝え、時間と料金を聞いて降りる。</div>
+      <h3>使える基本フレーズ <small>10表現</small></h3>
+      <div class="phrase-list"><article class="phrase" id="u7-p1" data-search="أُرِيدُ الذَّهَابَ إِلَى الْمَطَارِ. urīdu dh-dhahāba ilā l-maṭār 空港へ行きたいです。 行き先を入れ替える。">
+        <div class="ph-head"><span class="ph-num">01</span><button class="speech" data-text="أُرِيدُ الذَّهَابَ إِلَى الْمَطَارِ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أُرِيدُ الذَّهَابَ إِلَى الْمَطَارِ.</div>
+        <div class="roman">urīdu dh-dhahāba ilā l-maṭār</div>
+        <div class="japanese">空港へ行きたいです。</div>
+        <div class="note">行き先を入れ替える。</div></article><article class="phrase" id="u7-p2" data-search="خُذْنِي إِلَى هَذَا الْعُنْوَانِ، مِنْ فَضْلِكَ. khudhnī ilā hādhā l-ʿunwān, min faḍlika この住所までお願いします。（男性へ） 地図画面を見せながら使える。">
+        <div class="ph-head"><span class="ph-num">02</span><button class="speech" data-text="خُذْنِي إِلَى هَذَا الْعُنْوَانِ، مِنْ فَضْلِكَ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">خُذْنِي إِلَى هَذَا الْعُنْوَانِ، مِنْ فَضْلِكَ.</div>
+        <div class="roman">khudhnī ilā hādhā l-ʿunwān, min faḍlika</div>
+        <div class="japanese">この住所までお願いします。（男性へ）</div>
+        <div class="note">地図画面を見せながら使える。</div></article><article class="phrase" id="u7-p3" data-search="كَمْ يَسْتَغْرِقُ الطَّرِيقُ؟ kam yastaghriqu ṭ-ṭarīq? どれくらい時間がかかりますか？ 渋滞時にも使う。">
+        <div class="ph-head"><span class="ph-num">03</span><button class="speech" data-text="كَمْ يَسْتَغْرِقُ الطَّرِيقُ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">كَمْ يَسْتَغْرِقُ الطَّرِيقُ؟</div>
+        <div class="roman">kam yastaghriqu ṭ-ṭarīq?</div>
+        <div class="japanese">どれくらい時間がかかりますか？</div>
+        <div class="note">渋滞時にも使う。</div></article><article class="phrase" id="u7-p4" data-search="كَمْ سَتَكُونُ التَّكْلِفَةُ تَقْرِيبًا؟ kam satakūnu t-taklifa taqrīban? 料金は大体いくらですか？ 概算の確認。">
+        <div class="ph-head"><span class="ph-num">04</span><button class="speech" data-text="كَمْ سَتَكُونُ التَّكْلِفَةُ تَقْرِيبًا؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">كَمْ سَتَكُونُ التَّكْلِفَةُ تَقْرِيبًا؟</div>
+        <div class="roman">kam satakūnu t-taklifa taqrīban?</div>
+        <div class="japanese">料金は大体いくらですか？</div>
+        <div class="note">概算の確認。</div></article><article class="phrase" id="u7-p5" data-search="هَلْ يُمْكِنُكَ الِانْتِظَارُ هُنَا؟ hal yumkinuka l-intiẓār hunā? ここで待ってもらえますか？（男性へ） 待機の依頼。">
+        <div class="ph-head"><span class="ph-num">05</span><button class="speech" data-text="هَلْ يُمْكِنُكَ الِانْتِظَارُ هُنَا؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">هَلْ يُمْكِنُكَ الِانْتِظَارُ هُنَا؟</div>
+        <div class="roman">hal yumkinuka l-intiẓār hunā?</div>
+        <div class="japanese">ここで待ってもらえますか？（男性へ）</div>
+        <div class="note">待機の依頼。</div></article><article class="phrase" id="u7-p6" data-search="تَوَقَّفْ هُنَا، مِنْ فَضْلِكَ. tawaqqaf hunā, min faḍlika ここで止めてください。 降車するとき。">
+        <div class="ph-head"><span class="ph-num">06</span><button class="speech" data-text="تَوَقَّفْ هُنَا، مِنْ فَضْلِكَ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">تَوَقَّفْ هُنَا، مِنْ فَضْلِكَ.</div>
+        <div class="roman">tawaqqaf hunā, min faḍlika</div>
+        <div class="japanese">ここで止めてください。</div>
+        <div class="note">降車するとき。</div></article><article class="phrase" id="u7-p7" data-search="أَنَا مُسْتَعْجِلٌ قَلِيلًا. anā mustaʿjil qalīlan 少し急いでいます。（男性） 安全運転を優先。">
+        <div class="ph-head"><span class="ph-num">07</span><button class="speech" data-text="أَنَا مُسْتَعْجِلٌ قَلِيلًا." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أَنَا مُسْتَعْجِلٌ قَلِيلًا.</div>
+        <div class="roman">anā mustaʿjil qalīlan</div>
+        <div class="japanese">少し急いでいます。（男性）</div>
+        <div class="note">安全運転を優先。</div></article><article class="phrase" id="u7-p8" data-search="هَلْ يُمْكِنُنِي الدَّفْعُ بِالْبِطَاقَةِ؟ hal yumkinunī d-dafʿu bi-l-biṭāqa? カードで払えますか？ 降りる前に確認。">
+        <div class="ph-head"><span class="ph-num">08</span><button class="speech" data-text="هَلْ يُمْكِنُنِي الدَّفْعُ بِالْبِطَاقَةِ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">هَلْ يُمْكِنُنِي الدَّفْعُ بِالْبِطَاقَةِ؟</div>
+        <div class="roman">hal yumkinunī d-dafʿu bi-l-biṭāqa?</div>
+        <div class="japanese">カードで払えますか？</div>
+        <div class="note">降りる前に確認。</div></article><article class="phrase" id="u7-p9" data-search="أَرْسِلْ لِي الْمَوْقِعَ، مِنْ فَضْلِكَ. arsil lī l-mawqiʿ, min faḍlika 位置情報を送ってください。（男性へ） 待ち合わせにも使える。">
+        <div class="ph-head"><span class="ph-num">09</span><button class="speech" data-text="أَرْسِلْ لِي الْمَوْقِعَ، مِنْ فَضْلِكَ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أَرْسِلْ لِي الْمَوْقِعَ، مِنْ فَضْلِكَ.</div>
+        <div class="roman">arsil lī l-mawqiʿ, min faḍlika</div>
+        <div class="japanese">位置情報を送ってください。（男性へ）</div>
+        <div class="note">待ち合わせにも使える。</div></article><article class="phrase" id="u7-p10" data-search="هَلْ هَذَا هُوَ الْمَكَانُ الصَّحِيحُ؟ hal hādhā huwa l-makān aṣ-ṣaḥīḥ? ここで合っていますか？ 到着地点を確認。">
+        <div class="ph-head"><span class="ph-num">10</span><button class="speech" data-text="هَلْ هَذَا هُوَ الْمَكَانُ الصَّحِيحُ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">هَلْ هَذَا هُوَ الْمَكَانُ الصَّحِيحُ؟</div>
+        <div class="roman">hal hādhā huwa l-makān aṣ-ṣaḥīḥ?</div>
+        <div class="japanese">ここで合っていますか？</div>
+        <div class="note">到着地点を確認。</div></article></div>
+      <div class="chapter-extras">
+      <h3>会話例：A と B を交代で読む</h3><div class="dialogue"><div class="dialog-turn"><div class="speaker">A</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">أُرِيدُ الذَّهَابَ إِلَى الْمَطَارِ.</div><div class="roman">urīdu dh-dhahāba ilā l-maṭār.</div><div class="japanese">空港へ行きたいです。</div></div></div><div class="dialog-turn"><div class="speaker">B</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">حَسَنًا.</div><div class="roman">ḥasanan.</div><div class="japanese">分かりました。</div></div></div><div class="dialog-turn"><div class="speaker">A</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">كَمْ يَسْتَغْرِقُ الطَّرِيقُ؟</div><div class="roman">kam yastaghriqu ṭ-ṭarīq?</div><div class="japanese">どれくらいかかりますか？</div></div></div><div class="dialog-turn"><div class="speaker">B</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">حَوَالَيْ ثَلَاثِينَ دَقِيقَةً.</div><div class="roman">ḥawālay thalāthīn daqīqa.</div><div class="japanese">30分くらいです。</div></div></div></div>
+      <div class="real-tip"><b>現地での使い方</b><p>ドバイでは配車アプリや英語で対応できる場面も多いです。「hunā（ここ）」「yamīn（右）」「yasār（左）」を先に覚えると実用的です。</p></div>
+      <h3>日本語だけ見て言ってみよう</h3><div class="drills"><div class="drill"><span>01</span><strong>空港へ行きたいです。</strong><div class="practice-line"></div></div><div class="drill"><span>02</span><strong>どれくらい時間がかかりますか？</strong><div class="practice-line"></div></div><div class="drill"><span>03</span><strong>ここで止めてください。</strong><div class="practice-line"></div></div></div>
+      <div class="role"><b>1分ロールプレイ</b><p>スマホに行き先を表示し、運転手に時間を尋ね、目的地で降りる。</p></div></div></section><section class="unit" id="unit8">
+      <div class="unit-banner"><div class="unit-index">UNIT 08</div><h2>ホテル・住まい</h2><p>チェックインと困りごと</p></div>
+      <div class="unit-goal"><b>この章の目標</b> 予約確認、設備についての質問、不具合を伝えられる。</div>
+      <h3>使える基本フレーズ <small>10表現</small></h3>
+      <div class="phrase-list"><article class="phrase" id="u8-p1" data-search="لَدَيَّ حَجْزٌ بِاسْمِ ... ladayya ḥajz bi-sm ... …の名前で予約しています。 名前を続けて言う。">
+        <div class="ph-head"><span class="ph-num">01</span><button class="speech" data-text="لَدَيَّ حَجْزٌ بِاسْمِ ..." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">لَدَيَّ حَجْزٌ بِاسْمِ ...</div>
+        <div class="roman">ladayya ḥajz bi-sm ...</div>
+        <div class="japanese">…の名前で予約しています。</div>
+        <div class="note">名前を続けて言う。</div></article><article class="phrase" id="u8-p2" data-search="أُرِيدُ تَسْجِيلَ الْوُصُولِ. urīdu tasjīla l-wuṣūl チェックインをしたいです。 ホテルでの表現。">
+        <div class="ph-head"><span class="ph-num">02</span><button class="speech" data-text="أُرِيدُ تَسْجِيلَ الْوُصُولِ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أُرِيدُ تَسْجِيلَ الْوُصُولِ.</div>
+        <div class="roman">urīdu tasjīla l-wuṣūl</div>
+        <div class="japanese">チェックインをしたいです。</div>
+        <div class="note">ホテルでの表現。</div></article><article class="phrase" id="u8-p3" data-search="مَتَى وَقْتُ تَسْجِيلِ الْمُغَادَرَةِ؟ matā waqtu tasjīl al-mughādara? チェックアウトは何時ですか？ 出発前の確認。">
+        <div class="ph-head"><span class="ph-num">03</span><button class="speech" data-text="مَتَى وَقْتُ تَسْجِيلِ الْمُغَادَرَةِ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">مَتَى وَقْتُ تَسْجِيلِ الْمُغَادَرَةِ؟</div>
+        <div class="roman">matā waqtu tasjīl al-mughādara?</div>
+        <div class="japanese">チェックアウトは何時ですか？</div>
+        <div class="note">出発前の確認。</div></article><article class="phrase" id="u8-p4" data-search="هَلْ الْإِفْطَارُ مَشْمُولٌ؟ hal al-ifṭār mashmūl? 朝食は含まれていますか？ 朝食の有無を確認。">
+        <div class="ph-head"><span class="ph-num">04</span><button class="speech" data-text="هَلْ الْإِفْطَارُ مَشْمُولٌ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">هَلْ الْإِفْطَارُ مَشْمُولٌ؟</div>
+        <div class="roman">hal al-ifṭār mashmūl?</div>
+        <div class="japanese">朝食は含まれていますか？</div>
+        <div class="note">朝食の有無を確認。</div></article><article class="phrase" id="u8-p5" data-search="مَا كَلِمَةُ مُرُورِ الْوَاي فَاي؟ mā kalimatu murūr al-wāy fāy? Wi-Fiのパスワードは何ですか？ ホテル・カフェに便利。">
+        <div class="ph-head"><span class="ph-num">05</span><button class="speech" data-text="مَا كَلِمَةُ مُرُورِ الْوَاي فَاي؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">مَا كَلِمَةُ مُرُورِ الْوَاي فَاي؟</div>
+        <div class="roman">mā kalimatu murūr al-wāy fāy?</div>
+        <div class="japanese">Wi-Fiのパスワードは何ですか？</div>
+        <div class="note">ホテル・カフェに便利。</div></article><article class="phrase" id="u8-p6" data-search="مُكَيِّفُ الْهَوَاءِ لَا يَعْمَلُ. mukayyif al-hawāʾ lā yaʿmal エアコンが動きません。 ホテル・住居で使用。">
+        <div class="ph-head"><span class="ph-num">06</span><button class="speech" data-text="مُكَيِّفُ الْهَوَاءِ لَا يَعْمَلُ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">مُكَيِّفُ الْهَوَاءِ لَا يَعْمَلُ.</div>
+        <div class="roman">mukayyif al-hawāʾ lā yaʿmal</div>
+        <div class="japanese">エアコンが動きません。</div>
+        <div class="note">ホテル・住居で使用。</div></article><article class="phrase" id="u8-p7" data-search="أَحْتَاجُ إِلَى مِنْشَفَةٍ أُخْرَى. aḥtāju ilā minshafa ukhrā タオルをもう1枚ください。 必要な物を伝える。">
+        <div class="ph-head"><span class="ph-num">07</span><button class="speech" data-text="أَحْتَاجُ إِلَى مِنْشَفَةٍ أُخْرَى." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أَحْتَاجُ إِلَى مِنْشَفَةٍ أُخْرَى.</div>
+        <div class="roman">aḥtāju ilā minshafa ukhrā</div>
+        <div class="japanese">タオルをもう1枚ください。</div>
+        <div class="note">必要な物を伝える。</div></article><article class="phrase" id="u8-p8" data-search="هَلْ يُمْكِنُنِي تَغْيِيرُ الْغُرْفَةِ؟ hal yumkinunī taghyīru l-ghurfa? 部屋を変更できますか？ 設備の問題があるとき。">
+        <div class="ph-head"><span class="ph-num">08</span><button class="speech" data-text="هَلْ يُمْكِنُنِي تَغْيِيرُ الْغُرْفَةِ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">هَلْ يُمْكِنُنِي تَغْيِيرُ الْغُرْفَةِ؟</div>
+        <div class="roman">hal yumkinunī taghyīru l-ghurfa?</div>
+        <div class="japanese">部屋を変更できますか？</div>
+        <div class="note">設備の問題があるとき。</div></article><article class="phrase" id="u8-p9" data-search="أَيْنَ الْمِصْعَدُ؟ ayna l-miṣʿad? エレベーターはどこですか？ 館内移動。">
+        <div class="ph-head"><span class="ph-num">09</span><button class="speech" data-text="أَيْنَ الْمِصْعَدُ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أَيْنَ الْمِصْعَدُ؟</div>
+        <div class="roman">ayna l-miṣʿad?</div>
+        <div class="japanese">エレベーターはどこですか？</div>
+        <div class="note">館内移動。</div></article><article class="phrase" id="u8-p10" data-search="أُرِيدُ تَمْدِيدَ إِقَامَتِي. urīdu tamdīda iqāmatī 滞在を延長したいです。 長期滞在時にも。">
+        <div class="ph-head"><span class="ph-num">10</span><button class="speech" data-text="أُرِيدُ تَمْدِيدَ إِقَامَتِي." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أُرِيدُ تَمْدِيدَ إِقَامَتِي.</div>
+        <div class="roman">urīdu tamdīda iqāmatī</div>
+        <div class="japanese">滞在を延長したいです。</div>
+        <div class="note">長期滞在時にも。</div></article></div>
+      <div class="chapter-extras">
+      <h3>会話例：A と B を交代で読む</h3><div class="dialogue"><div class="dialog-turn"><div class="speaker">A</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">لَدَيَّ حَجْزٌ بِاسْمِ كِنْجِي.</div><div class="roman">ladayya ḥajz bi-sm kenjī.</div><div class="japanese">ケンジの名前で予約しています。</div></div></div><div class="dialog-turn"><div class="speaker">B</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">أَهْلًا وَسَهْلًا.</div><div class="roman">ahlan wa sahlan.</div><div class="japanese">ようこそ。</div></div></div><div class="dialog-turn"><div class="speaker">A</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">هَلْ الْإِفْطَارُ مَشْمُولٌ؟</div><div class="roman">hal al-ifṭār mashmūl?</div><div class="japanese">朝食は含まれますか？</div></div></div><div class="dialog-turn"><div class="speaker">B</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">نَعَمْ، الْإِفْطَارُ مَشْمُولٌ.</div><div class="roman">naʿam, al-ifṭār mashmūl.</div><div class="japanese">はい、含まれています。</div></div></div></div>
+      <div class="real-tip"><b>現地での使い方</b><p>UAEのホテルでは英語が基本になることも多いですが、不具合を伝える「lā yaʿmal（動かない）」は設備全般に応用できます。</p></div>
+      <h3>日本語だけ見て言ってみよう</h3><div class="drills"><div class="drill"><span>01</span><strong>…の名前で予約しています。</strong><div class="practice-line"></div></div><div class="drill"><span>02</span><strong>エアコンが動きません。</strong><div class="practice-line"></div></div><div class="drill"><span>03</span><strong>滞在を延長したいです。</strong><div class="practice-line"></div></div></div>
+      <div class="role"><b>1分ロールプレイ</b><p>ホテルで予約名を伝え、朝食・Wi-Fi・設備の問題を聞く。</p></div></div></section><section class="unit" id="unit9">
+      <div class="unit-banner"><div class="unit-index">UNIT 09</div><h2>時間・約束・予定</h2><p>時間を尋ねて予定を調整</p></div>
+      <div class="unit-goal"><b>この章の目標</b> 時刻を尋ね、会う時刻と予定変更を伝える。</div>
+      <h3>使える基本フレーズ <small>10表現</small></h3>
+      <div class="phrase-list"><article class="phrase" id="u9-p1" data-search="كَمِ السَّاعَةُ الْآنَ؟ kam as-sāʿa al-ān? 今何時ですか？ 必須の時刻表現。">
+        <div class="ph-head"><span class="ph-num">01</span><button class="speech" data-text="كَمِ السَّاعَةُ الْآنَ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">كَمِ السَّاعَةُ الْآنَ؟</div>
+        <div class="roman">kam as-sāʿa al-ān?</div>
+        <div class="japanese">今何時ですか？</div>
+        <div class="note">必須の時刻表現。</div></article><article class="phrase" id="u9-p2" data-search="السَّاعَةُ التَّاسِعَةُ. as-sāʿa at-tāsiʿa 9時です。 女性形の序数を使う。">
+        <div class="ph-head"><span class="ph-num">02</span><button class="speech" data-text="السَّاعَةُ التَّاسِعَةُ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">السَّاعَةُ التَّاسِعَةُ.</div>
+        <div class="roman">as-sāʿa at-tāsiʿa</div>
+        <div class="japanese">9時です。</div>
+        <div class="note">女性形の序数を使う。</div></article><article class="phrase" id="u9-p3" data-search="مَتَى يَبْدَأُ الِاجْتِمَاعُ؟ matā yabdaʾu l-ijtimāʿ? 会議はいつ始まりますか？ 仕事・授業にも。">
+        <div class="ph-head"><span class="ph-num">03</span><button class="speech" data-text="مَتَى يَبْدَأُ الِاجْتِمَاعُ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">مَتَى يَبْدَأُ الِاجْتِمَاعُ؟</div>
+        <div class="roman">matā yabdaʾu l-ijtimāʿ?</div>
+        <div class="japanese">会議はいつ始まりますか？</div>
+        <div class="note">仕事・授業にも。</div></article><article class="phrase" id="u9-p4" data-search="هَلْ أَنْتَ مُتَفَرِّغٌ غَدًا؟ hal anta mutafarigh ghadan? 明日は空いていますか？（男性へ） 女性には「anti mutafarigha」。">
+        <div class="ph-head"><span class="ph-num">04</span><button class="speech" data-text="هَلْ أَنْتَ مُتَفَرِّغٌ غَدًا؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">هَلْ أَنْتَ مُتَفَرِّغٌ غَدًا؟</div>
+        <div class="roman">hal anta mutafarigh ghadan?</div>
+        <div class="japanese">明日は空いていますか？（男性へ）</div>
+        <div class="note">女性には「anti mutafarigha」。</div></article><article class="phrase" id="u9-p5" data-search="لِنَلْتَقِ السَّاعَةَ الْخَامِسَةَ. linaltaqi as-sāʿa al-khāmisa 5時に会いましょう。 約束を提案する。">
+        <div class="ph-head"><span class="ph-num">05</span><button class="speech" data-text="لِنَلْتَقِ السَّاعَةَ الْخَامِسَةَ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">لِنَلْتَقِ السَّاعَةَ الْخَامِسَةَ.</div>
+        <div class="roman">linaltaqi as-sāʿa al-khāmisa</div>
+        <div class="japanese">5時に会いましょう。</div>
+        <div class="note">約束を提案する。</div></article><article class="phrase" id="u9-p6" data-search="هَلْ يُمْكِنُنَا أَنْ نَبْدَأَ مُبَكِّرًا؟ hal yumkinunā an nabdaʾa mubakkiran? 早めに始められますか？ 予定を前倒しする。">
+        <div class="ph-head"><span class="ph-num">06</span><button class="speech" data-text="هَلْ يُمْكِنُنَا أَنْ نَبْدَأَ مُبَكِّرًا؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">هَلْ يُمْكِنُنَا أَنْ نَبْدَأَ مُبَكِّرًا؟</div>
+        <div class="roman">hal yumkinunā an nabdaʾa mubakkiran?</div>
+        <div class="japanese">早めに始められますか？</div>
+        <div class="note">予定を前倒しする。</div></article><article class="phrase" id="u9-p7" data-search="هَلْ يُمْكِنُنَا تَأْجِيلُ الْمَوْعِدِ؟ hal yumkinunā taʾjīlu l-mawʿid? 約束を延期できますか？ 予定を後ろへずらす。">
+        <div class="ph-head"><span class="ph-num">07</span><button class="speech" data-text="هَلْ يُمْكِنُنَا تَأْجِيلُ الْمَوْعِدِ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">هَلْ يُمْكِنُنَا تَأْجِيلُ الْمَوْعِدِ؟</div>
+        <div class="roman">hal yumkinunā taʾjīlu l-mawʿid?</div>
+        <div class="japanese">約束を延期できますか？</div>
+        <div class="note">予定を後ろへずらす。</div></article><article class="phrase" id="u9-p8" data-search="سَأَصِلُ بَعْدَ عَشْرِ دَقَائِقَ. sa-aṣilu baʿda ʿashri daqāʾiq 10分後に着きます。 到着連絡。">
+        <div class="ph-head"><span class="ph-num">08</span><button class="speech" data-text="سَأَصِلُ بَعْدَ عَشْرِ دَقَائِقَ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">سَأَصِلُ بَعْدَ عَشْرِ دَقَائِقَ.</div>
+        <div class="roman">sa-aṣilu baʿda ʿashri daqāʾiq</div>
+        <div class="japanese">10分後に着きます。</div>
+        <div class="note">到着連絡。</div></article><article class="phrase" id="u9-p9" data-search="أَنَا مُتَأَخِّرٌ قَلِيلًا. anā mutaʾakhkhir qalīlan 少し遅れています。（男性） 女性は「mutaʾakhkhira」。">
+        <div class="ph-head"><span class="ph-num">09</span><button class="speech" data-text="أَنَا مُتَأَخِّرٌ قَلِيلًا." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أَنَا مُتَأَخِّرٌ قَلِيلًا.</div>
+        <div class="roman">anā mutaʾakhkhir qalīlan</div>
+        <div class="japanese">少し遅れています。（男性）</div>
+        <div class="note">女性は「mutaʾakhkhira」。</div></article><article class="phrase" id="u9-p10" data-search="هَلْ يُنَاسِبُكَ يَوْمُ الْخَمِيسِ؟ hal yunāsibuka yawm al-khamīs? 木曜日は都合がいいですか？（男性へ） 曜日の変更練習にも。">
+        <div class="ph-head"><span class="ph-num">10</span><button class="speech" data-text="هَلْ يُنَاسِبُكَ يَوْمُ الْخَمِيسِ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">هَلْ يُنَاسِبُكَ يَوْمُ الْخَمِيسِ؟</div>
+        <div class="roman">hal yunāsibuka yawm al-khamīs?</div>
+        <div class="japanese">木曜日は都合がいいですか？（男性へ）</div>
+        <div class="note">曜日の変更練習にも。</div></article></div>
+      <div class="chapter-extras">
+      <h3>会話例：A と B を交代で読む</h3><div class="dialogue"><div class="dialog-turn"><div class="speaker">A</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">هَلْ أَنْتَ مُتَفَرِّغٌ غَدًا؟</div><div class="roman">hal anta mutafarigh ghadan?</div><div class="japanese">明日は空いていますか？</div></div></div><div class="dialog-turn"><div class="speaker">B</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">نَعَمْ، بَعْدَ الظُّهْرِ.</div><div class="roman">naʿam, baʿda ẓ-ẓuhr.</div><div class="japanese">はい、午後なら。</div></div></div><div class="dialog-turn"><div class="speaker">A</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">لِنَلْتَقِ السَّاعَةَ الْخَامِسَةَ.</div><div class="roman">linaltaqi as-sāʿa al-khāmisa.</div><div class="japanese">5時に会いましょう。</div></div></div><div class="dialog-turn"><div class="speaker">B</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">مُمْتَازٌ، إِلَى اللِّقَاءِ.</div><div class="roman">mumtāz, ilā l-liqāʾ.</div><div class="japanese">いいですね。また会いましょう。</div></div></div></div>
+      <div class="real-tip"><b>現地での使い方</b><p>実際の会話では短い「bukra（明日）」「baʿd shwayya（少し後）」などが聞かれます。フスハーでは「ghadan（明日）」を覚えておくと読み書きにも役立ちます。</p></div>
+      <h3>日本語だけ見て言ってみよう</h3><div class="drills"><div class="drill"><span>01</span><strong>今何時ですか？</strong><div class="practice-line"></div></div><div class="drill"><span>02</span><strong>5時に会いましょう。</strong><div class="practice-line"></div></div><div class="drill"><span>03</span><strong>少し遅れています。（男性）</strong><div class="practice-line"></div></div></div>
+      <div class="role"><b>1分ロールプレイ</b><p>待ち合わせ日時を決め、5分遅れる連絡をする。</p></div></div></section><section class="unit" id="unit10">
+      <div class="unit-banner"><div class="unit-index">UNIT 10</div><h2>仕事・オフィス</h2><p>簡単な依頼と確認</p></div>
+      <div class="unit-goal"><b>この章の目標</b> 資料依頼、会議、進捗確認をフスハーで表現する。</div>
+      <h3>使える基本フレーズ <small>10表現</small></h3>
+      <div class="phrase-list"><article class="phrase" id="u10-p1" data-search="هَلْ لَدَيْكَ وَقْتٌ؟ hal ladayka waqt? 少し時間はありますか？（男性へ） 女性には「ladayki」。">
+        <div class="ph-head"><span class="ph-num">01</span><button class="speech" data-text="هَلْ لَدَيْكَ وَقْتٌ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">هَلْ لَدَيْكَ وَقْتٌ؟</div>
+        <div class="roman">hal ladayka waqt?</div>
+        <div class="japanese">少し時間はありますか？（男性へ）</div>
+        <div class="note">女性には「ladayki」。</div></article><article class="phrase" id="u10-p2" data-search="أُرِيدُ مُنَاقَشَةَ هَذَا الْمَوْضُوعِ. urīdu munāqashata hādhā l-mawḍūʿ この件について話し合いたいです。 ミーティングに。">
+        <div class="ph-head"><span class="ph-num">02</span><button class="speech" data-text="أُرِيدُ مُنَاقَشَةَ هَذَا الْمَوْضُوعِ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أُرِيدُ مُنَاقَشَةَ هَذَا الْمَوْضُوعِ.</div>
+        <div class="roman">urīdu munāqashata hādhā l-mawḍūʿ</div>
+        <div class="japanese">この件について話し合いたいです。</div>
+        <div class="note">ミーティングに。</div></article><article class="phrase" id="u10-p3" data-search="هَلْ يُمْكِنُكَ إِرْسَالُ الْمِلَفِّ؟ hal yumkinuka irsālu l-milaff? ファイルを送ってもらえますか？（男性へ） 依頼表現。">
+        <div class="ph-head"><span class="ph-num">03</span><button class="speech" data-text="هَلْ يُمْكِنُكَ إِرْسَالُ الْمِلَفِّ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">هَلْ يُمْكِنُكَ إِرْسَالُ الْمِلَفِّ؟</div>
+        <div class="roman">hal yumkinuka irsālu l-milaff?</div>
+        <div class="japanese">ファイルを送ってもらえますか？（男性へ）</div>
+        <div class="note">依頼表現。</div></article><article class="phrase" id="u10-p4" data-search="مَتَى سَيَكُونُ جَاهِزًا؟ matā sayakūnu jāhizan? いつ準備できますか？ 対象が男性名詞の場合。">
+        <div class="ph-head"><span class="ph-num">04</span><button class="speech" data-text="مَتَى سَيَكُونُ جَاهِزًا؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">مَتَى سَيَكُونُ جَاهِزًا؟</div>
+        <div class="roman">matā sayakūnu jāhizan?</div>
+        <div class="japanese">いつ準備できますか？</div>
+        <div class="note">対象が男性名詞の場合。</div></article><article class="phrase" id="u10-p5" data-search="سَأُرَاجِعُهُ وَأَرُدُّ عَلَيْكَ. sa-urājiʿuhu wa aruddu ʿalayka 確認して返信します。（男性へ） 仕事で使いやすい。">
+        <div class="ph-head"><span class="ph-num">05</span><button class="speech" data-text="سَأُرَاجِعُهُ وَأَرُدُّ عَلَيْكَ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">سَأُرَاجِعُهُ وَأَرُدُّ عَلَيْكَ.</div>
+        <div class="roman">sa-urājiʿuhu wa aruddu ʿalayka</div>
+        <div class="japanese">確認して返信します。（男性へ）</div>
+        <div class="note">仕事で使いやすい。</div></article><article class="phrase" id="u10-p6" data-search="هَلْ كُلُّ شَيْءٍ وَاضِحٌ؟ hal kullu shayʾ wāḍiḥ? すべて明確ですか？ 説明の確認。">
+        <div class="ph-head"><span class="ph-num">06</span><button class="speech" data-text="هَلْ كُلُّ شَيْءٍ وَاضِحٌ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">هَلْ كُلُّ شَيْءٍ وَاضِحٌ؟</div>
+        <div class="roman">hal kullu shayʾ wāḍiḥ?</div>
+        <div class="japanese">すべて明確ですか？</div>
+        <div class="note">説明の確認。</div></article><article class="phrase" id="u10-p7" data-search="أَرْسَلْتُ الْبَرِيدَ الْإِلِكْتُرُونِيَّ. arsaltu l-barīd al-iliktrūnī メールを送りました。 送信報告。">
+        <div class="ph-head"><span class="ph-num">07</span><button class="speech" data-text="أَرْسَلْتُ الْبَرِيدَ الْإِلِكْتُرُونِيَّ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أَرْسَلْتُ الْبَرِيدَ الْإِلِكْتُرُونِيَّ.</div>
+        <div class="roman">arsaltu l-barīd al-iliktrūnī</div>
+        <div class="japanese">メールを送りました。</div>
+        <div class="note">送信報告。</div></article><article class="phrase" id="u10-p8" data-search="نَحْتَاجُ إِلَى مَزِيدٍ مِنَ الْوَقْتِ. naḥtāju ilā mazīd mina l-waqt もう少し時間が必要です。 納期の相談に。">
+        <div class="ph-head"><span class="ph-num">08</span><button class="speech" data-text="نَحْتَاجُ إِلَى مَزِيدٍ مِنَ الْوَقْتِ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">نَحْتَاجُ إِلَى مَزِيدٍ مِنَ الْوَقْتِ.</div>
+        <div class="roman">naḥtāju ilā mazīd mina l-waqt</div>
+        <div class="japanese">もう少し時間が必要です。</div>
+        <div class="note">納期の相談に。</div></article><article class="phrase" id="u10-p9" data-search="دَعْنَا نُؤَكِّدِ الْمَوْعِدَ. daʿnā nuʾakkid al-mawʿid 日程を確認しましょう。 予定の再確認。">
+        <div class="ph-head"><span class="ph-num">09</span><button class="speech" data-text="دَعْنَا نُؤَكِّدِ الْمَوْعِدَ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">دَعْنَا نُؤَكِّدِ الْمَوْعِدَ.</div>
+        <div class="roman">daʿnā nuʾakkid al-mawʿid</div>
+        <div class="japanese">日程を確認しましょう。</div>
+        <div class="note">予定の再確認。</div></article><article class="phrase" id="u10-p10" data-search="شُكْرًا عَلَى تَعَاوُنِكَ. shukran ʿalā taʿāwunika ご協力ありがとうございます。（男性へ） 丁寧な締めの一言。">
+        <div class="ph-head"><span class="ph-num">10</span><button class="speech" data-text="شُكْرًا عَلَى تَعَاوُنِكَ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">شُكْرًا عَلَى تَعَاوُنِكَ.</div>
+        <div class="roman">shukran ʿalā taʿāwunika</div>
+        <div class="japanese">ご協力ありがとうございます。（男性へ）</div>
+        <div class="note">丁寧な締めの一言。</div></article></div>
+      <div class="chapter-extras">
+      <h3>会話例：A と B を交代で読む</h3><div class="dialogue"><div class="dialog-turn"><div class="speaker">A</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">هَلْ لَدَيْكَ وَقْتٌ؟</div><div class="roman">hal ladayka waqt?</div><div class="japanese">少し時間はありますか？</div></div></div><div class="dialog-turn"><div class="speaker">B</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">نَعَمْ، تَفَضَّلْ.</div><div class="roman">naʿam, tafaḍḍal.</div><div class="japanese">はい、どうぞ。</div></div></div><div class="dialog-turn"><div class="speaker">A</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">هَلْ يُمْكِنُكَ إِرْسَالُ الْمِلَفِّ؟</div><div class="roman">hal yumkinuka irsālu l-milaff?</div><div class="japanese">ファイルを送ってもらえますか？</div></div></div><div class="dialog-turn"><div class="speaker">B</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">نَعَمْ، سَأُرْسِلُهُ الْيَوْمَ.</div><div class="roman">naʿam, sa-ursiluhu l-yawm.</div><div class="japanese">はい、今日送ります。</div></div></div></div>
+      <div class="real-tip"><b>現地での使い方</b><p>ビジネスでのフスハーは文書や発表では役立ちますが、UAEの多国籍職場の日常業務は英語中心のことも多いです。ここでは丁寧な基本構文の練習として使ってください。</p></div>
+      <h3>日本語だけ見て言ってみよう</h3><div class="drills"><div class="drill"><span>01</span><strong>少し時間はありますか？（男性へ）</strong><div class="practice-line"></div></div><div class="drill"><span>02</span><strong>ファイルを送ってもらえますか？（男性へ）</strong><div class="practice-line"></div></div><div class="drill"><span>03</span><strong>もう少し時間が必要です。</strong><div class="practice-line"></div></div></div>
+      <div class="role"><b>1分ロールプレイ</b><p>同僚から資料をもらい、進捗を確認し、必要なら予定の変更を頼む。</p></div></div></section><section class="unit" id="unit11">
+      <div class="unit-banner"><div class="unit-index">UNIT 11</div><h2>友人との雑談・誘い</h2><p>会話を続ける質問</p></div>
+      <div class="unit-goal"><b>この章の目標</b> 天気、趣味、休日、誘いについて短く話す。</div>
+      <h3>使える基本フレーズ <small>10表現</small></h3>
+      <div class="phrase-list"><article class="phrase" id="u11-p1" data-search="كَيْفَ كَانَ يَوْمُكَ؟ kayfa kāna yawmuka? 今日はどうでしたか？（男性へ） 女性には「yawmuki」。">
+        <div class="ph-head"><span class="ph-num">01</span><button class="speech" data-text="كَيْفَ كَانَ يَوْمُكَ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">كَيْفَ كَانَ يَوْمُكَ؟</div>
+        <div class="roman">kayfa kāna yawmuka?</div>
+        <div class="japanese">今日はどうでしたか？（男性へ）</div>
+        <div class="note">女性には「yawmuki」。</div></article><article class="phrase" id="u11-p2" data-search="مَاذَا تُحِبُّ أَنْ تَفْعَلَ فِي عُطْلَةِ نِهَايَةِ الْأُسْبُوعِ؟ mādhā tuḥibbu an tafʿala fī ʿuṭlat nihāyat al-usbūʿ? 週末は何をするのが好きですか？（男性へ） 少し長いが汎用性が高い。">
+        <div class="ph-head"><span class="ph-num">02</span><button class="speech" data-text="مَاذَا تُحِبُّ أَنْ تَفْعَلَ فِي عُطْلَةِ نِهَايَةِ الْأُسْبُوعِ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">مَاذَا تُحِبُّ أَنْ تَفْعَلَ فِي عُطْلَةِ نِهَايَةِ الْأُسْبُوعِ؟</div>
+        <div class="roman">mādhā tuḥibbu an tafʿala fī ʿuṭlat nihāyat al-usbūʿ?</div>
+        <div class="japanese">週末は何をするのが好きですか？（男性へ）</div>
+        <div class="note">少し長いが汎用性が高い。</div></article><article class="phrase" id="u11-p3" data-search="أُحِبُّ السَّفَرَ. uḥibbu s-safar 旅行が好きです。 好きなものを入れ替えられる。">
+        <div class="ph-head"><span class="ph-num">03</span><button class="speech" data-text="أُحِبُّ السَّفَرَ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أُحِبُّ السَّفَرَ.</div>
+        <div class="roman">uḥibbu s-safar</div>
+        <div class="japanese">旅行が好きです。</div>
+        <div class="note">好きなものを入れ替えられる。</div></article><article class="phrase" id="u11-p4" data-search="هَلْ تُرِيدُ أَنْ نَشْرَبَ الْقَهْوَةَ؟ hal turīdu an nashraba l-qahwa? 一緒にコーヒーを飲みませんか？（男性へ） 誘いの基本。">
+        <div class="ph-head"><span class="ph-num">04</span><button class="speech" data-text="هَلْ تُرِيدُ أَنْ نَشْرَبَ الْقَهْوَةَ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">هَلْ تُرِيدُ أَنْ نَشْرَبَ الْقَهْوَةَ؟</div>
+        <div class="roman">hal turīdu an nashraba l-qahwa?</div>
+        <div class="japanese">一緒にコーヒーを飲みませんか？（男性へ）</div>
+        <div class="note">誘いの基本。</div></article><article class="phrase" id="u11-p5" data-search="الْجَوُّ حَارٌّ الْيَوْمَ. al-jawwu ḥārr al-yawm 今日は暑いです。 湾岸で話しやすい話題。">
+        <div class="ph-head"><span class="ph-num">05</span><button class="speech" data-text="الْجَوُّ حَارٌّ الْيَوْمَ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">الْجَوُّ حَارٌّ الْيَوْمَ.</div>
+        <div class="roman">al-jawwu ḥārr al-yawm</div>
+        <div class="japanese">今日は暑いです。</div>
+        <div class="note">湾岸で話しやすい話題。</div></article><article class="phrase" id="u11-p6" data-search="هَلْ لَدَيْكَ خُطَطٌ لِلْغَدِ؟ hal ladayka khuṭaṭ li-l-ghad? 明日の予定はありますか？（男性へ） 相手に予定を聞く。">
+        <div class="ph-head"><span class="ph-num">06</span><button class="speech" data-text="هَلْ لَدَيْكَ خُطَطٌ لِلْغَدِ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">هَلْ لَدَيْكَ خُطَطٌ لِلْغَدِ؟</div>
+        <div class="roman">hal ladayka khuṭaṭ li-l-ghad?</div>
+        <div class="japanese">明日の予定はありますか？（男性へ）</div>
+        <div class="note">相手に予定を聞く。</div></article><article class="phrase" id="u11-p7" data-search="أَنَا مَشْغُولٌ الْيَوْمَ. anā mashghūl al-yawm 今日は忙しいです。（男性） 女性は「mashghūla」。">
+        <div class="ph-head"><span class="ph-num">07</span><button class="speech" data-text="أَنَا مَشْغُولٌ الْيَوْمَ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أَنَا مَشْغُولٌ الْيَوْمَ.</div>
+        <div class="roman">anā mashghūl al-yawm</div>
+        <div class="japanese">今日は忙しいです。（男性）</div>
+        <div class="note">女性は「mashghūla」。</div></article><article class="phrase" id="u11-p8" data-search="رُبَّمَا غَدًا. rubbamā ghadan たぶん明日。 柔らかい返事。">
+        <div class="ph-head"><span class="ph-num">08</span><button class="speech" data-text="رُبَّمَا غَدًا." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">رُبَّمَا غَدًا.</div>
+        <div class="roman">rubbamā ghadan</div>
+        <div class="japanese">たぶん明日。</div>
+        <div class="note">柔らかい返事。</div></article><article class="phrase" id="u11-p9" data-search="كَانَ لِقَاءً جَمِيلًا. kāna liqāʾan jamīlan 楽しい時間でした。 会った後の一言。">
+        <div class="ph-head"><span class="ph-num">09</span><button class="speech" data-text="كَانَ لِقَاءً جَمِيلًا." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">كَانَ لِقَاءً جَمِيلًا.</div>
+        <div class="roman">kāna liqāʾan jamīlan</div>
+        <div class="japanese">楽しい時間でした。</div>
+        <div class="note">会った後の一言。</div></article><article class="phrase" id="u11-p10" data-search="لِنَتَحَدَّثْ لَاحِقًا. linataḥaddath lāḥiqan また後で話しましょう。 会話の締めに。">
+        <div class="ph-head"><span class="ph-num">10</span><button class="speech" data-text="لِنَتَحَدَّثْ لَاحِقًا." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">لِنَتَحَدَّثْ لَاحِقًا.</div>
+        <div class="roman">linataḥaddath lāḥiqan</div>
+        <div class="japanese">また後で話しましょう。</div>
+        <div class="note">会話の締めに。</div></article></div>
+      <div class="chapter-extras">
+      <h3>会話例：A と B を交代で読む</h3><div class="dialogue"><div class="dialog-turn"><div class="speaker">A</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">هَلْ لَدَيْكَ خُطَطٌ لِلْغَدِ؟</div><div class="roman">hal ladayka khuṭaṭ li-l-ghad?</div><div class="japanese">明日の予定はありますか？</div></div></div><div class="dialog-turn"><div class="speaker">B</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">لَا، لَيْسَ لَدَيَّ خُطَطٌ.</div><div class="roman">lā, laysa ladayya khuṭaṭ.</div><div class="japanese">いいえ、予定はありません。</div></div></div><div class="dialog-turn"><div class="speaker">A</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">هَلْ تُرِيدُ أَنْ نَشْرَبَ الْقَهْوَةَ؟</div><div class="roman">hal turīdu an nashraba l-qahwa?</div><div class="japanese">コーヒーを飲みに行きませんか？</div></div></div><div class="dialog-turn"><div class="speaker">B</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">نَعَمْ، بِكُلِّ سُرُورٍ.</div><div class="roman">naʿam, bi-kulli surūr.</div><div class="japanese">はい、喜んで。</div></div></div></div>
+      <div class="real-tip"><b>現地での使い方</b><p>フスハーの長い質問は実際の雑談では堅い印象になることがあります。短い「shū akhbārak?（最近どう？）」などの口語表現も今後学んでいくと便利です。</p></div>
+      <h3>日本語だけ見て言ってみよう</h3><div class="drills"><div class="drill"><span>01</span><strong>今日はどうでしたか？（男性へ）</strong><div class="practice-line"></div></div><div class="drill"><span>02</span><strong>旅行が好きです。</strong><div class="practice-line"></div></div><div class="drill"><span>03</span><strong>今日は暑いです。</strong><div class="practice-line"></div></div></div>
+      <div class="role"><b>1分ロールプレイ</b><p>週末について尋ね、コーヒーに誘い、日時を決める。</p></div></div></section><section class="unit" id="unit12">
+      <div class="unit-banner"><div class="unit-index">UNIT 12</div><h2>体調・薬局・助けを求める</h2><p>困ったときの必要表現</p></div>
+      <div class="unit-goal"><b>この章の目標</b> 症状を説明し、薬局・医師・緊急時の助けを頼む。</div>
+      <h3>使える基本フレーズ <small>10表現</small></h3>
+      <div class="phrase-list"><article class="phrase" id="u12-p1" data-search="أَحْتَاجُ إِلَى مُسَاعَدَةٍ. aḥtāju ilā musāʿada 助けが必要です。 最優先で覚える表現。">
+        <div class="ph-head"><span class="ph-num">01</span><button class="speech" data-text="أَحْتَاجُ إِلَى مُسَاعَدَةٍ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أَحْتَاجُ إِلَى مُسَاعَدَةٍ.</div>
+        <div class="roman">aḥtāju ilā musāʿada</div>
+        <div class="japanese">助けが必要です。</div>
+        <div class="note">最優先で覚える表現。</div></article><article class="phrase" id="u12-p2" data-search="أَشْعُرُ بِالْمَرَضِ. ashʿuru bi-l-maraḍ 体調が悪いです。 一般的な体調不良。">
+        <div class="ph-head"><span class="ph-num">02</span><button class="speech" data-text="أَشْعُرُ بِالْمَرَضِ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أَشْعُرُ بِالْمَرَضِ.</div>
+        <div class="roman">ashʿuru bi-l-maraḍ</div>
+        <div class="japanese">体調が悪いです。</div>
+        <div class="note">一般的な体調不良。</div></article><article class="phrase" id="u12-p3" data-search="لَدَيَّ أَلَمٌ فِي الْحَلْقِ. ladayya alam fī l-ḥalq 喉が痛いです。 痛む部位を入れ替える。">
+        <div class="ph-head"><span class="ph-num">03</span><button class="speech" data-text="لَدَيَّ أَلَمٌ فِي الْحَلْقِ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">لَدَيَّ أَلَمٌ فِي الْحَلْقِ.</div>
+        <div class="roman">ladayya alam fī l-ḥalq</div>
+        <div class="japanese">喉が痛いです。</div>
+        <div class="note">痛む部位を入れ替える。</div></article><article class="phrase" id="u12-p4" data-search="لَدَيَّ حُمَّى. ladayya ḥummā 熱があります。 発熱を伝える。">
+        <div class="ph-head"><span class="ph-num">04</span><button class="speech" data-text="لَدَيَّ حُمَّى." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">لَدَيَّ حُمَّى.</div>
+        <div class="roman">ladayya ḥummā</div>
+        <div class="japanese">熱があります。</div>
+        <div class="note">発熱を伝える。</div></article><article class="phrase" id="u12-p5" data-search="أَيْنَ أَقْرَبُ صَيْدَلِيَّةٍ؟ ayna aqrab ṣaydaliyya? 一番近い薬局はどこですか？ 薬局を探す。">
+        <div class="ph-head"><span class="ph-num">05</span><button class="speech" data-text="أَيْنَ أَقْرَبُ صَيْدَلِيَّةٍ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أَيْنَ أَقْرَبُ صَيْدَلِيَّةٍ؟</div>
+        <div class="roman">ayna aqrab ṣaydaliyya?</div>
+        <div class="japanese">一番近い薬局はどこですか？</div>
+        <div class="note">薬局を探す。</div></article><article class="phrase" id="u12-p6" data-search="أَحْتَاجُ إِلَى طَبِيبٍ. aḥtāju ilā ṭabīb 医師が必要です。 受診したいとき。">
+        <div class="ph-head"><span class="ph-num">06</span><button class="speech" data-text="أَحْتَاجُ إِلَى طَبِيبٍ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أَحْتَاجُ إِلَى طَبِيبٍ.</div>
+        <div class="roman">aḥtāju ilā ṭabīb</div>
+        <div class="japanese">医師が必要です。</div>
+        <div class="note">受診したいとき。</div></article><article class="phrase" id="u12-p7" data-search="عِنْدِي حَسَاسِيَّةٌ مِنْ ... ʿindī ḥasāsiyya min ... …にアレルギーがあります。 食材・薬剤名を続ける。">
+        <div class="ph-head"><span class="ph-num">07</span><button class="speech" data-text="عِنْدِي حَسَاسِيَّةٌ مِنْ ..." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">عِنْدِي حَسَاسِيَّةٌ مِنْ ...</div>
+        <div class="roman">ʿindī ḥasāsiyya min ...</div>
+        <div class="japanese">…にアレルギーがあります。</div>
+        <div class="note">食材・薬剤名を続ける。</div></article><article class="phrase" id="u12-p8" data-search="هَلْ يُوجَدُ مُسْتَشْفًى قَرِيبٌ؟ hal yūjadu mustashfā qarīb? 近くに病院はありますか？ 場所の確認。">
+        <div class="ph-head"><span class="ph-num">08</span><button class="speech" data-text="هَلْ يُوجَدُ مُسْتَشْفًى قَرِيبٌ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">هَلْ يُوجَدُ مُسْتَشْفًى قَرِيبٌ؟</div>
+        <div class="roman">hal yūjadu mustashfā qarīb?</div>
+        <div class="japanese">近くに病院はありますか？</div>
+        <div class="note">場所の確認。</div></article><article class="phrase" id="u12-p9" data-search="اِتَّصِلْ بِالْإِسْعَافِ، مِنْ فَضْلِكَ. ittaṣil bi-l-isʿāf, min faḍlika 救急車を呼んでください。（男性へ） 緊急時には現地の緊急番号も確認。">
+        <div class="ph-head"><span class="ph-num">09</span><button class="speech" data-text="اِتَّصِلْ بِالْإِسْعَافِ، مِنْ فَضْلِكَ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">اِتَّصِلْ بِالْإِسْعَافِ، مِنْ فَضْلِكَ.</div>
+        <div class="roman">ittaṣil bi-l-isʿāf, min faḍlika</div>
+        <div class="japanese">救急車を呼んでください。（男性へ）</div>
+        <div class="note">緊急時には現地の緊急番号も確認。</div></article><article class="phrase" id="u12-p10" data-search="فَقَدْتُ هَاتِفِي. faqadtu hātifī 携帯電話をなくしました。 紛失時。">
+        <div class="ph-head"><span class="ph-num">10</span><button class="speech" data-text="فَقَدْتُ هَاتِفِي." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">فَقَدْتُ هَاتِفِي.</div>
+        <div class="roman">faqadtu hātifī</div>
+        <div class="japanese">携帯電話をなくしました。</div>
+        <div class="note">紛失時。</div></article></div>
+      <div class="chapter-extras">
+      <h3>会話例：A と B を交代で読む</h3><div class="dialogue"><div class="dialog-turn"><div class="speaker">A</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">أَشْعُرُ بِالْمَرَضِ.</div><div class="roman">ashʿuru bi-l-maraḍ.</div><div class="japanese">体調が悪いです。</div></div></div><div class="dialog-turn"><div class="speaker">B</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">مَا الْمُشْكِلَةُ؟</div><div class="roman">mā l-mushkila?</div><div class="japanese">どうしましたか？</div></div></div><div class="dialog-turn"><div class="speaker">A</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">لَدَيَّ أَلَمٌ فِي الْحَلْقِ وَحُمَّى.</div><div class="roman">ladayya alam fī l-ḥalq wa ḥummā.</div><div class="japanese">喉が痛くて、熱があります。</div></div></div><div class="dialog-turn"><div class="speaker">B</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">مِنَ الْأَفْضَلِ أَنْ تَرَى طَبِيبًا.</div><div class="roman">mina l-afḍal an tarā ṭabīban.</div><div class="japanese">医師に診てもらった方がいいです。</div></div></div></div>
+      <div class="real-tip"><b>現地での使い方</b><p>緊急時には練習よりも速やかな対応を優先し、英語や翻訳アプリも使ってください。薬剤名・アレルギーは曖昧な発音に頼らず書面でも示すのが安全です。</p></div>
+      <h3>日本語だけ見て言ってみよう</h3><div class="drills"><div class="drill"><span>01</span><strong>助けが必要です。</strong><div class="practice-line"></div></div><div class="drill"><span>02</span><strong>喉が痛いです。</strong><div class="practice-line"></div></div><div class="drill"><span>03</span><strong>一番近い薬局はどこですか？</strong><div class="practice-line"></div></div></div>
+      <div class="role"><b>1分ロールプレイ</b><p>薬局に行き、自分の症状を2つ説明し、病院の場所を尋ねる。</p></div></div></section><section class="unit" id="unit13">
+      <div class="unit-banner"><div class="unit-index">UNIT 13</div><h2>空港・旅行</h2><p>チェックインから荷物受取まで</p></div>
+      <div class="unit-goal"><b>この章の目標</b> 空港で必要な質問と簡単な報告をできる。</div>
+      <h3>使える基本フレーズ <small>10表現</small></h3>
+      <div class="phrase-list"><article class="phrase" id="u13-p1" data-search="أَيْنَ مَكْتَبُ تَسْجِيلِ الْوُصُولِ لِهَذِهِ الرِّحْلَةِ؟ ayna maktab tasjīl al-wuṣūl li-hādhihi r-riḥla? この便のチェックインカウンターはどこですか？ 空港スタッフに聞く。">
+        <div class="ph-head"><span class="ph-num">01</span><button class="speech" data-text="أَيْنَ مَكْتَبُ تَسْجِيلِ الْوُصُولِ لِهَذِهِ الرِّحْلَةِ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أَيْنَ مَكْتَبُ تَسْجِيلِ الْوُصُولِ لِهَذِهِ الرِّحْلَةِ؟</div>
+        <div class="roman">ayna maktab tasjīl al-wuṣūl li-hādhihi r-riḥla?</div>
+        <div class="japanese">この便のチェックインカウンターはどこですか？</div>
+        <div class="note">空港スタッフに聞く。</div></article><article class="phrase" id="u13-p2" data-search="هَذَا جَوَازُ سَفَرِي. hādhā jawāz safarī これが私のパスポートです。 提示するとき。">
+        <div class="ph-head"><span class="ph-num">02</span><button class="speech" data-text="هَذَا جَوَازُ سَفَرِي." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">هَذَا جَوَازُ سَفَرِي.</div>
+        <div class="roman">hādhā jawāz safarī</div>
+        <div class="japanese">これが私のパスポートです。</div>
+        <div class="note">提示するとき。</div></article><article class="phrase" id="u13-p3" data-search="لَدَيَّ حَقِيبَةٌ وَاحِدَةٌ. ladayya ḥaqība wāḥida 荷物が1つあります。 預け荷物を説明。">
+        <div class="ph-head"><span class="ph-num">03</span><button class="speech" data-text="لَدَيَّ حَقِيبَةٌ وَاحِدَةٌ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">لَدَيَّ حَقِيبَةٌ وَاحِدَةٌ.</div>
+        <div class="roman">ladayya ḥaqība wāḥida</div>
+        <div class="japanese">荷物が1つあります。</div>
+        <div class="note">預け荷物を説明。</div></article><article class="phrase" id="u13-p4" data-search="أَيْنَ بَوَّابَةُ الصُّعُودِ؟ ayna bawwābat aṣ-ṣuʿūd? 搭乗ゲートはどこですか？ ゲート番号も確認する。">
+        <div class="ph-head"><span class="ph-num">04</span><button class="speech" data-text="أَيْنَ بَوَّابَةُ الصُّعُودِ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أَيْنَ بَوَّابَةُ الصُّعُودِ؟</div>
+        <div class="roman">ayna bawwābat aṣ-ṣuʿūd?</div>
+        <div class="japanese">搭乗ゲートはどこですか？</div>
+        <div class="note">ゲート番号も確認する。</div></article><article class="phrase" id="u13-p5" data-search="مَتَى يَبْدَأُ الصُّعُودُ إِلَى الطَّائِرَةِ؟ matā yabdaʾu ṣ-ṣuʿūd ilā ṭ-ṭāʾira? 搭乗はいつ始まりますか？ 搭乗開始時間。">
+        <div class="ph-head"><span class="ph-num">05</span><button class="speech" data-text="مَتَى يَبْدَأُ الصُّعُودُ إِلَى الطَّائِرَةِ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">مَتَى يَبْدَأُ الصُّعُودُ إِلَى الطَّائِرَةِ؟</div>
+        <div class="roman">matā yabdaʾu ṣ-ṣuʿūd ilā ṭ-ṭāʾira?</div>
+        <div class="japanese">搭乗はいつ始まりますか？</div>
+        <div class="note">搭乗開始時間。</div></article><article class="phrase" id="u13-p6" data-search="تَأَخَّرَتِ الرِّحْلَةُ. taʾakhkharat ar-riḥla 便が遅延しました。 遅延情報。">
+        <div class="ph-head"><span class="ph-num">06</span><button class="speech" data-text="تَأَخَّرَتِ الرِّحْلَةُ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">تَأَخَّرَتِ الرِّحْلَةُ.</div>
+        <div class="roman">taʾakhkharat ar-riḥla</div>
+        <div class="japanese">便が遅延しました。</div>
+        <div class="note">遅延情報。</div></article><article class="phrase" id="u13-p7" data-search="هَلْ هَذِهِ الرِّحْلَةُ إِلَى دُبَيّ؟ hal hādhihi r-riḥla ilā dubayy? これはドバイ行きの便ですか？ 目的地を入れ替える。">
+        <div class="ph-head"><span class="ph-num">07</span><button class="speech" data-text="هَلْ هَذِهِ الرِّحْلَةُ إِلَى دُبَيّ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">هَلْ هَذِهِ الرِّحْلَةُ إِلَى دُبَيّ؟</div>
+        <div class="roman">hal hādhihi r-riḥla ilā dubayy?</div>
+        <div class="japanese">これはドバイ行きの便ですか？</div>
+        <div class="note">目的地を入れ替える。</div></article><article class="phrase" id="u13-p8" data-search="أَيْنَ اسْتِلَامُ الْأَمْتِعَةِ؟ ayna istilām al-amtiʿa? 手荷物受取所はどこですか？ 到着後に。">
+        <div class="ph-head"><span class="ph-num">08</span><button class="speech" data-text="أَيْنَ اسْتِلَامُ الْأَمْتِعَةِ؟" title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أَيْنَ اسْتِلَامُ الْأَمْتِعَةِ؟</div>
+        <div class="roman">ayna istilām al-amtiʿa?</div>
+        <div class="japanese">手荷物受取所はどこですか？</div>
+        <div class="note">到着後に。</div></article><article class="phrase" id="u13-p9" data-search="لَمْ تَصِلْ حَقِيبَتِي. lam taṣil ḥaqībatī 私のスーツケースが届いていません。 紛失・未着の報告。">
+        <div class="ph-head"><span class="ph-num">09</span><button class="speech" data-text="لَمْ تَصِلْ حَقِيبَتِي." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">لَمْ تَصِلْ حَقِيبَتِي.</div>
+        <div class="roman">lam taṣil ḥaqībatī</div>
+        <div class="japanese">私のスーツケースが届いていません。</div>
+        <div class="note">紛失・未着の報告。</div></article><article class="phrase" id="u13-p10" data-search="أَحْتَاجُ إِلَى مُسَاعَدَةٍ. aḥtāju ilā musāʿada 助けが必要です。 困った場面の万能表現。">
+        <div class="ph-head"><span class="ph-num">10</span><button class="speech" data-text="أَحْتَاجُ إِلَى مُسَاعَدَةٍ." title="アラビア語の読み上げ（ブラウザの音声に依存）" aria-label="音声で聞く">▶ 音声</button></div>
+        <div class="arabic" lang="ar" dir="rtl">أَحْتَاجُ إِلَى مُسَاعَدَةٍ.</div>
+        <div class="roman">aḥtāju ilā musāʿada</div>
+        <div class="japanese">助けが必要です。</div>
+        <div class="note">困った場面の万能表現。</div></article></div>
+      <div class="chapter-extras">
+      <h3>会話例：A と B を交代で読む</h3><div class="dialogue"><div class="dialog-turn"><div class="speaker">A</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">أَيْنَ بَوَّابَةُ الصُّعُودِ؟</div><div class="roman">ayna bawwābat aṣ-ṣuʿūd?</div><div class="japanese">搭乗ゲートはどこですか？</div></div></div><div class="dialog-turn"><div class="speaker">B</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">الْبَوَّابَةُ رَقْمُ خَمْسَةٍ.</div><div class="roman">al-bawwāba raqm khamsa.</div><div class="japanese">5番ゲートです。</div></div></div><div class="dialog-turn"><div class="speaker">A</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">مَتَى يَبْدَأُ الصُّعُودُ إِلَى الطَّائِرَةِ؟</div><div class="roman">matā yabdaʾu ṣ-ṣuʿūd ilā ṭ-ṭāʾira?</div><div class="japanese">搭乗はいつ始まりますか？</div></div></div><div class="dialog-turn"><div class="speaker">B</div><div class="dialog-content"><div class="arabic" lang="ar" dir="rtl">بَعْدَ عِشْرِينَ دَقِيقَةً.</div><div class="roman">baʿda ʿishrīn daqīqa.</div><div class="japanese">20分後です。</div></div></div></div>
+      <div class="real-tip"><b>現地での使い方</b><p>空港では英語と併用するのが実用的です。重要な便名・時刻・ゲート番号は、必ず画面や搭乗券でも確認してください。</p></div>
+      <h3>日本語だけ見て言ってみよう</h3><div class="drills"><div class="drill"><span>01</span><strong>これが私のパスポートです。</strong><div class="practice-line"></div></div><div class="drill"><span>02</span><strong>搭乗ゲートはどこですか？</strong><div class="practice-line"></div></div><div class="drill"><span>03</span><strong>私のスーツケースが届いていません。</strong><div class="practice-line"></div></div></div>
+      <div class="role"><b>1分ロールプレイ</b><p>空港係員にパスポートを渡し、ゲート・搭乗時間・荷物の場所を確認する。</p></div></div></section>
+<section class="appendix" id="answers"><div class="eyebrow">ANSWER KEY</div><h2>章末の「日本語→アラビア語」解答</h2><p>先に声に出してから確認してください。答えは各章の表現と同じです。</p><div class="answer-group"><h3>UNIT 01 · あいさつ・別れ際</h3><div class="answer-item"><span>1.</span><div><div class="arabic" lang="ar" dir="rtl">السَّلَامُ عَلَيْكُمْ</div><div class="roman">as-salāmu ʿalaykum</div></div></div><div class="answer-item"><span>2.</span><div><div class="arabic" lang="ar" dir="rtl">كَيْفَ حَالُكَ؟</div><div class="roman">kayfa ḥāluka?</div></div></div><div class="answer-item"><span>3.</span><div><div class="arabic" lang="ar" dir="rtl">مَعَ السَّلَامَةِ</div><div class="roman">maʿa s-salāma</div></div></div></div><div class="answer-group"><h3>UNIT 02 · 自己紹介・出身・仕事</h3><div class="answer-item"><span>1.</span><div><div class="arabic" lang="ar" dir="rtl">مَا اسْمُكَ؟</div><div class="roman">mā ismuka?</div></div></div><div class="answer-item"><span>2.</span><div><div class="arabic" lang="ar" dir="rtl">أَنَا مِنَ الْيَابَانِ.</div><div class="roman">anā mina l-yābān</div></div></div><div class="answer-item"><span>3.</span><div><div class="arabic" lang="ar" dir="rtl">أَتَعَلَّمُ الْعَرَبِيَّةَ.</div><div class="roman">ataʿallamu l-ʿarabiyya</div></div></div></div><div class="answer-group"><h3>UNIT 03 · 聞き返す・言葉を確認する</h3><div class="answer-item"><span>1.</span><div><div class="arabic" lang="ar" dir="rtl">لَمْ أَفْهَمْ.</div><div class="roman">lam afham</div></div></div><div class="answer-item"><span>2.</span><div><div class="arabic" lang="ar" dir="rtl">هَلْ يُمْكِنُكَ أَنْ تُعِيدَ ذَلِكَ؟</div><div class="roman">hal yumkinuka an tuʿīda dhālika?</div></div></div><div class="answer-item"><span>3.</span><div><div class="arabic" lang="ar" dir="rtl">كَيْفَ أَقُولُ هَذَا بِالْعَرَبِيَّةِ؟</div><div class="roman">kayfa aqūlu hādhā bi-l-ʿarabiyya?</div></div></div></div><div class="answer-group"><h3>UNIT 04 · レストラン・カフェ</h3><div class="answer-item"><span>1.</span><div><div class="arabic" lang="ar" dir="rtl">أُرِيدُ قَائِمَةَ الطَّعَامِ، مِنْ فَضْلِكَ.</div><div class="roman">urīdu qāʾimat aṭ-ṭaʿām, min faḍlika</div></div></div><div class="answer-item"><span>2.</span><div><div class="arabic" lang="ar" dir="rtl">أُرِيدُ مَاءً، مِنْ فَضْلِكَ.</div><div class="roman">urīdu māʾan, min faḍlika</div></div></div><div class="answer-item"><span>3.</span><div><div class="arabic" lang="ar" dir="rtl">الْحِسَابَ، مِنْ فَضْلِكَ.</div><div class="roman">al-ḥisāb, min faḍlika</div></div></div></div><div class="answer-group"><h3>UNIT 05 · 買い物・値段・支払い</h3><div class="answer-item"><span>1.</span><div><div class="arabic" lang="ar" dir="rtl">بِكَمْ هَذَا؟</div><div class="roman">bikam hādhā?</div></div></div><div class="answer-item"><span>2.</span><div><div class="arabic" lang="ar" dir="rtl">هَلْ لَدَيْكُمْ مَقَاسٌ أَكْبَرُ؟</div><div class="roman">hal ladaykum maqās akbar?</div></div></div><div class="answer-item"><span>3.</span><div><div class="arabic" lang="ar" dir="rtl">سَآخُذُ هَذَا.</div><div class="roman">sa-ākhudhu hādhā</div></div></div></div><div class="answer-group"><h3>UNIT 06 · 道案内・場所を聞く</h3><div class="answer-item"><span>1.</span><div><div class="arabic" lang="ar" dir="rtl">أَيْنَ الْحَمَّامُ؟</div><div class="roman">ayna l-ḥammām?</div></div></div><div class="answer-item"><span>2.</span><div><div class="arabic" lang="ar" dir="rtl">أَيْنَ مَحَطَّةُ الْمِتْرُو؟</div><div class="roman">ayna maḥaṭṭat al-mitrū?</div></div></div><div class="answer-item"><span>3.</span><div><div class="arabic" lang="ar" dir="rtl">كَيْفَ أَذْهَبُ إِلَى الْمَطَارِ؟</div><div class="roman">kayfa adhhabu ilā l-maṭār?</div></div></div></div><div class="answer-group"><h3>UNIT 07 · タクシー・移動</h3><div class="answer-item"><span>1.</span><div><div class="arabic" lang="ar" dir="rtl">أُرِيدُ الذَّهَابَ إِلَى الْمَطَارِ.</div><div class="roman">urīdu dh-dhahāba ilā l-maṭār</div></div></div><div class="answer-item"><span>2.</span><div><div class="arabic" lang="ar" dir="rtl">كَمْ يَسْتَغْرِقُ الطَّرِيقُ؟</div><div class="roman">kam yastaghriqu ṭ-ṭarīq?</div></div></div><div class="answer-item"><span>3.</span><div><div class="arabic" lang="ar" dir="rtl">تَوَقَّفْ هُنَا، مِنْ فَضْلِكَ.</div><div class="roman">tawaqqaf hunā, min faḍlika</div></div></div></div><div class="answer-group"><h3>UNIT 08 · ホテル・住まい</h3><div class="answer-item"><span>1.</span><div><div class="arabic" lang="ar" dir="rtl">لَدَيَّ حَجْزٌ بِاسْمِ ...</div><div class="roman">ladayya ḥajz bi-sm ...</div></div></div><div class="answer-item"><span>2.</span><div><div class="arabic" lang="ar" dir="rtl">مُكَيِّفُ الْهَوَاءِ لَا يَعْمَلُ.</div><div class="roman">mukayyif al-hawāʾ lā yaʿmal</div></div></div><div class="answer-item"><span>3.</span><div><div class="arabic" lang="ar" dir="rtl">أُرِيدُ تَمْدِيدَ إِقَامَتِي.</div><div class="roman">urīdu tamdīda iqāmatī</div></div></div></div><div class="answer-group"><h3>UNIT 09 · 時間・約束・予定</h3><div class="answer-item"><span>1.</span><div><div class="arabic" lang="ar" dir="rtl">كَمِ السَّاعَةُ الْآنَ؟</div><div class="roman">kam as-sāʿa al-ān?</div></div></div><div class="answer-item"><span>2.</span><div><div class="arabic" lang="ar" dir="rtl">لِنَلْتَقِ السَّاعَةَ الْخَامِسَةَ.</div><div class="roman">linaltaqi as-sāʿa al-khāmisa</div></div></div><div class="answer-item"><span>3.</span><div><div class="arabic" lang="ar" dir="rtl">أَنَا مُتَأَخِّرٌ قَلِيلًا.</div><div class="roman">anā mutaʾakhkhir qalīlan</div></div></div></div><div class="answer-group"><h3>UNIT 10 · 仕事・オフィス</h3><div class="answer-item"><span>1.</span><div><div class="arabic" lang="ar" dir="rtl">هَلْ لَدَيْكَ وَقْتٌ؟</div><div class="roman">hal ladayka waqt?</div></div></div><div class="answer-item"><span>2.</span><div><div class="arabic" lang="ar" dir="rtl">هَلْ يُمْكِنُكَ إِرْسَالُ الْمِلَفِّ؟</div><div class="roman">hal yumkinuka irsālu l-milaff?</div></div></div><div class="answer-item"><span>3.</span><div><div class="arabic" lang="ar" dir="rtl">نَحْتَاجُ إِلَى مَزِيدٍ مِنَ الْوَقْتِ.</div><div class="roman">naḥtāju ilā mazīd mina l-waqt</div></div></div></div><div class="answer-group"><h3>UNIT 11 · 友人との雑談・誘い</h3><div class="answer-item"><span>1.</span><div><div class="arabic" lang="ar" dir="rtl">كَيْفَ كَانَ يَوْمُكَ؟</div><div class="roman">kayfa kāna yawmuka?</div></div></div><div class="answer-item"><span>2.</span><div><div class="arabic" lang="ar" dir="rtl">أُحِبُّ السَّفَرَ.</div><div class="roman">uḥibbu s-safar</div></div></div><div class="answer-item"><span>3.</span><div><div class="arabic" lang="ar" dir="rtl">الْجَوُّ حَارٌّ الْيَوْمَ.</div><div class="roman">al-jawwu ḥārr al-yawm</div></div></div></div><div class="answer-group"><h3>UNIT 12 · 体調・薬局・助けを求める</h3><div class="answer-item"><span>1.</span><div><div class="arabic" lang="ar" dir="rtl">أَحْتَاجُ إِلَى مُسَاعَدَةٍ.</div><div class="roman">aḥtāju ilā musāʿada</div></div></div><div class="answer-item"><span>2.</span><div><div class="arabic" lang="ar" dir="rtl">لَدَيَّ أَلَمٌ فِي الْحَلْقِ.</div><div class="roman">ladayya alam fī l-ḥalq</div></div></div><div class="answer-item"><span>3.</span><div><div class="arabic" lang="ar" dir="rtl">أَيْنَ أَقْرَبُ صَيْدَلِيَّةٍ؟</div><div class="roman">ayna aqrab ṣaydaliyya?</div></div></div></div><div class="answer-group"><h3>UNIT 13 · 空港・旅行</h3><div class="answer-item"><span>1.</span><div><div class="arabic" lang="ar" dir="rtl">هَذَا جَوَازُ سَفَرِي.</div><div class="roman">hādhā jawāz safarī</div></div></div><div class="answer-item"><span>2.</span><div><div class="arabic" lang="ar" dir="rtl">أَيْنَ بَوَّابَةُ الصُّعُودِ؟</div><div class="roman">ayna bawwābat aṣ-ṣuʿūd?</div></div></div><div class="answer-item"><span>3.</span><div><div class="arabic" lang="ar" dir="rtl">لَمْ تَصِلْ حَقِيبَتِي.</div><div class="roman">lam taṣil ḥaqībatī</div></div></div></div></section>
+<section class="studyplan" id="studyplan"><div class="eyebrow">4-WEEK PRACTICE ROUTINE</div><h2>毎日15〜25分の練習プラン</h2>
+<div class="planbox"><b>第1週（DAY 1–7）</b><br>UNIT 1〜7を毎日1章。最初はローマ字を使ってよいので10表現を繰り返し音読。</div>
+<div class="planbox"><b>第2週（DAY 8–14）</b><br>UNIT 8〜13を学び、DAY 14はUNIT 1〜3を日本語を隠して復習。</div>
+<div class="planbox"><b>第3週（DAY 15–21）</b><br>毎日2章を復習。会話例の役割A・Bを交互に練習し、最後に場面を思い浮かべて1分間話す。</div>
+<div class="planbox"><b>第4週（DAY 22–28）</b><br>苦手な場面を3つ選んで重点復習。練習問題を日本語だけ見て言えるかテストし、外出時に1日1表現使う。</div>
+<h3>最優先で覚える10表現</h3><p>挨拶、名前、出身、聞き返し、値段、場所、注文、会計、助け、別れ際の10種類から始めると、日常の多くの場面に応用できます。</p>
+<div class="footer">練習用教材 / 現代標準アラビア語（フスハー）を中心に編纂。口語の自然さは国・地域・話者によって異なります。音声ボタンは端末の音声合成に依存し、発音練習の補助用です。</div></section>
+</main>
+<script>
+const buttons=[['showAll',''],['hideJp','hide-jp'],['hideRom','hide-rom'],['hideBoth','hide-both']];
+buttons.forEach(([id,cls])=>{ document.getElementById(id).addEventListener('click',()=>{document.body.classList.remove('hide-jp','hide-rom','hide-both');if(cls)document.body.classList.add(cls);buttons.forEach(([bid])=>document.getElementById(bid).classList.toggle('active',bid===id));});});
+document.getElementById('search').addEventListener('input',e=>{let q=e.target.value.toLocaleLowerCase().trim();document.querySelectorAll('.phrase').forEach(el=>{el.classList.toggle('hidden-search',q&&!el.dataset.search.toLocaleLowerCase().includes(q));});document.querySelectorAll('.unit').forEach(el=>{el.classList.toggle('no-results',q&&!el.querySelector('.phrase:not(.hidden-search)'));});});
+let availableVoices=[];function refreshVoices(){if('speechSynthesis' in window)availableVoices=window.speechSynthesis.getVoices();}
+refreshVoices();if('speechSynthesis' in window)window.speechSynthesis.onvoiceschanged=refreshVoices;
+document.querySelectorAll('button.speech').forEach(btn=>btn.addEventListener('click',()=>{if(!('speechSynthesis' in window)){alert('このブラウザは音声合成に対応していません。');return;}let voice=availableVoices.find(v=>v.lang.toLowerCase()==='ar-sa')||availableVoices.find(v=>v.lang.toLowerCase().startsWith('ar'));let msg=new SpeechSynthesisUtterance(btn.dataset.text);msg.lang=voice?.lang||'ar-SA';if(voice)msg.voice=voice;msg.rate=.83;window.speechSynthesis.cancel();window.speechSynthesis.speak(msg);}));
+</script></body></html>
