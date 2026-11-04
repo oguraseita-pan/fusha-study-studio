@@ -15,6 +15,7 @@
   const jaTranslations = {
     "I am Japanese.":"私は日本人です。","She is a teacher.":"彼女は先生です。",
     "I work at a Japanese company.":"私は日本の会社で働いています。",
+    "I work at a Japanese company. And you?":"私は日本の会社で働いています。あなたは？",
     "I study Arabic.":"私はアラビア語を勉強しています。",
     "I go to the office in the morning.":"私は朝、オフィスへ行きます。",
     "I work from nine to five.":"9時から5時まで働きます。",
