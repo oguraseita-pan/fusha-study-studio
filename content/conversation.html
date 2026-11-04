@@ -879,4 +879,4 @@ document.getElementById('search').addEventListener('input',e=>{let q=e.target.va
 let availableVoices=[];function refreshVoices(){if('speechSynthesis' in window)availableVoices=window.speechSynthesis.getVoices();}
 refreshVoices();if('speechSynthesis' in window)window.speechSynthesis.onvoiceschanged=refreshVoices;
 document.querySelectorAll('button.speech').forEach(btn=>btn.addEventListener('click',()=>{if(!('speechSynthesis' in window)){alert('このブラウザは音声合成に対応していません。');return;}let voice=availableVoices.find(v=>v.lang.toLowerCase()==='ar-sa')||availableVoices.find(v=>v.lang.toLowerCase().startsWith('ar'));let msg=new SpeechSynthesisUtterance(btn.dataset.text);msg.lang=voice?.lang||'ar-SA';if(voice)msg.voice=voice;msg.rate=.83;window.speechSynthesis.cancel();window.speechSynthesis.speak(msg);}));
-</script></body></html>
+</script><script defer src="../assets/language.js"></script></body></html>

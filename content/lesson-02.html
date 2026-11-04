@@ -100,4 +100,4 @@ h1,h2,h3,p {margin-top:0;} h1{font-size:20pt; margin-bottom:8px; line-height:1.2
 function say(btn){const t=btn.getAttribute('data-ar');if(!('speechSynthesis' in window)){alert('Arabic audio is not supported in this browser.');return;}speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.lang='ar-SA';u.rate=.78;const vs=speechSynthesis.getVoices();const v=vs.find(x=>x.lang && /^ar/i.test(x.lang));if(v)u.voice=v;speechSynthesis.speak(u);}
 function toggleEnglish(){document.body.classList.toggle('hide-en');const el=document.getElementById('toggle-en');el.textContent=document.body.classList.contains('hide-en')?'Show English / romanization':'Hide English / romanization';}
 function printBook(){window.print();}
-</script></body></html>
+</script><script defer src="../assets/language.js"></script></body></html>
