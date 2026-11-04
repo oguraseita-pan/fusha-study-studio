@@ -15,4 +15,4 @@ Each resource is a standalone HTML page; speech synthesis relies on Arabic voice
 
 ## Publishing
 
-Vercel automatically deploys pushes to the production branch once this repository is connected. For new lessons, add `content/lesson-03.html` and a new card linking to it in `index.html`. No build step or dependencies are needed.
+Vercel automatically deploys pushes to the production branch once this repository is connected. For new lessons, add `content/lesson-03.html` and a new card linking to it in `index.html`. No build step or dependencies are needed. New lessons should be reviewed for correct Arabic spelling and published without any private student information.
