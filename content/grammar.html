@@ -74,7 +74,7 @@ button,input,select{font:inherit}button{cursor:pointer}
 <main class="container"><section class="hero"><div class="kicker">PRACTICAL ARABIC GRAMMAR · TWO VOLUMES</div><h1 id="bookTitle">Grammar</h1><p id="bookIntro"></p><div class="arhead" lang="ar" dir="rtl" id="bookAr"></div></section>
 <div class="booknav"><a href="grammar.html?level=basic" id="basicLink">A0–A2 · Foundations</a><a href="grammar.html?level=advanced" id="advancedLink">B1–B2 · Development</a></div>
 <div class="layout"><aside class="sidebar"><label for="search" id="searchLabel">Search chapters</label><input id="search" type="search" placeholder="Search / 検索 / بحث"/><div class="chapters" id="chapters"></div></aside>
-<article class="paper"><div class="overline"><span id="chapterIndex"></span><span id="level"></span></div><div id="article" class="loading">Loading chapters…</div><div class="actions"><button id="prev" type="button">← Previous</button><label class="check"><input type="checkbox" id="done"/> <span id="doneLabel">Chapter reviewed</span></label><button id="next" type="button">Next →</button></div></article></div></main>
+<article class="paper"><div class="overline"><span id="chapterIndex"></span><span id="level"></span></div><div id="article" class="loading">Loading chapters…</div><div class="actions"><button id="prev" type="button">← Previous</button><button id="next" type="button">Next →</button></div></article></div></main>
 <script src="../assets/grammar-topics.js"></script>
 <script>
 (function(){
@@ -95,7 +95,7 @@ button,input,select{font:inherit}button{cursor:pointer}
   $("bookIntro").textContent=ar?"اِخْتَرْ دَرْسًا وَاسْتَمِعْ وَتَدَرَّبْ.":ja?"章立ては英語・日本語・アラビア語共通です。初級の詳細な日本語解説と、発展編の日本語要点解説を収録しています。":"Unified chapters across all three display modes. English has detailed explanations; Japanese includes original early-level explanations and concise supplementary notes for higher chapters.";
   $("bookAr").textContent=level==="basic"?"مِنَ الْمُبْتَدِئِ إِلَى الْمُتَوَسِّطِ":"مَوَاضِيعُ الْمُسْتَوَى الْمُتَقَدِّمِ";
   $("searchLabel").textContent=ar?"ابْحَثْ عَنِ الدَّرْسِ":ja?"章を探す":"Search chapters";
-  $("doneLabel").textContent=ar?"أَكْمَلْتُ الدَّرْسَ":ja?"この章を復習した":"Reviewed";
+
   $("prev").textContent=ar?"→ السَّابِقُ":ja?"← 前の章":"← Previous";
   $("next").textContent=ar?"التَّالِي ←":ja?"次の章 →":"Next →";
   $("basicLink").textContent=ar?"A0–A2 · الْأَسَاسِيَّاتُ":ja?"A0–A2 · 基礎":"A0–A2 · Foundations";
@@ -108,10 +108,10 @@ button,input,select{font:inherit}button{cursor:pointer}
   const d=data[n-1];return lang==="ar"?d.ar:lang==="ja"?d.ja:d.enShort;
  }
  function renderNav(){
-  const q=$("search").value.toLowerCase().trim();
+  const q=$("search").value.trim().normalize("NFD").replace(/[\u064b-\u065f\u0670\u06d6-\u06ed]/g,"").toLowerCase();
   $("chapters").replaceChildren();
   for(let n=range[0];n<=range[1];n++){
-   const d=data[n-1];if(q&&![d.ja,d.ar,d.enShort,String(n)].join(" ").toLowerCase().includes(q))continue;
+   const d=data[n-1];if(q&&![d.ja,d.ar,d.enShort,String(n)].join(" ").normalize("NFD").replace(/[\u064b-\u065f\u0670\u06d6-\u06ed]/g,"").toLowerCase().includes(q))continue;
    const b=document.createElement("button");b.type="button";b.className=n===active?"active":"";
    const num=document.createElement("span");num.className="num";num.textContent=String(n).padStart(2,"0");
    b.append(num,document.createTextNode(getTitle(n)));b.onclick=()=>change(n);
@@ -178,13 +178,13 @@ button,input,select{font:inherit}button{cursor:pointer}
    }
    host.append(grid);
   }
-  const key="fss-grammar-done-"+active;$("done").checked=localStorage.getItem(key)==="1";
+
   $("prev").disabled=active===range[0];$("next").disabled=active===range[1];
   if(location.hash!=="#chapter-"+active)history.replaceState(null,"","#chapter-"+active);
  }
  function change(n){if(n<range[0]||n>range[1])return;active=n;render();window.scrollTo({top:0,behavior:"smooth"})}
  $("prev").onclick=()=>change(active-1);$("next").onclick=()=>change(active+1);
- $("done").onchange=()=>localStorage.setItem("fss-grammar-done-"+active,$("done").checked?"1":"0");
+
  $("search").oninput=renderNav;
  document.querySelectorAll(".controls button").forEach(b=>b.onclick=()=>{lang=b.dataset.lang;localStorage.setItem(K,lang);render()});
  function handleHash(){const m=location.hash.match(/chapter-(\d+)/);if(m){let n=Number(m[1]);if(n>=range[0]&&n<=range[1]&&n!==active){active=n;render()}}}
