@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#103943">
-<meta name="description" content="Fuṣḥā essential phrases: Japanese and English meaning, large Arabic, speech practice, categories, search and favourites.">
+<meta name="description" content="Fuṣḥā essential phrases: Japanese and English meanings, large Arabic, voice practice, category search and temporary in-page marks.">
 <title>Fuṣḥā Quick Phrases · 場面別基本表現集</title>
 <style>
 :root{--ink:#203b41;--nav:#103943;--teal:#117664;--light:#f2f7f5;--line:#dbe8e3;--muted:#617a7d;--gold:#d99a31}
@@ -59,7 +59,7 @@ body.lang-en .meaning .ja{display:none}body.lang-ja .meaning .en{display:none}
   <div class="kicker">A0–A2 · REAL-WORLD SPEAKING REFERENCE</div>
   <h1>場面別 基本表現集</h1>
   <p>授業中・挨拶・レストラン・タクシー・ホテル・空港・仕事などで使える短いフスハー表現。アラビア語をタップすると発音を試せます。英語・日本語の意味を隠して、声に出して練習しましょう。</p>
-  <div class="stats"><span id="total">— phrases</span><span id="parts">— parts</span><span>Large Arabic text</span><span>Fuṣḥā / MSA</span></div>
+  <div class="stats"><span id="total">— phrases</span><span id="parts">— parts</span><span>Large Arabic text</span><span>学習履歴は保存しません</span><span>Fuṣḥā / MSA</span></div>
  </header>
  <div class="guide">
  <div><b>使い方</b><p>① 授業前に5表現を選ぶ → ② 訳を隠して言う → ③ 講師に質問して会話にする → ④ 翌日と3日後に再練習。</p></div>
@@ -73,7 +73,7 @@ body.lang-en .meaning .ja{display:none}body.lang-ja .meaning .en{display:none}
    <button type="button" data-lang="en" aria-pressed="false">English</button>
    <button type="button" data-lang="both" aria-pressed="false">両方</button>
    <button type="button" id="hide" aria-pressed="false">訳を隠す</button>
-   <button type="button" id="favourites" aria-pressed="false">★ 保存</button>
+   <button type="button" id="favourites" aria-pressed="false" title="このページでの一時選択。端末には保存しません">★ 一時選択</button>
    <button type="button" id="random">ランダム</button>
    <button type="button" id="print" onclick="window.print()">印刷 / PDF</button>
   </div>
@@ -89,15 +89,15 @@ body.lang-en .meaning .ja{display:none}body.lang-ja .meaning .en{display:none}
 (function(){
 "use strict";
 const parts=window.PHRASE_PARTS||[], state={section:"all",query:"",lang:"ja",hide:false,favs:false};
-const STORE="fss-quickphrases-favs-v1";
+
 const langSaved=(()=>{try{return localStorage.getItem("fss-preferred-language-v2")||"ja"}catch(e){return "ja"}})();
 state.lang=langSaved==="en"?"en":"ja";
-let favs=new Set;try{favs=new Set(JSON.parse(localStorage.getItem(STORE)||"[]"))}catch(e){}
+const favs=new Set;
 const q=document.getElementById("query"), nav=document.getElementById("category"),res=document.getElementById("results"),status=document.getElementById("status");
 const e=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const norm=s=>String(s||"").normalize("NFD").replace(/[\u064b-\u065f\u0670\u06d6-\u06ed]/g,"").replace(/[\u0622\u0623\u0625\u0671]/g,"\u0627").replace(/\u0640/g,"").toLowerCase();
 const all=parts.flatMap((p,pi)=>p[5].map((row,i)=>({id:p[0]+"-"+i,cat:p[0],catNo:pi+1,n:i+1,ar:row[0],roman:row[1],en:row[2],ja:row[3],note:row[4]||"",titleJa:p[1],titleEn:p[2]})));
-function saveFavs(){try{localStorage.setItem(STORE,JSON.stringify([...favs]))}catch(e){}}
+
 function filter(){const term=norm(state.query.trim());return all.filter(p=>(state.section==="all"||p.cat===state.section)&&(!state.favs||favs.has(p.id))&&(!term||norm([p.ar,p.roman,p.en,p.ja,p.note,p.titleJa,p.titleEn].join(" ")).includes(term)))}
 function card(p){return '<article class="phrase" id="phrase-'+e(p.id)+'" data-id="'+e(p.id)+'"><div class="ph-head"><span class="num">'+String(p.n).padStart(2,"0")+' · '+e(p.cat.toUpperCase())+'</span><button type="button" class="star '+(favs.has(p.id)?"on":"")+'" data-star="'+e(p.id)+'" title="Save phrase" aria-label="Save phrase" aria-pressed="'+favs.has(p.id)+'">'+(favs.has(p.id)?"★":"☆")+'</button></div><div class="arwrap"><button class="arabic" type="button" dir="rtl" lang="ar" data-voice="'+e(p.ar)+'" title="Listen to Arabic">'+e(p.ar)+'</button></div><div class="roman">'+e(p.roman)+'</div><div class="meaning"><div class="ja">'+e(p.ja)+'</div><div class="en">'+e(p.en)+'</div></div>'+(p.note?'<div class="note">'+e(p.note)+'</div>':"")+'<button type="button" class="flip" data-reveal="'+e(p.id)+'">答えを見る</button></article>'}
 function renderNav(){nav.innerHTML='<button type="button" data-part="all" aria-pressed="'+(state.section==="all")+'">すべて</button>'+parts.map((p,i)=>'<button type="button" data-part="'+e(p[0])+'" aria-pressed="'+(state.section===p[0])+'">'+(i+1)+'. '+e(p[1])+'</button>').join("")}
@@ -121,7 +121,7 @@ document.getElementById("hide").onclick=()=>{state.hide=!state.hide;render()};
 document.getElementById("favourites").onclick=()=>{state.favs=!state.favs;render()};
 document.getElementById("random").onclick=()=>{const list=filter();if(!list.length)return;const p=list[Math.floor(Math.random()*list.length)];state.section="all";state.query="";q.value="";render();const el=document.getElementById("phrase-"+p.id);if(el){el.classList.add("is-highlight");el.scrollIntoView({behavior:"smooth",block:"center"})}};
 res.addEventListener("click",ev=>{
-const star=ev.target.closest("[data-star]");if(star){let id=star.dataset.star;favs.has(id)?favs.delete(id):favs.add(id);saveFavs();render();return}
+const star=ev.target.closest("[data-star]");if(star){let id=star.dataset.star;favs.has(id)?favs.delete(id):favs.add(id);render();return}
 const reveal=ev.target.closest("[data-reveal]");if(reveal){const el=document.getElementById("phrase-"+reveal.dataset.reveal);if(el){el.classList.toggle("revealed");reveal.textContent=el.classList.contains("revealed")?"訳を隠す":"答えを見る"}return}
 const speaker=ev.target.closest("[data-voice]");if(speaker){if(!("speechSynthesis" in window)){status.textContent="この端末では読み上げが使えません。";return}const u=new SpeechSynthesisUtterance(speaker.dataset.voice);u.lang="ar-SA";u.rate=.78;const voices=speechSynthesis.getVoices().filter(v=>v.lang.toLowerCase().startsWith("ar"));if(voices.length)u.voice=voices.find(v=>v.lang.toLowerCase()==="ar-sa")||voices[0];speechSynthesis.cancel();speechSynthesis.speak(u);}
 });
