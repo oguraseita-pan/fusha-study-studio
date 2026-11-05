@@ -16,7 +16,7 @@ root.innerHTML='<div class="fss-panel" id="fss-nav-panel" hidden><div class="fss
 '<div class="fss-dock"><a href="'+prefix+'index.html" aria-label="教材一覧に戻る">⌂ 教材</a>'+extra+'<button type="button" class="fss-primary" data-fss-toggle aria-expanded="false" aria-controls="fss-nav-panel">☷ 目次・検索</button><button type="button" data-fss-top aria-label="ページ先頭へ">↑</button></div>';
 document.body.appendChild(root);
 var panel=root.querySelector("#fss-nav-panel"),search=root.querySelector("#fss-nav-query"),list=root.querySelector("#fss-nav-items"),status=root.querySelector("#fss-nav-count"),toggle=root.querySelector("[data-fss-toggle]");
-function norm(s){return String(s||"").normalize("NFD").replace(/[\u064b-\u065f\u0670\u06d6-\u06ed]/g,"").replace(/[\u0622\u0623\u0625\u0671]/g,"\u0627").replace(/\u0640/g,"").toLowerCase()}
+function norm(s){return String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[\u064b-\u065f\u0670\u06d6-\u06ed]/g,"").replace(/[\u0622\u0623\u0625\u0671]/g,"\u0627").replace(/\u0640/g,"").toLowerCase()}
 function title(el,i){
 var h=el.querySelector("h2,h1,h3,.section-kicker,.cover-title");
 var v=h?(h.textContent||"").replace(/\s+/g," ").trim():"";
@@ -32,7 +32,7 @@ if(lesson!==null){
 }else if(/conversation\.html$/.test(path))nodes=[...document.querySelectorAll("section.unit")];
 else if(/curriculum\.html$/.test(path))nodes=[...document.querySelectorAll("tbody tr")];
 else if(/essential-phrases\.html$/.test(path))nodes=[...document.querySelectorAll("#results > section.section")];
-else if(/grammar\.html$/.test(path))nodes=[...document.querySelectorAll("#chapterCard")];
+else if(/grammar\.html$/.test(path))nodes=[...document.querySelectorAll("#article")];
 else nodes=[...document.querySelectorAll("main section")];
 return nodes.map(function(el,i){if(!el.id)el.id="fss-jump-"+(i+1);el.classList.add("fss-section-anchor");return {id:el.id,title:title(el,i),text:norm(el.innerText||el.textContent||""),index:i+1}}).filter(function(x){return x.text.length>4});
 }
