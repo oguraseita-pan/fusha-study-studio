@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#103943">
+<meta name="description" content="Fuṣḥā essential phrases: Japanese and English meaning, large Arabic, speech practice, categories, search and favourites.">
+<title>Fuṣḥā Quick Phrases · 場面別基本表現集</title>
+<style>
+:root{--ink:#203b41;--nav:#103943;--teal:#117664;--light:#f2f7f5;--line:#dbe8e3;--muted:#617a7d;--gold:#d99a31}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--light);color:var(--ink);font:15.5px/1.7 system-ui,-apple-system,"Noto Sans CJK JP",sans-serif}
+button,input{font:inherit}button{cursor:pointer}a{color:inherit}
+.bar{background:var(--nav);color:#f7fffc;padding:13px max(calc((100vw - 1120px)/2),18px);display:flex;align-items:center;gap:12px;justify-content:space-between;flex-wrap:wrap}
+.bar a{text-decoration:none;font-weight:800}.bar .small{color:#b7dcd1;font-size:12px}.wrap{max-width:1160px;margin:auto;padding:24px 20px 68px}
+.hero{background:linear-gradient(120deg,#0d353f,#187b68);color:#fff;padding:34px 37px;border-radius:23px}
+.kicker{font-size:11px;letter-spacing:.13em;color:#c4e7db;font-weight:850}
+h1{font-size:clamp(27px,4vw,43px);line-height:1.23;margin:9px 0}h2{font-size:23px;line-height:1.35;margin:0}h3{font-size:16px;margin:0 0 6px}.hero p{color:#e2f4ee;max-width:760px;margin:0}
+.stats{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.stats span{border:1px solid #ffffff53;border-radius:10px;padding:5px 12px;background:#ffffff17;font-size:12px}
+.guide{margin:16px 0;background:#e5f3eb;border:1px solid #c7e2d5;border-radius:14px;padding:15px 20px;display:flex;gap:14px;flex-wrap:wrap}
+.guide>div{flex:1;min-width:230px}.guide p{margin:3px 0;color:#4d6e69;font-size:13px}
+.controls{position:sticky;top:0;z-index:12;background:#f2f7f5f2;backdrop-filter:blur(16px);padding:11px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:minmax(200px,1fr) auto;gap:9px;align-items:center}
+#query{width:100%;padding:12px 15px;background:white;border:1px solid #bbd6ce;border-radius:11px;outline-color:#30a28c}
+.toggle{display:flex;flex-wrap:wrap;gap:6px;align-items:center}.toggle button,.category button{background:white;color:#315451;border:1px solid #bcd7cf;border-radius:10px;padding:8px 11px;font-size:13px}
+.toggle button[aria-pressed=true],.category button[aria-pressed=true]{background:#116c5b;color:#fff;border-color:#116c5b}
+.category{display:flex;flex-wrap:wrap;gap:7px;padding:15px 0 5px}.category button{font-size:12px}
+.section{background:#fff;border:1px solid var(--line);border-radius:18px;margin:19px 0;padding:25px}
+.section-heading{display:flex;align-items:start;gap:15px;justify-content:space-between;flex-wrap:wrap;margin-bottom:17px}
+.section-heading p{margin:5px 0;color:var(--muted);font-size:14px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:.13em;color:var(--teal)}
+.mission{background:#f1f8f4;border-radius:10px;padding:10px 13px;color:#386b60;font-size:13px;max-width:340px}
+.phrases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.phrase{border:1px solid #dae9e3;background:#fcfefd;border-radius:13px;padding:15px 17px;position:relative;min-width:0}
+.phrase.is-highlight{outline:3px solid #d5a34d}
+.ph-head{display:flex;justify-content:space-between;align-items:center;gap:10px}.num{font-size:11px;letter-spacing:.1em;color:#81958f;font-weight:750}
+.star{border:none;background:transparent;padding:5px 8px;font-size:24px;line-height:1;color:#aabcb7}.star.on{color:#ca8b27}
+.arwrap{margin:6px 0 3px;text-align:right;direction:rtl}
+.arabic{font:normal clamp(35px,3.8vw,44px)/1.8 "Noto Naskh Arabic","Amiri","Noto Sans Arabic",serif;direction:rtl;display:block;unicode-bidi:plaintext;white-space:normal;overflow-wrap:normal;word-break:normal;background:transparent;border:0;color:#0f5d52;cursor:pointer;text-align:right;width:100%;padding:1px 0}
+.arabic:focus-visible{outline:2px solid #158d79;border-radius:6px}
+.roman{font-size:13px;color:#718985;line-height:1.65}
+.meaning{margin-top:9px;padding-top:8px;border-top:1px solid #e4eeea}.meaning .ja{font-weight:600}.meaning .en{font-size:13px;color:#546d70}
+.note{background:#f0f7f3;color:#526e65;padding:8px 11px;font-size:12px;border-radius:8px;margin-top:9px}
+.hide-text .meaning,.hide-text .roman,.hide-text .note{display:none}
+.flip{display:none;font-size:12px;color:#176959;margin-top:7px;border:1px solid #cadfd7;border-radius:8px;background:#f0f8f3;padding:4px 10px}
+.hide-text .flip{display:inline-block}.hide-text .phrase.revealed .meaning,.hide-text .phrase.revealed .roman,.hide-text .phrase.revealed .note{display:block}
+body.lang-en .meaning .ja{display:none}body.lang-ja .meaning .en{display:none}
+.status{color:#617d77;font-size:13px;padding:10px 0}
+.empty{border:1px dashed #b7ccc4;border-radius:15px;background:white;padding:35px;text-align:center;color:var(--muted)}
+.footer{font-size:12px;color:#708783;padding:18px 0}
+@media(max-width:760px){.wrap{padding:11px 9px 45px}.hero{padding:26px 19px}.section{padding:18px 15px}.phrases{grid-template-columns:1fr}.controls{grid-template-columns:1fr;position:relative}.toggle{justify-content:flex-start}.arabic{font-size:37px}.mission{max-width:none}.bar{padding:11px 16px}}
+@media print{.bar,.controls,.category,.star,.flip,.status{display:none!important}body{background:white}.wrap{padding:0}.hero{background:white;color:#173f3b;padding:10px 0}.hero p{color:#374}.guide{display:none}.section{margin:8px 0;padding:14px;break-inside:auto;border:1px solid #d7e5df}.phrase{break-inside:avoid}.meaning,.roman,.note{display:block!important}.phrases{grid-template-columns:repeat(2,minmax(0,1fr))}@page{size:A4;margin:14mm}}
+</style>
+</head>
+<body>
+<div class="bar">
+ <a href="../index.html">← Fuṣḥā Study Studio</a>
+ <span class="small">QUICK REFERENCE · الفُصْحَى</span>
+</div>
+<main class="wrap">
+ <header class="hero">
+  <div class="kicker">A0–A2 · REAL-WORLD SPEAKING REFERENCE</div>
+  <h1>場面別 基本表現集</h1>
+  <p>授業中・挨拶・レストラン・タクシー・ホテル・空港・仕事などで使える短いフスハー表現。アラビア語をタップすると発音を試せます。英語・日本語の意味を隠して、声に出して練習しましょう。</p>
+  <div class="stats"><span id="total">— phrases</span><span id="parts">— parts</span><span>Large Arabic text</span><span>Fuṣḥā / MSA</span></div>
+ </header>
+ <div class="guide">
+ <div><b>使い方</b><p>① 授業前に5表現を選ぶ → ② 訳を隠して言う → ③ 講師に質問して会話にする → ④ 翌日と3日後に再練習。</p></div>
+ <div><b>フスハーと実際の会話</b><p>ここでは標準アラビア語を掲載。日常の地域方言では言い方が変わります。会話では語末の格語尾を省略することが一般的です。</p></div>
+ <div><b>相手による変化</b><p>基本は男性への呼びかけを掲載。女性への変化が必要な表現は注記しています。音声は端末の合成音声であり、ネイティブ録音ではありません。</p></div>
+ </div>
+ <div class="controls">
+  <input type="search" id="query" aria-label="Search phrases" placeholder="検索：日本語 / English / Arabic / 発音 ..." autocomplete="off">
+  <div class="toggle">
+   <button type="button" data-lang="ja" aria-pressed="true">日本語</button>
+   <button type="button" data-lang="en" aria-pressed="false">English</button>
+   <button type="button" data-lang="both" aria-pressed="false">両方</button>
+   <button type="button" id="hide" aria-pressed="false">訳を隠す</button>
+   <button type="button" id="favourites" aria-pressed="false">★ 保存</button>
+   <button type="button" id="random">ランダム</button>
+  </div>
+ </div>
+ <nav class="category" id="category" aria-label="Categories"></nav>
+ <div class="status" id="status" aria-live="polite">Loading ...</div>
+ <div id="results"></div>
+ <footer class="footer">Fuṣḥā Study Studio · 音声は端末のアラビア語読み上げに依存します。重要な商談・医療情報は、必要に応じて英語等でも正確に確認してください。</footer>
+</main>
+<script src="../assets/essential-phrases-a.js"></script>
+<script src="../assets/essential-phrases-b.js"></script>
+<script>
+(function(){
+"use strict";
+const parts=window.PHRASE_PARTS||[], state={section:"all",query:"",lang:"ja",hide:false,favs:false};
+const STORE="fss-quickphrases-favs-v1";
+const langSaved=(()=>{try{return localStorage.getItem("fss-preferred-language-v2")||"ja"}catch(e){return "ja"}})();
+state.lang=langSaved==="en"?"en":"ja";
+let favs=new Set;try{favs=new Set(JSON.parse(localStorage.getItem(STORE)||"[]"))}catch(e){}
+const q=document.getElementById("query"), nav=document.getElementById("category"),res=document.getElementById("results"),status=document.getElementById("status");
+const e=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const norm=s=>String(s||"").normalize("NFD").replace(/[\u064b-\u065f\u0670\u06d6-\u06ed]/g,"").replace(/[\u0622\u0623\u0625\u0671]/g,"\u0627").replace(/\u0640/g,"").toLowerCase();
+const all=parts.flatMap((p,pi)=>p[5].map((row,i)=>({id:p[0]+"-"+i,cat:p[0],catNo:pi+1,n:i+1,ar:row[0],roman:row[1],en:row[2],ja:row[3],note:row[4]||"",titleJa:p[1],titleEn:p[2]})));
+function saveFavs(){try{localStorage.setItem(STORE,JSON.stringify([...favs]))}catch(e){}}
+function filter(){const term=norm(state.query.trim());return all.filter(p=>(state.section==="all"||p.cat===state.section)&&(!state.favs||favs.has(p.id))&&(!term||norm([p.ar,p.roman,p.en,p.ja,p.note,p.titleJa,p.titleEn].join(" ")).includes(term)))}
+function card(p){return '<article class="phrase" id="phrase-'+e(p.id)+'" data-id="'+e(p.id)+'"><div class="ph-head"><span class="num">'+String(p.n).padStart(2,"0")+' · '+e(p.cat.toUpperCase())+'</span><button type="button" class="star '+(favs.has(p.id)?"on":"")+'" data-star="'+e(p.id)+'" title="Save phrase" aria-label="Save phrase" aria-pressed="'+favs.has(p.id)+'">'+(favs.has(p.id)?"★":"☆")+'</button></div><div class="arwrap"><button class="arabic" type="button" dir="rtl" lang="ar" data-voice="'+e(p.ar)+'" title="Listen to Arabic">'+e(p.ar)+'</button></div><div class="roman">'+e(p.roman)+'</div><div class="meaning"><div class="ja">'+e(p.ja)+'</div><div class="en">'+e(p.en)+'</div></div>'+(p.note?'<div class="note">'+e(p.note)+'</div>':"")+'<button type="button" class="flip" data-reveal="'+e(p.id)+'">答えを見る</button></article>'}
+function renderNav(){nav.innerHTML='<button type="button" data-part="all" aria-pressed="'+(state.section==="all")+'">すべて</button>'+parts.map((p,i)=>'<button type="button" data-part="'+e(p[0])+'" aria-pressed="'+(state.section===p[0])+'">'+(i+1)+'. '+e(p[1])+'</button>').join("")}
+function render(){
+document.body.classList.toggle("hide-text",state.hide);document.body.classList.toggle("lang-ja",state.lang==="ja");document.body.classList.toggle("lang-en",state.lang==="en");
+document.querySelectorAll("[data-lang]").forEach(b=>b.setAttribute("aria-pressed",String(state.lang===b.dataset.lang)));
+document.getElementById("hide").setAttribute("aria-pressed",String(state.hide));
+document.getElementById("favourites").setAttribute("aria-pressed",String(state.favs));
+renderNav();
+const list=filter();status.textContent=list.length+" 表現を表示 · お気に入り "+favs.size+" 件";
+let result="";
+for(const p of parts){const items=list.filter(x=>x.cat===p[0]);if(!items.length)continue;
+result+='<section class="section"><div class="section-heading"><div><span class="eyebrow">PART '+String(parts.indexOf(p)+1).padStart(2,"0")+' · '+e(p[2])+'</span><h2>'+e(p[1])+'</h2><p>'+e(p[3])+'</p></div><div class="mission"><b>ロールプレイ</b><div>'+e(p[4])+'</div></div></div><div class="phrases">'+items.map(card).join("")+'</div></section>'}
+res.innerHTML=result||'<div class="empty">該当する表現がありません。検索条件を変更してください。</div>';
+}
+document.getElementById("total").textContent=all.length+" essential phrases";document.getElementById("parts").textContent=parts.length+" parts";
+q.addEventListener("input",()=>{state.query=q.value;render()});
+nav.addEventListener("click",ev=>{let b=ev.target.closest("[data-part]");if(!b)return;state.section=b.dataset.part;render();document.getElementById("status").scrollIntoView({behavior:"smooth",block:"start"})});
+document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{state.lang=b.dataset.lang;render()}));
+document.getElementById("hide").onclick=()=>{state.hide=!state.hide;render()};
+document.getElementById("favourites").onclick=()=>{state.favs=!state.favs;render()};
+document.getElementById("random").onclick=()=>{const list=filter();if(!list.length)return;const p=list[Math.floor(Math.random()*list.length)];state.section="all";state.query="";q.value="";render();const el=document.getElementById("phrase-"+p.id);if(el){el.classList.add("is-highlight");el.scrollIntoView({behavior:"smooth",block:"center"})}};
+res.addEventListener("click",ev=>{
+const star=ev.target.closest("[data-star]");if(star){let id=star.dataset.star;favs.has(id)?favs.delete(id):favs.add(id);saveFavs();render();return}
+const reveal=ev.target.closest("[data-reveal]");if(reveal){const el=document.getElementById("phrase-"+reveal.dataset.reveal);if(el){el.classList.toggle("revealed");reveal.textContent=el.classList.contains("revealed")?"訳を隠す":"答えを見る"}return}
+const speaker=ev.target.closest("[data-voice]");if(speaker){if(!("speechSynthesis" in window)){status.textContent="この端末では読み上げが使えません。";return}const u=new SpeechSynthesisUtterance(speaker.dataset.voice);u.lang="ar-SA";u.rate=.78;const voices=speechSynthesis.getVoices().filter(v=>v.lang.toLowerCase().startsWith("ar"));if(voices.length)u.voice=voices.find(v=>v.lang.toLowerCase()==="ar-sa")||voices[0];speechSynthesis.cancel();speechSynthesis.speak(u);}
+});
+render();
+})();
+</script>
+</body></html>
