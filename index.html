@@ -42,11 +42,12 @@ function run(){
 const q=normal(search.value.trim());let visible=0;
 for(const card of cards){
 const category=group(card);
-const text=normal((card.dataset.key||"")+" "+card.textContent+" "+[...card.querySelectorAll(".t")].map(x=>["en","ja","ar"].map(l=>x.getAttribute("data-"+l)||"").join(" ")).join(" ")+" "+boost[category]);
+const n=(card.dataset.key||"").match(/^lesson-(\d+)/);const number=n?Number(n[1]):null;const aliases=number===null?"":("レッスン"+number+" 第"+number+"週 lesson"+number+" week"+number+" Lesson "+number+" "+String(number).padStart(2,"0"));
+const text=normal((card.dataset.key||"")+" "+card.textContent+" "+[...card.querySelectorAll(".t")].map(x=>["en","ja","ar"].map(l=>x.getAttribute("data-"+l)||"").join(" ")).join(" ")+" "+boost[category]+" "+aliases);
 const hit=(!q||q.split(/\s+/).every(x=>text.includes(x)))&&(filter==="all"||category===filter);
 card.hidden=!hit;if(hit)visible++;
 }
-count.textContent=lang==="ja"?(visible+"件の教材を表示（全"+cards.length+"件）"):lang==="ar"?(visible+" / "+cards.length+" مواد"):("Showing "+visible+" of "+cards.length+" resources");
+count.textContent=visible===0?(lang==="ja"?"該当する教材はありません。別のキーワードを試してください。":lang==="ar"?"لم يتم العثور على نتائج.":"No matching materials. Try another keyword."):(lang==="ja"?(visible+"件の教材を表示（全"+cards.length+"件）"):lang==="ar"?(visible+" / "+cards.length+" مواد"):("Showing "+visible+" of "+cards.length+" resources"));
 }
 function apply(){
 document.documentElement.lang=lang;
