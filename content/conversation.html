@@ -74,7 +74,7 @@ h3{margin:15px 0 9px}
 .drill{min-height:43px}
 .role{padding:9px 12px;margin-top:10px}
 }
-</style></head><body>
+</style><link rel="stylesheet" href="../assets/site-navigation.css"></head><body>
 <nav class="toolbar"><button id="showAll" class="active">訳・読み方を表示</button><button id="hideJp">日本語訳を隠す</button><button id="hideRom">発音を隠す</button><button id="hideBoth">両方隠す</button><input class="search" id="search" type="search" placeholder="日本語・アラビア語・ローマ字で検索"></nav>
 <main>
 <section class="cover"><div><div class="eyebrow">FUSHA • BEGINNER CONVERSATION PRACTICE</div><h1>フスハーの<br><span>基本日常会話集</span></h1><div class="cover-sub">初級者のための場面別フレーズ＆会話練習帳<br>挨拶からレストラン、仕事、旅行まで</div><div class="cover-ar" lang="ar" dir="rtl">هَيَّا نَتَحَدَّثْ بِالْعَرَبِيَّةِ!</div></div><div class="cover-footer"><span>13場面・132基本表現・52会話ターン</span><span>Modern Standard Arabic / A0–A2</span></div></section>
@@ -879,4 +879,4 @@ document.getElementById('search').addEventListener('input',e=>{let q=e.target.va
 let availableVoices=[];function refreshVoices(){if('speechSynthesis' in window)availableVoices=window.speechSynthesis.getVoices();}
 refreshVoices();if('speechSynthesis' in window)window.speechSynthesis.onvoiceschanged=refreshVoices;
 document.querySelectorAll('button.speech').forEach(btn=>btn.addEventListener('click',()=>{if(!('speechSynthesis' in window)){alert('このブラウザは音声合成に対応していません。');return;}let voice=availableVoices.find(v=>v.lang.toLowerCase()==='ar-sa')||availableVoices.find(v=>v.lang.toLowerCase().startsWith('ar'));let msg=new SpeechSynthesisUtterance(btn.dataset.text);msg.lang=voice?.lang||'ar-SA';if(voice)msg.voice=voice;msg.rate=.83;window.speechSynthesis.cancel();window.speechSynthesis.speak(msg);}));
-</script><script defer src="../assets/language.js"></script></body></html>
+</script><script defer src="../assets/language.js"></script><script defer src="../assets/site-navigation.js"></script></body></html>
