@@ -35,7 +35,7 @@ let filter="all";
 const cards=[...document.querySelectorAll("#cards .card")];
 const search=document.getElementById("search"), count=document.getElementById("library-count");
 const diacritics=/[\u064b-\u065f\u0670\u06d6-\u06ed]/g;
-function normal(s){return String(s||"").normalize("NFD").replace(diacritics,"").replace(/[\u0622\u0623\u0625\u0671]/g,"\u0627").toLowerCase()}
+function normal(s){return String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(diacritics,"").replace(/[\u0622\u0623\u0625\u0671]/g,"\u0627").toLowerCase()}
 function group(card){let id=card.dataset.key||"";if(id.startsWith("lesson-"))return "speaking";if(id.startsWith("grammar"))return "grammar";return "phrases"}
 const boost={"grammar":"文法 動詞 名詞 活用 変化 文型 動詞の形","phrases":"フレーズ 定型文 表現 場面 生活 日常会話 レストラン タクシー 授業中","speaking":"会話 レッスン 週 学習 実践 ロールプレイ"};
 function run(){
