@@ -95,7 +95,7 @@ state.lang=langSaved==="en"?"en":"ja";
 const favs=new Set;
 const q=document.getElementById("query"), nav=document.getElementById("category"),res=document.getElementById("results"),status=document.getElementById("status");
 const e=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const norm=s=>String(s||"").normalize("NFD").replace(/[\u064b-\u065f\u0670\u06d6-\u06ed]/g,"").replace(/[\u0622\u0623\u0625\u0671]/g,"\u0627").replace(/\u0640/g,"").toLowerCase();
+const norm=s=>String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[\u064b-\u065f\u0670\u06d6-\u06ed]/g,"").replace(/[\u0622\u0623\u0625\u0671]/g,"\u0627").replace(/\u0640/g,"").toLowerCase();
 const all=parts.flatMap((p,pi)=>p[5].map((row,i)=>({id:p[0]+"-"+i,cat:p[0],catNo:pi+1,n:i+1,ar:row[0],roman:row[1],en:row[2],ja:row[3],note:row[4]||"",titleJa:p[1],titleEn:p[2]})));
 
 function filter(){const term=norm(state.query.trim());return all.filter(p=>(state.section==="all"||p.cat===state.section)&&(!state.favs||favs.has(p.id))&&(!term||norm([p.ar,p.roman,p.en,p.ja,p.note,p.titleJa,p.titleEn].join(" ")).includes(term)))}
