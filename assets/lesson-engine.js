@@ -48,19 +48,16 @@ add('Final speaking assessment · Scorecard','FINAL CHECKPOINT · RECORD & COMPA
 '<div class="rubric-header"><div>Evaluation dimension / 評価項目</div><div>Initial</div><div>Final</div></div>'+
 rubricRows+
 '<div class="rubric-scores"><div>Initial: <strong id="score-initial">— / 24</strong></div><div>Final: <strong id="score-final">— / 24</strong></div><div>Difference: <strong id="score-change">—</strong></div></div>'+
-'<p class="fine">Scores are saved only in this browser. A score change describes these tasks, not a certified CEFR level.</p>'+
+'<p class="fine">Scores are for this open page only and are not saved. Print or copy results before leaving. A score change is not a certified CEFR level.</p>'+
 '<h3>Next 4 weeks / 修了後の学習</h3><div class="steps">'+roadmap+'</div>');
 }
 
 add('Pronunciation & real-life Arabic','FUṢḤĀ ↔ SPOKEN','<div class="two"><div class="panel"><h3>Fuṣḥā target / 標準語</h3><p>'+E(D.speaking.fusha)+'</p></div><div class="panel"><h3>Real conversation / 実際の会話</h3><p>'+E(D.speaking.real)+'</p></div></div><div class="teacher"><b>Keep the distinction clear:</b> The lesson uses Fuṣḥā. Any Syrian or Gulf alternative is a comparison, not a replacement for the model sentence. Word-final case endings are often omitted when speaking.</div>');
-add('Homework and error log','SPACED PRACTICE','<div class="two"><div class="panel"><h3>Repeat for retention</h3><p><b>Today:</b> 5 min read and record.</p><p><b>Tomorrow:</b> 5 min from Japanese or English prompts.</p><p><b>3 days later:</b> 5 min role-play without notes.</p><p><b>Next week:</b> review 5 phrases in the warm-up.</p></div><div class="panel"><h3>Teacher notes / 講師メモ</h3><label class="small" for="note">Three corrections, useful expressions, next lesson needs:</label><textarea id="note" rows="8" placeholder="1. Pronunciation&#10;2. Grammar&#10;3. Useful phrase"></textarea><div class="fine">Stored only in this browser (not synced).</div></div></div>');
+add('Homework and error log','SPACED PRACTICE','<div class="two"><div class="panel"><h3>Repeat for retention</h3><p><b>Today:</b> 5 min read and record.</p><p><b>Tomorrow:</b> 5 min from Japanese or English prompts.</p><p><b>3 days later:</b> 5 min role-play without notes.</p><p><b>Next week:</b> review 5 phrases in the warm-up.</p></div><div class="panel"><h3>Teacher notes / 講師メモ</h3><label class="small" for="note">Three corrections, useful expressions, next lesson needs:</label><textarea id="note" rows="8" placeholder="1. Pronunciation&#10;2. Grammar&#10;3. Useful phrase"></textarea><div class="fine">Session only · copy or print notes before closing.</div></div></div>');
 document.getElementById('content').innerHTML=lessonHeader()+'<nav class="section-nav" aria-label="Lesson sections">'+nav.join('')+'</nav>'+parts.join('')+'<footer>Fuṣḥā Study Studio · Week '+D.week+' · Lesson material for student and teacher · '+E(D.dates)+'</footer>';
-var saved;
-try{saved=JSON.parse(localStorage.getItem(id)||'{}')}catch(_){saved={}}
 var done=document.querySelectorAll('[data-progress]');
-done.forEach(function(x){x.checked=!!saved[x.dataset.progress];x.addEventListener('change',function(){saved[x.dataset.progress]=x.checked;persist()})});
-document.getElementById('note').value=saved.note||'';document.getElementById('note').addEventListener('input',function(){saved.note=this.value;persist()});
-function persist(){try{localStorage.setItem(id,JSON.stringify(saved))}catch(_){}}
+done.forEach(function(x){x.checked=false});
+document.getElementById('note').value='';
 
 if(D.assessment){
 var els=document.querySelectorAll('[data-rating-key]');
@@ -71,7 +68,7 @@ els.forEach(function(x){var prefix=x.dataset.ratingKey.split('-')[0];if(x.value!
 var diff=document.getElementById('score-change');
 if(diff)diff.textContent=totals.initial.count===6&&totals.final.count===6?String(totals.final.sum-totals.initial.sum):'—';
 }
-els.forEach(function(x){var k=x.dataset.ratingKey;x.value=saved[k]===undefined?'':String(saved[k]);x.addEventListener('change',function(){saved[k]=x.value;persist();recompute()})});
+els.forEach(function(x){x.value='';x.addEventListener('change',recompute)});
 recompute();
 }
 
