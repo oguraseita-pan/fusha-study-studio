@@ -32,6 +32,26 @@ var defaultRows=[['00–10','Warm up from memory. No notes.'],['10–25','Review
 add('Class '+(i+1)+' · '+c.name,'3 × 120-MINUTE LESSON PLANS','<div class="classhead"><b>'+E(c.day)+'</b><span>'+E(c.goal)+'</span></div><div class="schedule">'+defaultRows.map(function(r){return '<div class="schedule-row"><b>'+r[0]+'</b><span>'+E(r[1])+'</span></div>'}).join('')+'</div><h3>Role-play ladder / ロールプレイ</h3><div class="steps">'+c.missions.map(function(m,j){return '<div class="step"><b>Mission '+(j+1)+'</b><div>'+E(m.en)+'</div><p class="ja">'+E(m.ja)+'</p></div>'}).join('')+'</div><h3>Question bank for the teacher</h3><div class="qa-grid">'+c.questions.map(function(q){return '<div class="qcard">'+AR(q.ar)+'<div class="trans en">'+E(q.en)+'</div><div class="trans ja">'+E(q.ja)+'</div></div>'}).join('')+'</div><div class="teacher"><b>Teacher cue in simple English:</b> '+E(c.teacher)+'<br><b>Exit task:</b> '+E(c.exit)+'</div>');
 });
 add('Self-test and teacher answer key','ACTIVE RECALL','<p>Speak each answer before revealing the model. Different but correct Fuṣḥā answers are acceptable.</p><div class="testgrid">'+D.test.map(function(q,i){return '<div class="testq"><b>'+(i+1)+'. '+E(q.en)+'</b><div class="ja">'+E(q.ja)+'</div><div class="answer">'+FR(q.answer)+'</div></div>'}).join('')+'</div><h3>Performance check / 到達度</h3><div class="checks">'+D.checks.map(function(q,i){return '<label><input type="checkbox" data-progress="'+E('check-'+i)+'">'+E(q)+'</label>'}).join('')+'</div><div class="teacher"><b>Suggested rubric:</b> 0 = cannot yet, 1 = with prompts, 2 = independent. Rate: meaning / questions / pronunciation / flexibility. Keep the same scorecard in Week 12 for comparison.</div>');
+
+if(D.assessment){
+var A=D.assessment;
+var optionHtml='<option value="">—</option>'+[0,1,2,3,4].map(function(n){return '<option value="'+n+'">'+n+'</option>'}).join('');
+var rubricRows=A.criteria.map(function(x){
+return '<div class="rubric-row"><div><b>'+E(x.en)+'</b><div class="ja">'+E(x.ja)+'</div><div class="fine">'+E(x.desc)+'</div></div><div><label class="small" for="rating-initial-'+E(x.key)+'">Initial</label><select id="rating-initial-'+E(x.key)+'" data-rating-key="initial-'+E(x.key)+'" aria-label="Initial '+E(x.en)+'">'+optionHtml+'</select></div><div><label class="small" for="rating-final-'+E(x.key)+'">Final</label><select id="rating-final-'+E(x.key)+'" data-rating-key="final-'+E(x.key)+'" aria-label="Final '+E(x.en)+'">'+optionHtml+'</select></div></div>'
+}).join('');
+var benchmark=A.benchmark.map(function(q,i){return '<div class="step"><b>Task '+(i+1)+'</b><p>'+E(q)+'</p></div>'}).join('');
+var scale=A.scale.map(function(q){return '<li>'+E(q)+'</li>'}).join('');
+var roadmap=A.roadmap.map(function(q,i){return '<div class="step"><b>Step '+(i+1)+'</b><p>'+E(q)+'</p></div>'}).join('');
+add('Final speaking assessment · Scorecard','FINAL CHECKPOINT · RECORD & COMPARE',
+'<p>'+E(A.note)+'</p><h3>Benchmark tasks / 共通評価タスク</h3><div class="steps">'+benchmark+'</div>'+
+'<h3>Score definitions / 評価基準</h3><ul>'+scale+'</ul><p class="fine">Use the same benchmark tasks and scoring anchors at both time points. Empty fields are not counted.</p>'+
+'<div class="rubric-header"><div>Evaluation dimension / 評価項目</div><div>Initial</div><div>Final</div></div>'+
+rubricRows+
+'<div class="rubric-scores"><div>Initial: <strong id="score-initial">— / 24</strong></div><div>Final: <strong id="score-final">— / 24</strong></div><div>Difference: <strong id="score-change">—</strong></div></div>'+
+'<p class="fine">Scores are saved only in this browser. A score change describes these tasks, not a certified CEFR level.</p>'+
+'<h3>Next 4 weeks / 修了後の学習</h3><div class="steps">'+roadmap+'</div>');
+}
+
 add('Pronunciation & real-life Arabic','FUṢḤĀ ↔ SPOKEN','<div class="two"><div class="panel"><h3>Fuṣḥā target / 標準語</h3><p>'+E(D.speaking.fusha)+'</p></div><div class="panel"><h3>Real conversation / 実際の会話</h3><p>'+E(D.speaking.real)+'</p></div></div><div class="teacher"><b>Keep the distinction clear:</b> The lesson uses Fuṣḥā. Any Syrian or Gulf alternative is a comparison, not a replacement for the model sentence. Word-final case endings are often omitted when speaking.</div>');
 add('Homework and error log','SPACED PRACTICE','<div class="two"><div class="panel"><h3>Repeat for retention</h3><p><b>Today:</b> 5 min read and record.</p><p><b>Tomorrow:</b> 5 min from Japanese or English prompts.</p><p><b>3 days later:</b> 5 min role-play without notes.</p><p><b>Next week:</b> review 5 phrases in the warm-up.</p></div><div class="panel"><h3>Teacher notes / 講師メモ</h3><label class="small" for="note">Three corrections, useful expressions, next lesson needs:</label><textarea id="note" rows="8" placeholder="1. Pronunciation&#10;2. Grammar&#10;3. Useful phrase"></textarea><div class="fine">Stored only in this browser (not synced).</div></div></div>');
 document.getElementById('content').innerHTML=lessonHeader()+'<nav class="section-nav" aria-label="Lesson sections">'+nav.join('')+'</nav>'+parts.join('')+'<footer>Fuṣḥā Study Studio · Week '+D.week+' · Lesson material for student and teacher · '+E(D.dates)+'</footer>';
@@ -41,6 +61,20 @@ var done=document.querySelectorAll('[data-progress]');
 done.forEach(function(x){x.checked=!!saved[x.dataset.progress];x.addEventListener('change',function(){saved[x.dataset.progress]=x.checked;persist()})});
 document.getElementById('note').value=saved.note||'';document.getElementById('note').addEventListener('input',function(){saved.note=this.value;persist()});
 function persist(){try{localStorage.setItem(id,JSON.stringify(saved))}catch(_){}}
+
+if(D.assessment){
+var els=document.querySelectorAll('[data-rating-key]');
+function recompute(){
+var totals={initial:{sum:0,count:0},final:{sum:0,count:0}};
+els.forEach(function(x){var prefix=x.dataset.ratingKey.split('-')[0];if(x.value!==''){totals[prefix].sum+=Number(x.value);totals[prefix].count++}});
+['initial','final'].forEach(function(k){var el=document.getElementById('score-'+k);if(el)el.textContent=totals[k].count===6?totals[k].sum+' / 24':totals[k].count+' / 6 rated'});
+var diff=document.getElementById('score-change');
+if(diff)diff.textContent=totals.initial.count===6&&totals.final.count===6?String(totals.final.sum-totals.initial.sum):'—';
+}
+els.forEach(function(x){var k=x.dataset.ratingKey;x.value=saved[k]===undefined?'':String(saved[k]);x.addEventListener('change',function(){saved[k]=x.value;persist();recompute()})});
+recompute();
+}
+
 function prefs(){document.body.classList.toggle('hide-ja',!ui.ja);document.body.classList.toggle('hide-en',!ui.en);document.body.classList.toggle('show-answers',ui.answers);document.querySelectorAll('[data-switch]').forEach(function(b){var k=b.dataset.switch;b.setAttribute('aria-pressed',String(!!ui[k]));b.classList.toggle('selected',!!ui[k])})}
 document.querySelectorAll('[data-switch]').forEach(function(b){b.addEventListener('click',function(){var k=b.dataset.switch;ui[k]=!ui[k];prefs()})});prefs();
 function speak(s){var state=document.getElementById('voice-state');if(!('speechSynthesis' in window)){state.textContent='Arabic speech is unavailable in this browser.';return}window.speechSynthesis.cancel();var utt=new SpeechSynthesisUtterance(s);utt.lang='ar-SA';utt.rate=.78;var voices=window.speechSynthesis.getVoices().filter(function(v){return v.lang&&v.lang.toLowerCase().startsWith('ar')});if(voices.length)utt.voice=voices.find(function(v){return v.lang==='ar-SA'})||voices[0];state.textContent=voices.length?'Playing Arabic speech.':'Using the device default voice; install an Arabic voice if needed.';window.speechSynthesis.speak(utt)}
