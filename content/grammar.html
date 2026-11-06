@@ -86,13 +86,12 @@ button,input,select{font:inherit}button{cursor:pointer}
  let lang=localStorage.getItem(K)||"en";if(!["en","ja","ar"].includes(lang))lang="en";
  const range=level==="basic"?[1,35]:[36,51];
  let active=requested>=range[0]&&requested<=range[1]?requested:range[0];
- let enSections=[],jaSections=[];
- const jm=n=>n<=15?n:n===16||n===17?15:n===18||n===19?16:n===20?17:n>=21&&n<=27?n-3:0;
+ let enSections=[],jaSections=[],jaById=new Map();
  const $=id=>document.getElementById(id);
  function labels(){
   const ar=lang==="ar",ja=lang==="ja";
   $("bookTitle").textContent=ar?(level==="basic"?"الْقَوَاعِدُ الْأَسَاسِيَّةُ":"الْقَوَاعِدُ الْمُتَقَدِّمَةُ"):level==="basic"?(ja?"文法書 A0–A2｜基礎":"Grammar A0–A2 · Foundations"):(ja?"文法書 B1–B2｜発展":"Grammar B1–B2 · Development");
-  $("bookIntro").textContent=ar?"اِخْتَرْ دَرْسًا وَاسْتَمِعْ وَتَدَرَّبْ.":ja?"章立ては英語・日本語・アラビア語共通です。初級の詳細な日本語解説と、発展編の日本語要点解説を収録しています。":"Unified chapters across all three display modes. English has detailed explanations; Japanese includes original early-level explanations and concise supplementary notes for higher chapters.";
+  $("bookIntro").textContent=ar?"اِخْتَرْ دَرْسًا وَاسْتَمِعْ وَتَدَرَّبْ.":ja?"英語・日本語の原書51項目を主題ごとに対応させています。日本語原書の補講15A・15B・16Aは、サイトでは第16・17・19章として表示します。":"English and Japanese source chapters are aligned topic by topic across all 51 entries. The Japanese book labels three supplementary lessons 15A, 15B and 16A.";
   $("bookAr").textContent=level==="basic"?"مِنَ الْمُبْتَدِئِ إِلَى الْمُتَوَسِّطِ":"مَوَاضِيعُ الْمُسْتَوَى الْمُتَقَدِّمِ";
   $("searchLabel").textContent=ar?"ابْحَثْ عَنِ الدَّرْسِ":ja?"章を探す":"Search chapters";
 
@@ -105,7 +104,10 @@ button,input,select{font:inherit}button{cursor:pointer}
   document.documentElement.lang=lang;
  }
  function getTitle(n){
-  const d=data[n-1];return lang==="ar"?d.ar:lang==="ja"?d.ja:d.enShort;
+  const d=data[n-1];
+  if(lang==="ar")return d.ar;
+  if(lang==="ja")return jaById.get(d.jaSourceId)?.querySelector(".chapter-head h2")?.textContent.trim()||d.ja;
+  return enSections[n-1]?.querySelector(".chapter-head h2")?.textContent.trim()||d.enShort;
  }
  function renderNav(){
   const q=$("search").value.trim().normalize("NFD").replace(/[\u064b-\u065f\u0670\u06d6-\u06ed]/g,"").toLowerCase();
@@ -150,23 +152,15 @@ button,input,select{font:inherit}button{cursor:pointer}
     const clone=src.cloneNode(true);clone.querySelector(".chapter-head")?.remove();clone.querySelector(".done-label")?.remove();host.append(clone);
     addPlayHandlers(clone);
   }else if(lang==="ja"){
-    const desc=document.createElement("div");desc.className="note jp-explain";desc.textContent=d.explain;host.append(desc);
-    const ix=jm(active);
-    if(ix&&jaSections[ix-1]){
-      const intro=document.createElement("div");intro.className="small";intro.textContent=ix===active?"日本語版の詳細解説":"日本語版の関連章（補足）: 第"+ix+"章";host.append(intro);
-      const chapter=jaSections[ix-1].cloneNode(true);chapter.classList.add("jp-source");
-      chapter.querySelector(".chapter-head")?.remove();chapter.querySelector(".done-label")?.remove();host.append(chapter);addPlayHandlers(chapter);
-    }else{
-      const note=document.createElement("div");note.className="note";note.textContent="この章の日本語は要点解説です。詳細な用法と練習問題は English に切り替えて確認できます。";host.append(note);
-      const grid=document.createElement("div");grid.className="practice-list";
-      for(const ar of arabicExamples(active)){
-        const block=document.createElement("div");block.className="practice-item";
-        const word=document.createElement("span");word.className="arword";word.lang="ar";word.dir="rtl";word.textContent=ar;word.onclick=()=>sound(ar);
-        const btn=document.createElement("button");btn.className="listen";btn.textContent="▶";btn.onclick=()=>sound(ar);
-        block.append(btn,word);grid.append(block);
-      }
-      host.append(grid);
-    }
+    const original=jaById.get(d.jaSourceId);
+    if(!original){host.textContent="日本語版の対応する章が見つかりません。";return}
+    const originalNo=d.jaSourceId.replace("lesson-","");
+    const intro=document.createElement("div");intro.className="small";
+    intro.textContent=originalNo===String(active)?"日本語版の詳細解説":"日本語原書では「"+originalNo+"」に該当する補講・章です。";
+    host.append(intro);
+    const chapter=original.cloneNode(true);chapter.classList.add("jp-source");
+    chapter.querySelector(".chapter-head")?.remove();chapter.querySelector(".done-label")?.remove();
+    host.append(chapter);addPlayHandlers(chapter);
   }else{
    const instruction=document.createElement("div");instruction.className="practice-intro";instruction.textContent="اِقْرَأْ، وَاسْتَمِعْ، ثُمَّ قُلْهَا بِنَفْسِكَ.";host.append(instruction);
    const grid=document.createElement("div");grid.className="practice-list";
@@ -190,7 +184,7 @@ button,input,select{font:inherit}button{cursor:pointer}
  function handleHash(){const m=location.hash.match(/chapter-(\d+)/);if(m){let n=Number(m[1]);if(n>=range[0]&&n<=range[1]&&n!==active){active=n;render()}}}
  addEventListener("hashchange",handleHash);
  Promise.all([fetch("./grammar-en.html").then(r=>{if(!r.ok)throw Error("English grammar unavailable");return r.text()}),fetch("./grammar-ja.html").then(r=>{if(!r.ok)throw Error("Japanese grammar unavailable");return r.text()})])
- .then(([a,b])=>{const parser=new DOMParser();enSections=[...parser.parseFromString(a,"text/html").querySelectorAll(".chapter")];jaSections=[...parser.parseFromString(b,"text/html").querySelectorAll(".chapter")];if(enSections.length!==51)throw Error("Expected 51 English chapters");render();})
+ .then(([a,b])=>{const parser=new DOMParser();enSections=[...parser.parseFromString(a,"text/html").querySelectorAll(".chapter")];jaSections=[...parser.parseFromString(b,"text/html").querySelectorAll(".chapter")];jaById=new Map(jaSections.map(x=>[x.id,x]));if(enSections.length!==51||jaSections.length!==51||data.length!==51)throw Error("Expected 51 chapters in both books");const missing=data.filter(d=>!jaById.has(d.jaSourceId));if(missing.length)throw Error("Japanese chapter mapping missing: "+missing.map(d=>d.jaSourceId).join(", "));render();})
  .catch(e=>{$("article").textContent="Could not load grammar content: "+e.message});
  labels();
 })();
