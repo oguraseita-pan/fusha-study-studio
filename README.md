@@ -23,7 +23,7 @@ The Arabic-only view of older resources is a reading/listening practice mode, no
 - `content/conversation.html` — everyday phrases
 - `curriculum.html` — 20-week / 60-class roadmap, linked to grammar chapters
 
-The unified grammar book has **51 English chapters**. Existing Japanese source lessons cover fewer chapters and do not map 1:1; the unified reader shows original Japanese explanations where available and concise Japanese summary notes for uncovered chapters. It does not claim all B1–B2 explanations are fully translated.
+The unified grammar reader aligns **51 English source chapters with 51 Japanese source sections**. All 51 Japanese sections contain original explanations, examples, and exercises. The Japanese standalone book calls its extra chapters **15A, 15B and 16A**; the unified reader presents these as Chapters 16, 17 and 19 and displays the original numbering. Navigation titles are taken from the corresponding source chapter headings, and the mapping is pinned by `jaSourceId` in `assets/grammar-topics.js` rather than calculated from an outdated 24-chapter edition. B1–B2 lessons provide introductions and practice rather than an exhaustive advanced grammar course.
 
 ## Teacher lesson structure
 
