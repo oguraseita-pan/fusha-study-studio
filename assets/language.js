@@ -190,7 +190,7 @@
     "#fsspractice .fss-phrase{border-top:1px solid #edf3f1;display:flex;gap:12px;align-items:center;justify-content:space-between;padding:15px 4px}",
     "#fsspractice .fss-ar{font:normal clamp(34px,4vw,48px)/1.8 'Noto Naskh Arabic','Amiri',serif;direction:rtl;flex:1;text-align:right}",
     "#fsspractice .fss-audio{font:600 18px system-ui;border-radius:50%;background:#e1f4ed;color:#126457;border:0;width:39px;height:39px;cursor:pointer;flex:none}",
-    "body.fss-mode-ar > :not(#fssbar):not(#fsspractice):not(script){display:none!important}",
+    "body.fss-mode-ar > :not(#fssbar):not(#fsspractice):not(#fss-lesson-top):not(#fss-nav):not(script){display:none!important}",
     "body.fss-mode-ar{background:#f1f6f4!important}",
     "body.fss-mode-ja .fss-english-gloss{display:none!important}",
     "body.fss-mode-en .fss-japanese-gloss{display:none!important}",
