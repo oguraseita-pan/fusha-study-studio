@@ -85,6 +85,52 @@ function ready(){
   }
  }
  removeInstructionBlocks();
+
+ function finishPersonalization(){
+  if(n<=4){
+    document.querySelectorAll("section.sheet").forEach(function(sec){
+      var header=(sec.querySelector(".section-head h1")?.textContent||"").trim();
+      if(/^(Please teach in clear|Instructions for the teacher|Teacher guide)/i.test(header)){sec.remove();return}
+      sec.querySelectorAll(".note").forEach(function(el){
+        var label=(el.querySelector("b,strong,h3")?.textContent||"").trim();
+        if(/teacher (agreement|note|drill|prompt|cue|tips)|講師(?:向け|メモ)/i.test(label))el.remove();
+      });
+      sec.querySelectorAll(".section-head .kicker,.cover-kicker").forEach(function(el){
+        el.textContent=el.textContent.replace(/\bWEEK\b/gi,"LESSON").replace(/\b(?:MON|WED|FRI)(?:DAY|NESDAY)?\b/gi,"PRACTICE");
+      });
+      sec.querySelectorAll(".section-head .sub,.fineprint,.prompt,.role p,.jpsection p").forEach(function(el){
+        if(el.querySelector(".ar,[lang=ar]"))return;
+        var t=el.textContent||"";
+        if(/teacher should|teacher reads|teacher asks|teacher changes|teacher cues|teacher may|teacher gives|the teacher will|ask the teacher|先生には|先生の質問|講師に/i.test(t)){
+          el.textContent="自分で例文を声に出し、条件や役割を変えて繰り返し練習する。 Listen, repeat and try a new variation without notes.";
+        }
+      });
+    });
+  }
+  if(n>=5&&n<=8){
+    var label=document.querySelector("main.wrap > header.hero > small");
+    if(label)label.textContent="FUṢḤĀ · PERSONAL STUDY · LESSON "+n;
+    document.querySelectorAll("main.wrap .hint,main.wrap p").forEach(function(el){
+      if(el.querySelector(".ar,[lang=ar]"))return;
+      var t=(el.textContent||"").trim();
+      if(!/teacher|講師|先生/i.test(t))return;
+      if(/^The teacher reads these four lines/i.test(t)){
+        el.textContent="Read these four lines aloud twice (or use speech playback). Then answer a question and rebuild the conversation.";
+      }else if(/Task 2 \(surprise\).*Teacher changes/i.test(t)){
+        el.textContent="Task 2: Change one detail (person, place, time or reason) and respond again.";
+      }else if(/^Mission \d+: Teacher asks/i.test(t)){
+        el.textContent=t.replace(/Teacher asks/,"Answer").replace(/\.$/," aloud.");
+      }else if(/^Mission \d+: Teacher (offers|refuses|changes)/i.test(t)){
+        el.textContent=t.replace(/Teacher (offers|refuses|changes)/i,"Imagine the other person $1").replace(/\.$/," and respond aloud.");
+      }else if(/^Drill \d+: Teacher asks/i.test(t)){
+        el.textContent=t.replace("Teacher asks","Answer questions about");
+      }else if(/teacher should|with the teacher|ask the teacher|for teacher/i.test(t)&&t.length<450){
+        el.textContent="Read the model aloud, try both roles, and repeat without looking.";
+      }
+    });
+  }
+ }
+ finishPersonalization();
  function splitBilingual(){
   if(n<5||n>8)return;
   document.querySelectorAll(".trans").forEach(function(el){
