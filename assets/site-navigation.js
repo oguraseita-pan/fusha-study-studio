@@ -5,6 +5,24 @@ var lesson=match?Number(match[1]):null;
 var path=location.pathname;
 var inContent=/\/content\//.test(path);
 var prefix=inContent?"../":"";
+/* Store navigation within the installed app; never rely on the browser's Back UI. */
+var navigationKey="fss-navigation-stack-v1";
+function readStack(){try{var a=JSON.parse(sessionStorage.getItem(navigationKey)||"[]");return Array.isArray(a)?a:[]}catch(e){return []}}
+function writeStack(stack){try{sessionStorage.setItem(navigationKey,JSON.stringify(stack.slice(-40)))}catch(e){}}
+function localUrl(value){try{var url=new URL(value,location.href);return url.origin===location.origin&&/^https?:$/.test(url.protocol)?url:null}catch(e){return null}}
+function isSameDocument(url){return url.pathname===location.pathname&&url.search===location.search}
+document.addEventListener("click",function(ev){
+ if(ev.defaultPrevented||ev.button!==0||ev.metaKey||ev.ctrlKey||ev.shiftKey||ev.altKey)return;
+ var anchor=ev.target.closest("a[href]");
+ if(!anchor||anchor.hasAttribute("download")||anchor.target&&anchor.target!=="_self")return;
+ var url=localUrl(anchor.href);
+ if(!url||isSameDocument(url))return;
+ var stack=readStack();
+ var current=location.pathname+location.search+location.hash;
+ if(stack[stack.length-1]!==current)stack.push(current);
+ writeStack(stack);
+},true);
+if(/^\/(?:index\.html)?$/.test(path))return;
 if(document.getElementById("fss-nav"))return;
 var root=document.createElement("aside");
 root.id="fss-nav";
@@ -13,19 +31,36 @@ var prev=lesson>1?'<a href="lesson-'+String(lesson-1).padStart(2,"0")+'.html" ar
 var next=lesson!==null&&lesson<20?'<a href="lesson-'+String(lesson+1).padStart(2,"0")+'.html" aria-label="次のレッスン">次の課 →</a>':"";
 var extra=lesson===null?'':prev+next;
 root.innerHTML='<div class="fss-panel" id="fss-nav-panel" hidden><div class="fss-panel-header"><span class="fss-panel-title">目次・教材内を検索</span><button type="button" data-fss-close aria-label="閉じる">×</button></div><input class="fss-search" id="fss-nav-query" type="search" placeholder="見出し・単語・表現で検索" aria-label="この教材内を検索"><div class="fss-status" id="fss-nav-count"></div><div class="fss-items" id="fss-nav-items"></div><div class="fss-hint">検索はこのページ内のみ。入力内容は保存されません。</div></div>'+
-'<div class="fss-dock"><a href="'+prefix+'index.html" aria-label="教材一覧に戻る">⌂ 教材</a>'+extra+'<button type="button" class="fss-primary" data-fss-toggle aria-expanded="false" aria-controls="fss-nav-panel">☷ 目次・検索</button><button type="button" data-fss-top aria-label="ページ先頭へ">↑</button></div>';
+'<div class="fss-dock"><button type="button" data-fss-back aria-label="前の画面に戻る">← 戻る</button><a href="'+prefix+'index.html" aria-label="教材一覧に戻る">⌂ 教材</a>'+extra+'<button type="button" class="fss-primary" data-fss-toggle aria-expanded="false" aria-controls="fss-nav-panel">☷ 目次・検索</button><button type="button" data-fss-top aria-label="ページ先頭へ">↑</button></div>';
 document.body.appendChild(root);
 var panel=root.querySelector("#fss-nav-panel"),search=root.querySelector("#fss-nav-query"),list=root.querySelector("#fss-nav-items"),status=root.querySelector("#fss-nav-count"),toggle=root.querySelector("[data-fss-toggle]");
+root.querySelector("[data-fss-back]").addEventListener("click",function(){
+ var stack=readStack(),current=location.pathname+location.search+location.hash;
+ while(stack.length){
+  var previous=localUrl(stack.pop());
+  if(previous&&previous.pathname+previous.search+previous.hash!==current){
+   writeStack(stack);location.assign(previous.href);return;
+  }
+ }
+ writeStack([]);
+ var ref=localUrl(document.referrer);
+ if(ref&&!isSameDocument(ref)){location.assign(ref.href);return}
+ location.assign(prefix+"index.html");
+});
 function norm(s){return String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[\u064b-\u065f\u0670\u06d6-\u06ed]/g,"").replace(/[\u0622\u0623\u0625\u0671]/g,"\u0627").replace(/\u0640/g,"").toLowerCase()}
 function title(el,i){
-var h=el.querySelector("h2,h1,h3,.section-kicker,.cover-title");
+var h=el.querySelector("h2,h1,h3,.section-kicker,.cover-title") || (el.matches(".fss-ar-card")?el.querySelector("span"):null);
 var v=h?(h.textContent||"").replace(/\s+/g," ").trim():"";
 if(!v&&el.matches("tr"))v=(el.innerText||el.textContent||"").replace(/\s+/g," ").trim().slice(0,75);
 return v.slice(0,95)||("項目 "+(i+1));
 }
 function collect(){
 var nodes;
-if(lesson!==null){
+if(document.body.classList.contains("fss-mode-ar")&&document.getElementById("fsspractice")){
+ nodes=[...document.querySelectorAll("#fsspractice .fss-unit")];
+}else if(document.body.classList.contains("fss-personal-ar")&&document.getElementById("fss-ar-practice")){
+ nodes=[...document.querySelectorAll("#fss-ar-practice .fss-ar-card")];
+}else if(lesson!==null){
  if(lesson>=9)nodes=[...document.querySelectorAll("#content > section.unit")];
  else if(lesson>=5)nodes=[...document.querySelectorAll("main.wrap > section")];
  else nodes=[...document.querySelectorAll("section.sheet")];
