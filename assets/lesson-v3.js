@@ -72,6 +72,22 @@ function draw(){
   const cue=lang==="ar"?t().testName:locale(q);
   return '<article class="fss-test-card"><div class="fss-test-question"><b>'+(i+1)+'.</b> '+escape(cue)+'</div><button type="button" class="fss-reveal" data-reveal="'+i+'" aria-expanded="false">'+escape(t().show)+'</button><div class="fss-model" id="fss-answer-'+i+'" hidden>'+ar(q.answer?.ar)+(lang!=="ar"?caption(q.answer):"")+'</div></article>';
  }).join("");
+
+ const assessment=D.assessment;
+ let assessmentBlock="";
+ if(assessment&&assessment.criteria&&assessment.criteria.length){
+  const saved=(()=>{try{return JSON.parse(localStorage.getItem("fss-speaking-rubric-v4-"+lessonNo)||"{}")}catch(e){return {}}})();
+  const name=lang==="ja"?["初回","再評価"]:lang==="ar"?["الْأَوَّلُ","الثَّانِي"]:["First","Later"];
+  const select=(part,c)=>'<select data-rating="'+escape(part+"-"+c.key)+'" aria-label="'+escape((lang==="ja"?c.ja:c.en)+" "+part)+'"><option value="">—</option>'+[0,1,2,3,4].map(i=>'<option value="'+i+'"'+(saved[part+"-"+c.key]===String(i)?' selected':'')+'>'+i+'</option>').join("")+'</select>';
+  const rows=assessment.criteria.map(c=>'<div class="fss-rating-row"><b>'+escape(lang==="ja"?c.ja:lang==="ar"?"✓":c.en)+'</b>'+select("initial",c)+select("final",c)+'</div>').join("");
+  const prompts=assessment.benchmark.map((x,i)=>'<div class="fss-mission"><span class="fss-step-num">'+(i+1)+'</span><span>'+escape(lang==="ar"?t().speak:locale(x))+'</span></div>').join("");
+  const scales=lang==="ar"?"":'<ul>'+assessment.scale.map(x=>'<li>'+escape(locale(x))+'</li>').join("")+'</ul>';
+  const intro=lang==="ja"?"これは自分の成長を比較するための目安であり、CEFRの公式認定ではありません。同じ課題を初回と再評価で行ってください。":lang==="ar"?"هَذَا لِتَقْيِيمِ تَقَدُّمِكَ فَقَطْ":assessment.note;
+  const html='<p class="fss-note">'+escape(intro)+'</p><h3>'+escape(lang==="ja"?"共通評価課題":lang==="ar"?"مَهَامُ التَّقْيِيمِ":"Benchmark tasks")+'</h3><div class="fss-list">'+prompts+'</div>'+scales+
+  '<div class="fss-rating-row fss-rating-header"><b>'+escape(t().self)+'</b><b>'+escape(name[0])+'</b><b>'+escape(name[1])+'</b></div>'+rows+
+  '<div id="fss-rating-result" class="fss-rating-result" aria-live="polite"></div>';
+  assessmentBlock=titleAndContent("self",html);
+ }
  const sections=[
   head,reviewBlock,
   titleAndContent("vocabulary",'<div class="fss-vocab-grid">'+vocab+'</div>'),
@@ -80,13 +96,26 @@ function draw(){
   titleAndContent("dialogues",dialogues),
   titleAndContent("practice",'<div class="fss-practice-grid">'+classes+'</div>','<p class="fss-note">'+escape(t().noNotes)+'</p>'),
   titleAndContent("quiz",'<div class="fss-tests">'+tests+'</div>','<p class="fss-note">'+escape(t().try)+'</p>'),
+  assessmentBlock,
   titleAndContent("after",'<div class="fss-review-grid">'+[[t().today,t().todayDesc],[t().tomorrow,t().tomorrowDesc],[t().later,t().laterDesc],[t().week,t().weekDesc]].map(v=>'<div class="fss-review-card"><b>'+escape(v[0])+'</b><p>'+escape(v[1])+'</p></div>').join("")+'</div>')
  ].join("");
  const nav='<div class="fss-lesson-bar"><a class="fss-home" href="../index.html">'+escape(t().home)+'</a><span class="fss-lesson-serial">'+escape(t().lesson)+' '+String(lessonNo).padStart(2,"0")+'</span><div class="fss-language" role="group" aria-label="Learning language"><button data-lang="ja" aria-pressed="'+(lang==="ja")+'">日本語</button><button data-lang="en" aria-pressed="'+(lang==="en")+'">English</button><button data-lang="ar" lang="ar" aria-pressed="'+(lang==="ar")+'">العَرَبِيَّةُ</button></div></div>';
  const bottom='<div class="fss-lesson-links">'+(lessonNo>1?'<a href="lesson-'+String(lessonNo-1).padStart(2,"0")+'.html">← '+escape(t().prev)+'</a>':'<span></span>')+(lessonNo<20?'<a href="lesson-'+String(lessonNo+1).padStart(2,"0")+'.html">'+escape(t().next)+' →</a>':'<a href="../index.html">'+escape(t().home)+'</a>')+'</div>';
  root.innerHTML=nav+'<div class="fss-lesson-wrap">'+hero+'<p class="fss-study-flow">'+escape(t().flow)+'</p>'+sections+bottom+'</div>';
+ if(assessmentBlock)updateRatingSummary();
  const currentNav=document.querySelector("#fss-nav");
  if(currentNav)currentNav.setAttribute("data-fss-content-version",String(Date.now()));
+}
+function updateRatingSummary(){
+ const result=root.querySelector("#fss-rating-result");if(!result)return;
+ const entries={initial:{sum:0,count:0},final:{sum:0,count:0}};
+ root.querySelectorAll("[data-rating]").forEach(el=>{
+  if(el.value==="")return;
+  const part=el.dataset.rating.split("-")[0];
+  if(entries[part]){entries[part].sum+=Number(el.value);entries[part].count++}
+ });
+ const max=(D.assessment?.criteria?.length||6)*4;
+ result.textContent=(lang==="ja"?"初回":lang==="ar"?"الْأَوَّلُ":"First")+" "+entries.initial.count+"/"+(D.assessment.criteria.length)+"："+entries.initial.sum+"/"+max+" · "+(lang==="ja"?"再評価":lang==="ar"?"الثَّانِي":"Later")+" "+entries.final.count+"/"+(D.assessment.criteria.length)+"："+entries.final.sum+"/"+max;
 }
 function say(s){
  if(!("speechSynthesis" in window))return;
@@ -108,6 +137,15 @@ root.addEventListener("click",ev=>{
  }
 });
 root.addEventListener("change",ev=>{
+ const rating=ev.target.closest("[data-rating]");
+ if(rating){
+  const key="fss-speaking-rubric-v4-"+lessonNo;
+  let saved={};try{saved=JSON.parse(localStorage.getItem(key)||"{}")}catch(e){}
+  saved[rating.dataset.rating]=rating.value;
+  try{localStorage.setItem(key,JSON.stringify(saved))}catch(e){}
+  updateRatingSummary();
+  return;
+ }
  const goal=ev.target.closest("[data-goal]");
  if(!goal)return;
  const i=Number(goal.dataset.goal);
