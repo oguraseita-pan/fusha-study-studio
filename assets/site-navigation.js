@@ -68,6 +68,7 @@ if(document.body.classList.contains("fss-mode-ar")&&document.getElementById("fss
 else if(/curriculum\.html$/.test(path))nodes=[...document.querySelectorAll("tbody tr")];
 else if(/essential-phrases\.html$/.test(path))nodes=[...document.querySelectorAll("#results > section.section")];
 else if(/grammar\.html$/.test(path))nodes=[...document.querySelectorAll("#article")];
+else if(/grammar-(?:ja|en)\.html$/.test(path))nodes=[...document.querySelectorAll("section.chapter")];
 else nodes=[...document.querySelectorAll("main section")];
 return nodes.map(function(el,i){if(!el.id)el.id="fss-jump-"+(i+1);el.classList.add("fss-section-anchor");return {id:el.id,title:title(el,i),text:norm(el.innerText||el.textContent||""),index:i+1}}).filter(function(x){return x.text.length>4});
 }
