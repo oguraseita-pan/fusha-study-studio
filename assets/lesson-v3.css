@@ -1,0 +1,93 @@
+:root{--fss-navy:#103741;--fss-teal:#137869;--fss-ink:#243e41;--fss-muted:#677d80;--fss-line:#dce9e5;--fss-soft:#f2f7f5;--fss-paper:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--fss-soft);color:var(--fss-ink);font:15px/1.72 system-ui,-apple-system,"Segoe UI",sans-serif}
+button,input{font:inherit}
+button{cursor:pointer}
+#content{min-height:100vh}
+.fss-lesson-bar{position:sticky;top:0;z-index:1100;display:flex;align-items:center;gap:12px;justify-content:space-between;background:var(--fss-navy);color:white;padding:10px max(16px,calc((100vw - 1130px)/2));box-shadow:0 4px 18px #092e311f}
+.fss-lesson-bar a{color:#effff8;text-decoration:none;font-size:13px;font-weight:750;min-height:44px;display:flex;align-items:center;white-space:nowrap}
+.fss-lesson-serial{font-size:12px;color:#badfd4;white-space:nowrap;font-weight:700}
+.fss-language{display:flex;gap:5px;align-items:center;margin-left:auto}
+.fss-language button{background:transparent;border:1px solid #668e8c;border-radius:10px;color:#e5f8f0;font-weight:700;font-size:13px;padding:8px 12px;min-height:44px;white-space:nowrap}
+.fss-language button[aria-pressed=true]{background:#dff6e9;border-color:#dff6e9;color:#0c5449}
+.fss-language button[lang=ar]{font:600 19px/1.35 "Noto Naskh Arabic","Amiri",serif}
+.fss-lesson-wrap{max-width:1080px;margin:0 auto;padding:22px 20px 100px}
+.fss-hero{border-radius:23px;background:linear-gradient(120deg,#103741,#1c7365);padding:34px 38px;color:#fafffc;position:relative;overflow:hidden}
+.fss-overline{font-size:11px;letter-spacing:.095em;color:#bde0d6;font-weight:800}
+.fss-hero h1{font-size:clamp(27px,4vw,43px);line-height:1.35;margin:10px 0}
+.fss-subtitle{font-size:16px;color:#cfe9e1}
+.fss-feature-ar{margin:14px 0;max-width:100%}
+.fss-feature-ar .fss-ar{font-size:clamp(34px,4.3vw,49px);color:#fff;background:transparent;border:0;padding:0;text-align:left}
+.fss-hero-target{font-size:15px;line-height:1.85;margin:10px 0 0;color:#e3f6ed}
+.fss-study-flow{background:#e7f3ee;border:1px solid #c7e2d7;border-radius:13px;margin:17px 0 20px;padding:12px 18px;font-size:14px;color:#275b51}
+.fss-unit{background:#fff;border:1px solid var(--fss-line);border-radius:18px;padding:25px 28px;margin:18px 0;scroll-margin-top:80px}
+.fss-h2{font-size:23px;font-weight:800;margin:0 0 18px;line-height:1.5}
+.fss-progress{font-size:13px;color:var(--fss-teal);font-weight:700;margin:-10px 0 18px}
+.fss-list{display:grid;gap:9px}
+.fss-goal{display:flex;gap:11px;align-items:center;background:#f5f9f7;padding:11px 13px;border:1px solid #e1eeea;border-radius:11px;cursor:pointer}
+.fss-goal input{accent-color:#168875;min-width:18px;min-height:18px}
+.fss-review-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.fss-review-card{border:1px solid var(--fss-line);background:#f8fbf9;border-radius:12px;padding:14px}
+.fss-review-card p{margin:6px 0 0}
+.fss-num,.fss-index{font-size:11px;letter-spacing:.06em;color:#168875;font-weight:900}
+.fss-vocab-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.fss-vocab-card,.fss-grammar-card{padding:16px;border:1px solid var(--fss-line);border-radius:13px;background:#fbfdfc;min-width:0}
+.fss-card-top{display:flex;align-items:center;gap:10px;justify-content:space-between;font-size:11px;font-weight:800;color:#588279;text-transform:uppercase;letter-spacing:.04em;margin-bottom:7px}
+.fss-ar{display:inline-flex;align-items:center;gap:8px;max-width:100%;min-height:46px;overflow-wrap:anywhere;text-align:right;background:none;border:0;padding:4px 0;color:#075e58;font:normal clamp(34px,3.5vw,44px)/1.65 "Noto Naskh Arabic","Amiri",serif;direction:rtl;vertical-align:middle}
+.fss-ar:focus-visible,.fss-language button:focus-visible,.fss-reveal:focus-visible{outline:3px solid #e6aa38;outline-offset:4px}
+.fss-play{font:15px/1.2 system-ui;color:#569789;opacity:.75;white-space:nowrap;direction:ltr}
+.fss-ar:hover .fss-play{opacity:1}
+.fss-roman{font-size:13px;line-height:1.7;color:#738889;margin:1px 0}
+.fss-translation{font-size:15px;line-height:1.75;color:#274b49;font-weight:560;margin:4px 0}
+.fss-forms{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:8px;margin-top:10px}
+.fss-form{border-radius:9px;background:#f0f6f3;padding:8px 9px;min-width:0}
+.fss-form small{display:block;color:#687f7e;font-size:11px;font-weight:750;line-height:1.35}
+.fss-form .fss-ar{font-size:clamp(27px,3vw,34px);min-height:36px}
+.fss-form .fss-play{font-size:11px}
+.fss-example{margin-top:12px;padding:10px;border-top:1px solid #e2ede8}
+.fss-example>small{display:block;color:#6c8380;font-weight:750;font-size:11px}
+.fss-example .fss-ar{font-size:clamp(30px,3vw,38px)}
+.fss-grammar-grid{display:grid;gap:13px}
+.fss-grammar-card h3{margin:5px 0;font-size:17px}
+.fss-description{margin:6px 0 12px;font-size:15px;line-height:1.9}
+.fss-chunks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.fss-chunk{border-radius:13px;background:#f7faf9;border:1px solid var(--fss-line);padding:12px 14px;display:flex;align-items:flex-start;gap:12px}
+.fss-chunk-body{flex:1;min-width:0}
+.fss-note{color:#5e7576;background:#f2f8f5;border-left:3px solid #64ae9b;padding:9px 12px;border-radius:7px;font-size:13px;margin:-5px 0 15px}
+.fss-dialogue{margin:0 0 17px}
+.fss-dialogue h3{color:#17695d;font-size:17px;margin:0 0 8px}
+.fss-turns{border:1px solid var(--fss-line);border-radius:13px;overflow:hidden}
+.fss-turn{display:grid;grid-template-columns:38px minmax(0,1fr);gap:12px;padding:12px 16px;border-bottom:1px solid var(--fss-line)}
+.fss-turn:nth-child(2n){background:#f7faf8}
+.fss-turn:last-child{border-bottom:0}
+.fss-role{font-weight:800;color:#138573}
+.fss-practice-grid{display:grid;gap:14px}
+.fss-practice-step{border-radius:13px;border:1px solid #dce9e5;background:#fafdfb;padding:15px}
+.fss-practice-step h3{font-size:18px;margin:0 0 9px;color:#176d60}
+.fss-mission{display:flex;align-items:flex-start;gap:11px;padding:7px 0}
+.fss-step-num{color:#108374;font-size:12px;font-weight:800;min-width:24px}
+.fss-questionbank{margin-top:13px;border-top:1px solid #deebe5;padding-top:12px}
+.fss-questionbank h4{margin:0 0 5px;color:#4e7469;font-size:14px}
+.fss-questionbank>div{padding:8px 0;border-bottom:1px solid #e4eeea}
+.fss-test-card{padding:13px 15px;border:1px solid var(--fss-line);background:#f9fcfa;border-radius:12px}
+.fss-tests{display:grid;gap:10px}
+.fss-test-question{font-weight:650;font-size:15px;margin-bottom:10px}
+.fss-reveal{border-radius:9px;background:#dcefe6;color:#0e5b4f;border:1px solid #b9dcd0;min-height:43px;font-weight:800;padding:8px 14px}
+.fss-model{border-top:1px solid #d6e7e0;margin-top:12px;padding:12px 0 1px}
+.fss-model[hidden]{display:none!important}
+.fss-lesson-links{display:flex;justify-content:space-between;align-items:center;margin:25px 0;gap:12px}
+.fss-lesson-links>a{padding:12px 17px;background:#1b7165;border-radius:11px;color:white;text-decoration:none;min-height:44px;font-size:14px;font-weight:800}
+body[data-study-language=ar] .fss-lesson-wrap{direction:rtl}
+body[data-study-language=ar] .fss-goal{display:none}
+body[data-study-language=ar] .fss-review-card{font-family:"Noto Naskh Arabic","Amiri",serif;font-size:23px}
+body[data-study-language=ar] .fss-h2{font-family:"Noto Naskh Arabic","Amiri",serif;font-size:30px;line-height:1.8}
+body[data-study-language=ar] .fss-hero-target{display:none}
+body[data-study-language=ar] .fss-language{direction:ltr}
+body[data-study-language=ar] .fss-lesson-bar{direction:ltr}
+body[data-study-language=ar] .fss-mission{font-family:"Noto Naskh Arabic","Amiri",serif;font-size:22px}
+body[data-study-language=ar] .fss-forms small{font-family:"Noto Naskh Arabic","Amiri",serif;font-size:17px}
+@media(max-width:700px){.fss-vocab-grid,.fss-chunks{grid-template-columns:1fr}.fss-unit{padding:19px 18px}.fss-hero{padding:26px 24px}.fss-lesson-wrap{padding:10px 10px 100px}}
+@media(max-width:620px){.fss-lesson-bar{gap:4px;padding:8px 9px}.fss-lesson-serial{display:none}.fss-lesson-bar a{font-size:12px}.fss-language{gap:3px}.fss-language button{font-size:12px;padding:8px 7px}.fss-language button[lang=ar]{font-size:17px}.fss-review-grid{grid-template-columns:1fr}.fss-hero{border-radius:17px}.fss-ar{font-size:clamp(34px,8.6vw,43px)}.fss-forms{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:350px){.fss-lesson-bar a{font-size:11px}.fss-language button{padding:7px 5px}}
+@media print{.fss-lesson-bar,.fss-lesson-links,#fss-nav{display:none!important}body{background:white}.fss-unit{break-inside:avoid;border-color:#ccc}.fss-lesson-wrap{padding:0}.fss-reveal{display:none!important}.fss-model[hidden]{display:block!important}}
