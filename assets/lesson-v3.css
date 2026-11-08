@@ -79,7 +79,12 @@ button{cursor:pointer}
 .fss-lesson-links{display:flex;justify-content:space-between;align-items:center;margin:25px 0;gap:12px}
 .fss-lesson-links>a{padding:12px 17px;background:#1b7165;border-radius:11px;color:white;text-decoration:none;min-height:44px;font-size:14px;font-weight:800}
 body[data-study-language=ar] .fss-lesson-wrap{direction:rtl}
-body[data-study-language=ar] .fss-goal{display:none}
+body[data-study-language=ar] .fss-goal{display:flex;direction:rtl;font:normal 24px/1.8 "Noto Naskh Arabic","Amiri",serif}
+body[data-study-language=ar] .fss-goal input{flex:0 0 19px;margin-inline:9px}
+.fss-ar-subtitle{font:600 27px/1.65 "Noto Naskh Arabic","Amiri",serif;direction:rtl;text-align:right}
+.fss-listen-btn{margin:10px 0 2px;border:1px solid #bcdecf;border-radius:9px;background:#e9f7ef;color:#126757;font:650 18px/1.4 "Noto Naskh Arabic","Amiri",serif;padding:10px 16px;min-height:44px;display:block;cursor:pointer}
+body[data-study-language=ar] .fss-practice-step .fss-list>.fss-mission{display:flex;align-items:center}
+body[data-study-language=ar] .fss-mission .fss-ar{font-size:clamp(31px,3vw,39px)}
 body[data-study-language=ar] .fss-review-card{font-family:"Noto Naskh Arabic","Amiri",serif;font-size:23px}
 body[data-study-language=ar] .fss-h2{font-family:"Noto Naskh Arabic","Amiri",serif;font-size:30px;line-height:1.8}
 body[data-study-language=ar] .fss-hero-target{display:none}
