@@ -47,7 +47,7 @@ phrases:[
 ],
 dialogues:[
 ["Hotel check-in","ホテルでのチェックイン",[
-["A","مَرْحَبًا، عِنْدِي حَجْزٌ بِاسْمِي.","marḥaban, ʿindī ḥjzun bi-ismī","Hello, I have a reservation.","こんにちは。予約しています。"],
+["A","مَرْحَبًا، عِنْدِي حَجْزٌ بِاسْمِي.","marḥaban, ʿindī ḥajzun bi-ismī","Hello, I have a reservation.","こんにちは。予約しています。"],
 ["B","أَهْلًا بِكَ. مَا اسْمُكَ؟","ahlan bika. mā ismuka","Welcome. What is your name?","ようこそ。お名前は？"],
 ["A","اِسْمِي كِينْجِي. أُرِيدُ تَسْجِيلَ الْوُصُولِ.","ismī kīnjī. urīdu tasjīla al-wuṣūl","I'm Kenji. I'd like to check in.","ケンジです。チェックインしたいです。"],
 ["B","تَفَضَّلْ، هَذَا مِفْتَاحُ غُرْفَتِكَ.","tafaḍḍal, hādhā miftāḥu ghurfatika","Here is your room key.","こちらが部屋の鍵です。"]
