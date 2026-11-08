@@ -17,7 +17,7 @@ body.fss-mode-ar > #fss-lesson-top{display:flex!important}
 #fss-ar-practice .fss-ar-card button{border:0;border-radius:50%;background:#e3f4ec;color:#126c5c;min-width:40px;min-height:40px;font-size:17px;cursor:pointer}
 body.fss-personal-ar > main.wrap,body.fss-personal-ar > main#content,body.fss-personal-ar > section.sheet{display:none!important}
 body.fss-personal-ar > #fss-ar-practice{display:block!important}
-body.fss-personal-ar > #fss-nav{display:none!important}
+body.fss-personal-ar > #fss-nav{display:block!important}
 body.fss-personal-ar .footer{display:none}
 body.fss-lesson-en .trans[data-fss-bilingual] .fss-ja-piece,body.fss-lesson-ja .trans[data-fss-bilingual] .fss-en-piece{display:none}
 @media(max-width:600px){#fss-lesson-top{padding:10px 12px;gap:7px}#fss-lesson-top .fss-lesson-number{display:none}#fss-lesson-top a{font-size:12px}#fss-lesson-top .fss-language-switch{margin-left:auto}#fss-lesson-top button{padding:7px 8px;font-size:12px;min-height:35px}#fss-ar-practice{margin:12px auto 110px;padding:12px}#fss-ar-practice .fss-ar-grid{grid-template-columns:1fr}}
@@ -26,3 +26,7 @@ body.fss-lesson-en .trans[data-fss-bilingual] .fss-ja-piece,body.fss-lesson-ja .
 /* Early bilingual handbook: show the dedicated Japanese study notes in Japanese mode. */
 body.fss-lesson-en .jpsection,body.fss-lesson-en .jpnote{display:none!important}
 body.fss-lesson-ja .jpsection,body.fss-lesson-ja .jpnote{display:block}
+
+/* The combined Arabic-only reader must never hide the app navigation. */
+body.fss-mode-ar > #fss-lesson-top,body.fss-personal-ar > #fss-lesson-top{display:flex!important;position:sticky!important;top:0!important;z-index:1200!important}
+body.fss-mode-ar > #fss-nav,body.fss-personal-ar > #fss-nav{display:block!important}
