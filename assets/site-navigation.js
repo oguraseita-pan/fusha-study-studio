@@ -56,7 +56,9 @@ return v.slice(0,95)||("項目 "+(i+1));
 }
 function collect(){
 var nodes;
-if(document.body.classList.contains("fss-mode-ar")&&document.getElementById("fsspractice")){
+if(document.querySelector("#content .fss-lesson-wrap")){
+ nodes=[...document.querySelectorAll("#content .fss-unit")];
+}else if(document.body.classList.contains("fss-mode-ar")&&document.getElementById("fsspractice")){
  nodes=[...document.querySelectorAll("#fsspractice .fss-unit")];
 }else if(document.body.classList.contains("fss-personal-ar")&&document.getElementById("fss-ar-practice")){
  nodes=[...document.querySelectorAll("#fss-ar-practice .fss-ar-card")];
