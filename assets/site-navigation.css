@@ -31,3 +31,15 @@ body:has(#fss-nav){padding-bottom:72px!important}
   body:has(#fss-nav){padding-bottom:84px!important}
 }
 @media print{#fss-nav{display:none!important}body:has(#fss-nav){padding-bottom:0!important}}
+
+/* App navigation: accessible Back button and iOS home-indicator clearance. */
+#fss-nav{bottom:max(14px,env(safe-area-inset-bottom,0px) + 8px)}
+#fss-nav .fss-dock [data-fss-back]{background:#dff5eb;border-color:#dff5eb;color:#144f43}
+#fss-nav .fss-dock a,#fss-nav .fss-dock button{min-height:42px;display:inline-flex;align-items:center;justify-content:center}
+@media(max-width:620px){
+ #fss-nav{bottom:max(8px,env(safe-area-inset-bottom,0px) + 5px)}
+ #fss-nav .fss-dock{gap:3px;padding:5px}
+ #fss-nav .fss-dock a,#fss-nav .fss-dock button{padding:9px 5px;min-width:35px;font-size:11px;white-space:nowrap}
+ #fss-nav .fss-dock [data-fss-back]{flex:1.1}
+ body:has(#fss-nav){padding-bottom:calc(90px + env(safe-area-inset-bottom,0px))!important}
+}
