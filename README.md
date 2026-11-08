@@ -25,9 +25,15 @@ The Arabic-only view of older resources is a reading/listening practice mode, no
 
 The unified grammar reader aligns **51 English source chapters with 51 Japanese source sections**. All 51 Japanese sections contain original explanations, examples, and exercises. The Japanese standalone book calls its extra chapters **15A, 15B and 16A**; the unified reader presents these as Chapters 16, 17 and 19 and displays the original numbering. Navigation titles are taken from the corresponding source chapter headings, and the mapping is pinned by `jaSourceId` in `assets/grammar-topics.js` rather than calculated from an outdated 24-chapter edition. B1–B2 lessons provide introductions and practice rather than an exhaustive advanced grammar course.
 
-## Teacher lesson structure
+## Personal study lessons
 
-Each weekly lesson pack contains three 120-minute classes (Mon/Wed/Fri), dialogues, vocabulary, grammar references, listening and role-play, homework and performance checks. In future, add `content/lesson-04.html`, a homepage card, and the curriculum links.
+The 20 speaking lessons are self-paced. Each lesson has the same header with a back-to-home link and Japanese / English / Arabic study views. Dated classroom timetables and teacher instructions are not shown. Vocabulary, grammar, model dialogues, independent speaking missions, listening practice and review remain available.
+
+The Arabic option is an Arabic-only listening-and-speaking practice view. In some early lessons, Japanese is provided for core examples while longer notes retain English fallback.
+
+## Add to Home Screen
+
+Open https://fusha-study-studio-git.vercel.app/ in Safari on iPhone and use Share → Add to Home Screen. On Android, use Chrome's browser menu → Add to Home screen or Install app. The site provides a web app manifest, standalone display settings and 192px/512px app icons. A network connection is required to load material that has not previously been viewed.
 
 ## Publishing
 
