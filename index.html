@@ -63,4 +63,4 @@ document.getElementById("search-clear").addEventListener("click",()=>{search.val
 search.addEventListener("input",run);
 search.addEventListener("keydown",e=>{if(e.key==="Escape"){search.value="";run();search.blur()}});
 apply();
-})();</script></body></html>
+})();</script><script>if ('serviceWorker' in navigator) { window.addEventListener('load', function(){ navigator.serviceWorker.register('/sw.js').catch(function(){}); }); }</script></body></html>
