@@ -43,3 +43,4 @@ body:has(#fss-nav){padding-bottom:72px!important}
  #fss-nav .fss-dock [data-fss-back]{flex:1.1}
  body:has(#fss-nav){padding-bottom:calc(90px + env(safe-area-inset-bottom,0px))!important}
 }
+@media(max-width:380px){#fss-nav .fss-dock [data-fss-top]{display:none!important}}
