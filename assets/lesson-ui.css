@@ -30,3 +30,19 @@ body.fss-lesson-ja .jpsection,body.fss-lesson-ja .jpnote{display:block}
 /* The combined Arabic-only reader must never hide the app navigation. */
 body.fss-mode-ar > #fss-lesson-top,body.fss-personal-ar > #fss-lesson-top{display:flex!important;position:sticky!important;top:0!important;z-index:1200!important}
 body.fss-mode-ar > #fss-nav,body.fss-personal-ar > #fss-nav{display:block!important}
+
+/* Mobile standalone layout: one compact, reachable row with no browser controls required. */
+#fss-lesson-top .fss-brand-short{display:none}
+#fss-lesson-top button{min-height:42px}
+@media(max-width:640px){
+ #fss-lesson-top{gap:6px;flex-wrap:nowrap;padding:8px 10px}
+ #fss-lesson-top a{flex-shrink:0;white-space:nowrap;min-height:42px}
+ #fss-lesson-top .fss-brand-long{display:none}
+ #fss-lesson-top .fss-brand-short{display:inline}
+ #fss-lesson-top .fss-language-switch{gap:3px;margin-left:auto}
+ #fss-lesson-top button{padding:8px 7px;min-height:42px}
+}
+@media(max-width:350px){
+ #fss-lesson-top button{padding:7px 4px}
+ #fss-lesson-top button[lang=ar]{font-size:16px}
+}
