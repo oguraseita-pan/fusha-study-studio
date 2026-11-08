@@ -22,3 +22,7 @@ body.fss-personal-ar .footer{display:none}
 body.fss-lesson-en .trans[data-fss-bilingual] .fss-ja-piece,body.fss-lesson-ja .trans[data-fss-bilingual] .fss-en-piece{display:none}
 @media(max-width:600px){#fss-lesson-top{padding:10px 12px;gap:7px}#fss-lesson-top .fss-lesson-number{display:none}#fss-lesson-top a{font-size:12px}#fss-lesson-top .fss-language-switch{margin-left:auto}#fss-lesson-top button{padding:7px 8px;font-size:12px;min-height:35px}#fss-ar-practice{margin:12px auto 110px;padding:12px}#fss-ar-practice .fss-ar-grid{grid-template-columns:1fr}}
 @media print{#fss-lesson-top{display:none!important}#fss-ar-practice{break-inside:avoid}}
+
+/* Early bilingual handbook: show the dedicated Japanese study notes in Japanese mode. */
+body.fss-lesson-en .jpsection,body.fss-lesson-en .jpnote{display:none!important}
+body.fss-lesson-ja .jpsection,body.fss-lesson-ja .jpnote{display:block}
