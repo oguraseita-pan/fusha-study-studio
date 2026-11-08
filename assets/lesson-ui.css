@@ -1,0 +1,24 @@
+
+#fss-lesson-top{position:sticky;top:0;z-index:1200;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:10px max(14px,calc((100vw - 1120px)/2));background:#103640;color:#fff;box-shadow:0 3px 15px #092c302b;font:600 14px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif}
+#fss-lesson-top a{color:#e9fff7;text-decoration:none;display:inline-flex;align-items:center;gap:7px;font-size:13px;white-space:nowrap}
+#fss-lesson-top .fss-lesson-number{font-size:12px;color:#b5dfd4;letter-spacing:.04em}
+#fss-lesson-top .fss-language-switch{display:flex;gap:5px;align-items:center}
+#fss-lesson-top button{cursor:pointer;background:transparent;color:#d7ece7;border:1px solid #688f89;border-radius:10px;padding:7px 12px;font:650 13px/1.3 system-ui,-apple-system,"Segoe UI",sans-serif;min-height:36px}
+#fss-lesson-top button[aria-pressed=true]{background:#dff6ec;color:#114e45;border-color:#dff6ec}
+#fss-lesson-top button[lang=ar]{font:650 18px/1.2 "Noto Naskh Arabic","Amiri",serif}
+body > nav.controls,body > nav.nav,body > .top,body > #fssbar{display:none!important}
+body.fss-mode-ar > #fss-lesson-top{display:flex!important}
+#fss-ar-practice{max-width:1000px;margin:24px auto 120px;padding:20px;color:#153b39}
+#fss-ar-practice[hidden]{display:none!important}
+#fss-ar-practice h1{font:600 35px/1.8 "Noto Naskh Arabic","Amiri",serif;text-align:right}
+#fss-ar-practice .fss-ar-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+#fss-ar-practice .fss-ar-card{display:flex;align-items:center;gap:12px;justify-content:space-between;background:white;border:1px solid #d7e9e1;border-radius:14px;padding:12px 17px}
+#fss-ar-practice .fss-ar-card span{font:normal 34px/1.8 "Noto Naskh Arabic","Amiri",serif;text-align:right;direction:rtl;flex:1;overflow-wrap:anywhere}
+#fss-ar-practice .fss-ar-card button{border:0;border-radius:50%;background:#e3f4ec;color:#126c5c;min-width:40px;min-height:40px;font-size:17px;cursor:pointer}
+body.fss-personal-ar > main.wrap,body.fss-personal-ar > main#content,body.fss-personal-ar > section.sheet{display:none!important}
+body.fss-personal-ar > #fss-ar-practice{display:block!important}
+body.fss-personal-ar > #fss-nav{display:none!important}
+body.fss-personal-ar .footer{display:none}
+body.fss-lesson-en .trans[data-fss-bilingual] .fss-ja-piece,body.fss-lesson-ja .trans[data-fss-bilingual] .fss-en-piece{display:none}
+@media(max-width:600px){#fss-lesson-top{padding:10px 12px;gap:7px}#fss-lesson-top .fss-lesson-number{display:none}#fss-lesson-top a{font-size:12px}#fss-lesson-top .fss-language-switch{margin-left:auto}#fss-lesson-top button{padding:7px 8px;font-size:12px;min-height:35px}#fss-ar-practice{margin:12px auto 110px;padding:12px}#fss-ar-practice .fss-ar-grid{grid-template-columns:1fr}}
+@media print{#fss-lesson-top{display:none!important}#fss-ar-practice{break-inside:avoid}}
