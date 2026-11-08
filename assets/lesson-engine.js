@@ -73,6 +73,7 @@ recompute();
 }
 
 function prefs(){document.body.classList.toggle('hide-ja',!ui.ja);document.body.classList.toggle('hide-en',!ui.en);document.body.classList.toggle('show-answers',ui.answers);document.querySelectorAll('[data-switch]').forEach(function(b){var k=b.dataset.switch;b.setAttribute('aria-pressed',String(!!ui[k]));b.classList.toggle('selected',!!ui[k])})}
+window.fssSetLessonLanguage=function(mode){ui.ja=mode==='ja';ui.en=mode==='en';prefs()};
 document.querySelectorAll('[data-switch]').forEach(function(b){b.addEventListener('click',function(){var k=b.dataset.switch;ui[k]=!ui[k];prefs()})});prefs();
 function speak(s){var state=document.getElementById('voice-state');if(!('speechSynthesis' in window)){state.textContent='Arabic speech is unavailable in this browser.';return}window.speechSynthesis.cancel();var utt=new SpeechSynthesisUtterance(s);utt.lang='ar-SA';utt.rate=.78;var voices=window.speechSynthesis.getVoices().filter(function(v){return v.lang&&v.lang.toLowerCase().startsWith('ar')});if(voices.length)utt.voice=voices.find(function(v){return v.lang==='ar-SA'})||voices[0];state.textContent=voices.length?'Playing Arabic speech.':'Using the device default voice; install an Arabic voice if needed.';window.speechSynthesis.speak(utt)}
 document.getElementById('content').addEventListener('click',function(ev){var el=ev.target.closest('[data-say]');if(el)speak(el.dataset.say)});
