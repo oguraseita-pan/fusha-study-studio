@@ -6,7 +6,7 @@ var n=Number(match[1]),key="fss-preferred-language-v2";
 function ready(){
  if(document.getElementById("fss-lesson-top"))return;
  var nav=document.createElement("nav");nav.id="fss-lesson-top";nav.setAttribute("aria-label","Lesson navigation and study language");
- nav.innerHTML='<a href="../index.html" aria-label="Back to study home">← <span>Fuṣḥā Study Studio</span></a><span class="fss-lesson-number">LESSON '+String(n).padStart(2,"0")+'</span><div class="fss-language-switch" role="group" aria-label="Learning language"><button type="button" data-fss-lang="ja">日本語</button><button type="button" data-fss-lang="en">English</button><button type="button" data-fss-lang="ar" lang="ar">العَرَبِيَّةُ</button></div>';
+ nav.innerHTML='<a href="../index.html" aria-label="Back to study home">← <span class="fss-brand-long">Fuṣḥā Study Studio</span><span class="fss-brand-short">戻る</span></a><span class="fss-lesson-number">LESSON '+String(n).padStart(2,"0")+'</span><div class="fss-language-switch" role="group" aria-label="Learning language"><button type="button" data-fss-lang="ja">日本語</button><button type="button" data-fss-lang="en">English</button><button type="button" data-fss-lang="ar" lang="ar">العَرَبِيَّةُ</button></div>';
  document.body.insertBefore(nav,document.body.firstChild);
  function textClean(t){return (t||"").replace(/\s+/g," ").trim()}
  function removeInstructionBlocks(){
