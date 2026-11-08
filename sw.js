@@ -1,6 +1,6 @@
 /* Fuṣḥā Study Studio: network-first shell cache for home-screen installations. */
-const CACHE = 'fusha-study-shell-v1';
-const SHELL = ['/', '/index.html', '/manifest.webmanifest', '/icons/icon.svg', '/icons/icon-192.png', '/icons/icon-512.png'];
+const CACHE = 'fusha-study-shell-v2';
+const SHELL = ['/', '/index.html', '/manifest.webmanifest', '/icons/icon.svg', '/icons/icon-192.png', '/icons/icon-512.png', '/offline.html'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL)).then(() => self.skipWaiting()));
 });
@@ -21,7 +21,7 @@ self.addEventListener('fetch', event => {
       const cached = await caches.match(request);
       if (cached) return cached;
       if (request.mode === 'navigate') {
-        return (await caches.match('/index.html')) || Response.error();
+        return (await caches.match('/offline.html')) || Response.error();
       }
       return Response.error();
     })
