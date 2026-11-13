@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<html lang="ja"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Fuṣḥā Grammar · A0–B2 | Fuṣḥā Study Studio</title>
 <meta name="description" content="Unified Modern Standard Arabic grammar reference with English, Japanese and Arabic practice modes."/>
 <style>
@@ -69,13 +69,13 @@ button,input,select{font:inherit}button{cursor:pointer}
 @media(max-width:840px){.layout{grid-template-columns:1fr}.sidebar{position:static;max-height:230px}.chapters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.paper{padding:21px}.hero{padding:25px}.practice-list,.chapter .example-grid,.chapter .examples{grid-template-columns:1fr}}
 @media(max-width:480px){.nav{padding:9px 12px}.nav a{font-size:12px}.chapters{grid-template-columns:1fr}.container{padding:12px 9px 35px}.paper{padding:17px}.hero{border-radius:16px}.booknav a{padding:8px 12px}}
 @media print{.topbar,.sidebar,.actions,.booknav,.listen{display:none!important}.container{padding:0}.layout{display:block}.paper{border:0;box-shadow:none}.hero{display:none}.chapter .example-grid{grid-template-columns:repeat(2,1fr)}}
-</style><link rel="stylesheet" href="../assets/site-navigation.css"><link rel="manifest" href="/manifest.webmanifest"><link rel="icon" type="image/svg+xml" href="/icons/icon.svg"><link rel="apple-touch-icon" href="/icons/icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="Fuṣḥā"></head>
+</style><link rel="stylesheet" href="../assets/site-navigation.css"><link rel="stylesheet" href="../assets/grammar-deep.css"><link rel="manifest" href="/manifest.webmanifest"><link rel="icon" type="image/svg+xml" href="/icons/icon.svg"><link rel="apple-touch-icon" href="/icons/icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="Fuṣḥā"></head>
 <body><header class="topbar"><div class="nav"><a href="../index.html">⌂ Fuṣḥā Study Studio</a><div class="controls"><button id="l-en" data-lang="en">English</button><button id="l-ja" data-lang="ja">日本語</button><button id="l-ar" data-lang="ar" lang="ar">العَرَبِيَّةُ</button></div></div></header>
 <main class="container"><section class="hero"><div class="kicker">PRACTICAL ARABIC GRAMMAR · TWO VOLUMES</div><h1 id="bookTitle">Grammar</h1><p id="bookIntro"></p><div class="arhead" lang="ar" dir="rtl" id="bookAr"></div></section>
 <div class="booknav"><a href="grammar.html?level=basic" id="basicLink">A0–A2 · Foundations</a><a href="grammar.html?level=advanced" id="advancedLink">B1–B2 · Development</a></div>
 <div class="layout"><aside class="sidebar"><label for="search" id="searchLabel">Search chapters</label><input id="search" type="search" placeholder="Search / 検索 / بحث"/><div class="chapters" id="chapters"></div></aside>
 <article class="paper"><div class="overline"><span id="chapterIndex"></span><span id="level"></span></div><div id="article" class="loading">Loading chapters…</div><div class="actions"><button id="prev" type="button">← Previous</button><button id="next" type="button">Next →</button></div></article></div></main>
-<script src="../assets/grammar-topics.js"></script>
+<script src="../assets/grammar-topics.js"></script><script src="../assets/grammar-depth-01.js"></script><script src="../assets/grammar-depth-02.js"></script><script src="../assets/grammar-depth-03.js"></script><script src="../assets/grammar-tables.js"></script><script src="../assets/grammar-deep-ui.js"></script>
 <script>
 (function(){
  const data=window.FSS_GRAMMAR_TOPICS||[];
@@ -83,7 +83,7 @@ button,input,select{font:inherit}button{cursor:pointer}
  const p=new URLSearchParams(location.search);
  const requested=parseInt(p.get("chapter"),10)||parseInt((location.hash.match(/chapter-(\d+)/)||[])[1],10)||0;
  let level=p.get("level")==="advanced"?"advanced":p.get("level")==="basic"?"basic":requested>=36?"advanced":"basic";
- let lang=localStorage.getItem(K)||"en";if(!["en","ja","ar"].includes(lang))lang="en";
+ let lang=localStorage.getItem(K)||"ja";if(!["en","ja","ar"].includes(lang))lang="en";
  const range=level==="basic"?[1,35]:[36,51];
  let active=requested>=range[0]&&requested<=range[1]?requested:range[0];
  let enSections=[],jaSections=[],jaById=new Map();
@@ -91,7 +91,7 @@ button,input,select{font:inherit}button{cursor:pointer}
  function labels(){
   const ar=lang==="ar",ja=lang==="ja";
   $("bookTitle").textContent=ar?(level==="basic"?"الْقَوَاعِدُ الْأَسَاسِيَّةُ":"الْقَوَاعِدُ الْمُتَقَدِّمَةُ"):level==="basic"?(ja?"文法書 A0–A2｜基礎":"Grammar A0–A2 · Foundations"):(ja?"文法書 B1–B2｜発展":"Grammar B1–B2 · Development");
-  $("bookIntro").textContent=ar?"اِخْتَرْ دَرْسًا وَاسْتَمِعْ وَتَدَرَّبْ.":ja?"英語・日本語の原書51項目を主題ごとに対応させています。日本語原書の補講15A・15B・16Aは、サイトでは第16・17・19章として表示します。":"English and Japanese source chapters are aligned topic by topic across all 51 entries. The Japanese book labels three supplementary lessons 15A, 15B and 16A.";
+  $("bookIntro").textContent=ar?"اِخْتَرْ دَرْسًا، وَاقْرَأِ الْقَوَاعِدَ، وَاسْتَمِعْ إِلَى الْأَمْثِلَةِ.":ja?"全51章。文法の仕組み・活用／比較表・解説付き例文・間違いやすい点・解答付き練習を学べます。さらに原書の詳細解説も収録。":"51 chapters. Go deeper with explanations, conjugation tables, worked examples, common errors, self-checks and the complete source chapters.";
   $("bookAr").textContent=level==="basic"?"مِنَ الْمُبْتَدِئِ إِلَى الْمُتَوَسِّطِ":"مَوَاضِيعُ الْمُسْتَوَى الْمُتَقَدِّمِ";
   $("searchLabel").textContent=ar?"ابْحَثْ عَنِ الدَّرْسِ":ja?"章を探す":"Search chapters";
 
@@ -113,7 +113,7 @@ button,input,select{font:inherit}button{cursor:pointer}
   const q=$("search").value.trim().normalize("NFD").replace(/[\u064b-\u065f\u0670\u06d6-\u06ed]/g,"").toLowerCase();
   $("chapters").replaceChildren();
   for(let n=range[0];n<=range[1];n++){
-   const d=data[n-1];if(q&&![d.ja,d.ar,d.enShort,String(n)].join(" ").normalize("NFD").replace(/[\u064b-\u065f\u0670\u06d6-\u06ed]/g,"").toLowerCase().includes(q))continue;
+   const d=data[n-1];if(q&&![d.ja,d.ar,d.enShort,d.explain,...(window.FSS_GRAMMAR_DEPTH?.[n]?.lead||[]),...(window.FSS_GRAMMAR_DEPTH?.[n]?.notes?.flat()||[]),String(n)].join(" ").normalize("NFD").replace(/[\u064b-\u065f\u0670\u06d6-\u06ed]/g,"").toLowerCase().includes(q))continue;
    const b=document.createElement("button");b.type="button";b.className=n===active?"active":"";
    const num=document.createElement("span");num.className="num";num.textContent=String(n).padStart(2,"0");
    b.append(num,document.createTextNode(getTitle(n)));b.onclick=()=>change(n);
@@ -148,6 +148,14 @@ button,input,select{font:inherit}button{cursor:pointer}
   host.replaceChildren();host.className="";
   if(!src){host.textContent="Could not load this chapter. Check your network connection.";return}
   const h=document.createElement("h2");h.className="article-title"+(lang==="ar"?" ar":"");h.textContent=getTitle(active);host.append(h);
+  const deepDive=window.FSS_BUILD_GRAMMAR_DEPTH?.(active,lang);
+  if(deepDive)host.append(deepDive);
+  if(lang!=="ar"&&deepDive){
+   const originalHeading=document.createElement("h3");
+   originalHeading.className="depth-original-heading";
+   originalHeading.textContent=window.FSS_GRAMMAR_DEPTH_LABELS?.[lang]?.source||"Complete chapter";
+   host.append(originalHeading);
+  }
   if(lang==="en"){
     const clone=src.cloneNode(true);clone.querySelector(".chapter-head")?.remove();clone.querySelector(".done-label")?.remove();host.append(clone);
     addPlayHandlers(clone);
